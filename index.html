@@ -11,45 +11,47 @@
   .slide { display: none; width: 100%; height: 100%; position: absolute; top: 0; left: 0; padding: 40px 56px; flex-direction: column; justify-content: flex-start; }
   .slide.active { display: flex; }
   .nav { position: fixed; bottom: 22px; left: 50%; transform: translateX(-50%); display: flex; align-items: center; gap: 14px; z-index: 100; }
-  .nav button { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: #fff; padding: 7px 20px; border-radius: 24px; cursor: pointer; font-size: 12px; transition: all 0.2s; }
+  .nav button { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: #fff; padding: 8px 24px; border-radius: 24px; cursor: pointer; font-size: 14px; transition: all 0.2s; }
   .nav button:hover { background: rgba(255,255,255,0.22); }
-  .nav .counter { font-size: 12px; color: rgba(255,255,255,0.45); min-width: 40px; text-align: center; }
-  .dot-nav { display: flex; gap: 7px; }
-  .dot { width: 7px; height: 7px; border-radius: 50%; background: rgba(255,255,255,0.22); cursor: pointer; transition: all 0.2s; }
+  .nav .counter { font-size: 14px; color: rgba(255,255,255,0.45); min-width: 48px; text-align: center; }
+  .dot-nav { display: flex; gap: 8px; }
+  .dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,0.22); cursor: pointer; transition: all 0.2s; }
   .dot.active { background: #4fc3f7; transform: scale(1.35); }
-  .bg1 { background: linear-gradient(135deg, #0a0e1a 0%, #0d1b3e 50%, #0a1628 100%); }
-  .bg2 { background: linear-gradient(135deg, #071428 0%, #0d2040 60%, #0a1a35 100%); }
-  .bg3 { background: linear-gradient(135deg, #060f24 0%, #0c1d3a 50%, #091525 100%); }
-  .bg4 { background: linear-gradient(135deg, #080d20 0%, #0b1a38 50%, #081422 100%); }
-  .bg5 { background: linear-gradient(135deg, #050c1c 0%, #0a1832 50%, #061020 100%); }
-  .deco { position: absolute; border-radius: 50%; pointer-events: none; }
-  .slide-num { position: absolute; top: 40px; right: 56px; font-size: 11px; color: rgba(255,255,255,0.18); letter-spacing: 1px; }
-  .watermark { position: absolute; bottom: 50px; right: 56px; font-size: 10px; color: rgba(255,255,255,0.12); letter-spacing: 2px; font-weight: 600; }
-  .lbl { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: #4fc3f7; margin-bottom: 6px; font-weight: 600; }
-  .ttl { font-size: 28px; font-weight: 700; line-height: 1.2; margin-bottom: 5px; }
-  .ttl span { color: #4fc3f7; }
-  .sub { font-size: 12px; color: rgba(255,255,255,0.45); margin-bottom: 20px; }
-  .divider { width: 50px; height: 3px; background: linear-gradient(90deg, #4fc3f7, #1565c0); border-radius: 2px; margin-bottom: 20px; }
+
+  .bg1{background:linear-gradient(135deg,#0a0e1a 0%,#0d1b3e 50%,#0a1628 100%)}
+  .bg2{background:linear-gradient(135deg,#071428 0%,#0d2040 60%,#0a1a35 100%)}
+  .bg3{background:linear-gradient(135deg,#060f24 0%,#0c1d3a 50%,#091525 100%)}
+  .bg4{background:linear-gradient(135deg,#080d20 0%,#0b1a38 50%,#081422 100%)}
+  .bg5{background:linear-gradient(135deg,#050c1c 0%,#0a1832 50%,#061020 100%)}
+
+  .deco{position:absolute;border-radius:50%;pointer-events:none;}
+  .slide-num{position:absolute;top:40px;right:56px;font-size:13px;color:rgba(255,255,255,0.18);letter-spacing:1px;}
+  .watermark{position:absolute;bottom:50px;right:56px;font-size:12px;color:rgba(255,255,255,0.12);letter-spacing:2px;font-weight:600;}
+  .lbl{font-size:12px;letter-spacing:3px;text-transform:uppercase;color:#4fc3f7;margin-bottom:8px;font-weight:600;}
+  .ttl{font-size:32px;font-weight:700;line-height:1.2;margin-bottom:6px;}
+  .ttl span{color:#4fc3f7;}
+  .sub{font-size:14px;color:rgba(255,255,255,0.45);margin-bottom:22px;}
+  .divider{width:50px;height:3px;background:linear-gradient(90deg,#4fc3f7,#1565c0);border-radius:2px;margin-bottom:22px;}
 
   /* SLIDE 1 */
-  .cover-tag { display: inline-flex; align-items: center; gap: 8px; background: rgba(79,195,247,0.1); border: 1px solid rgba(79,195,247,0.28); border-radius: 20px; padding: 5px 14px; font-size: 11px; color: #4fc3f7; letter-spacing: 2px; margin-bottom: 26px; width: fit-content; }
-  .cover-tag::before { content: '●'; font-size: 7px; animation: blink 1.5s infinite; }
-  @keyframes blink { 0%,100%{opacity:1}50%{opacity:0.3} }
-  .cover-main { font-size: 38px; font-weight: 800; line-height: 1.18; margin-bottom: 14px; }
-  .cover-main .hl { color: #4fc3f7; }
-  .cover-desc { font-size: 13px; color: rgba(255,255,255,0.5); max-width: 500px; line-height: 1.75; margin-bottom: 30px; }
-  .cover-meta { display: flex; gap: 28px; }
-  .cmi .l { font-size: 10px; color: rgba(255,255,255,0.3); letter-spacing: 1px; }
-  .cmi .v { font-size: 13px; color: rgba(255,255,255,0.78); font-weight: 500; }
-  .stat-cards { position: absolute; right: 56px; top: 50%; transform: translateY(-50%); display: flex; flex-direction: column; gap: 12px; }
-  .sc { background: rgba(255,255,255,0.04); border: 1px solid rgba(79,195,247,0.18); border-radius: 11px; padding: 16px 24px; text-align: center; }
-  .sc .n { font-size: 30px; font-weight: 800; color: #4fc3f7; line-height: 1; }
-  .sc .u { font-size: 11px; color: rgba(255,255,255,0.42); margin-top: 3px; }
+  .cover-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(79,195,247,0.1);border:1px solid rgba(79,195,247,0.28);border-radius:20px;padding:6px 16px;font-size:13px;color:#4fc3f7;letter-spacing:2px;margin-bottom:28px;width:fit-content;}
+  .cover-tag::before{content:'●';font-size:8px;animation:blink 1.5s infinite;}
+  @keyframes blink{0%,100%{opacity:1}50%{opacity:0.3}}
+  .cover-main{font-size:44px;font-weight:800;line-height:1.18;margin-bottom:16px;}
+  .cover-main .hl{color:#4fc3f7;}
+  .cover-desc{font-size:16px;color:rgba(255,255,255,0.5);max-width:520px;line-height:1.75;margin-bottom:32px;}
+  .cover-meta{display:flex;gap:32px;}
+  .cmi .l{font-size:11px;color:rgba(255,255,255,0.3);letter-spacing:1px;}
+  .cmi .v{font-size:15px;color:rgba(255,255,255,0.78);font-weight:500;}
+  .stat-cards{position:absolute;right:56px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:14px;}
+  .sc{background:rgba(255,255,255,0.04);border:1px solid rgba(79,195,247,0.18);border-radius:12px;padding:18px 28px;text-align:center;}
+  .sc .n{font-size:34px;font-weight:800;color:#4fc3f7;line-height:1;}
+  .sc .u{font-size:13px;color:rgba(255,255,255,0.42);margin-top:4px;}
 
   /* SLIDE 2 */
-  .cat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; flex: 1; }
-  .cc { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07); border-radius: 11px; padding: 13px; position: relative; overflow: hidden; }
-  .cc::before { content:''; position:absolute; top:0;left:0;right:0;height:2px;border-radius:2px 2px 0 0; }
+  .cat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;flex:1;}
+  .cc{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.07);border-radius:12px;padding:16px;position:relative;overflow:hidden;}
+  .cc::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;border-radius:3px 3px 0 0;}
   .c1::before{background:linear-gradient(90deg,#4fc3f7,#0288d1)}
   .c2::before{background:linear-gradient(90deg,#81c784,#388e3c)}
   .c3::before{background:linear-gradient(90deg,#ffb74d,#f57c00)}
@@ -57,86 +59,137 @@
   .c5::before{background:linear-gradient(90deg,#ef9a9a,#c62828)}
   .c6::before{background:linear-gradient(90deg,#80deea,#00838f)}
   .c7::before{background:linear-gradient(90deg,#ffe082,#f9a825)}
-  .cc-icon { font-size: 18px; margin-bottom: 6px; }
-  .cc-name { font-size: 12px; font-weight: 700; margin-bottom: 7px; color: rgba(255,255,255,0.88); }
-  .cc-items { display: flex; flex-direction: column; gap: 3px; }
-  .ci { font-size: 10px; color: rgba(255,255,255,0.48); padding: 2px 0; border-bottom: 1px solid rgba(255,255,255,0.05); line-height: 1.4; }
-  .ci:last-child { border-bottom: none; }
-  .tot { display: inline-flex; align-items: center; gap: 6px; background: rgba(79,195,247,0.09); border: 1px solid rgba(79,195,247,0.22); border-radius: 18px; padding: 3px 12px; font-size: 11px; color: #4fc3f7; margin-bottom: 14px; }
+  .cc-icon{font-size:22px;margin-bottom:8px;}
+  .cc-name{font-size:14px;font-weight:700;margin-bottom:9px;color:rgba(255,255,255,0.88);}
+  .cc-items{display:flex;flex-direction:column;gap:4px;}
+  .ci{font-size:12px;color:rgba(255,255,255,0.48);padding:3px 0;border-bottom:1px solid rgba(255,255,255,0.05);line-height:1.4;}
+  .ci:last-child{border-bottom:none;}
+  .tot{display:inline-flex;align-items:center;gap:6px;background:rgba(79,195,247,0.09);border:1px solid rgba(79,195,247,0.22);border-radius:18px;padding:4px 14px;font-size:13px;color:#4fc3f7;margin-bottom:16px;}
 
-  /* SLIDE 3 */
-  .tool-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; flex: 1; }
-  .tc { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07); border-radius: 11px; padding: 14px 16px; }
-  .tbadge { font-size: 9px; font-weight: 700; letter-spacing: 1px; padding: 2px 9px; border-radius: 10px; text-transform: uppercase; display: inline-block; margin-bottom: 8px; }
-  .tb-core { background: rgba(79,195,247,0.13); color: #4fc3f7; border: 1px solid rgba(79,195,247,0.28); }
-  .tb-spec { background: rgba(129,199,132,0.13); color: #81c784; border: 1px solid rgba(129,199,132,0.28); }
-  .tb-ag { background: rgba(206,147,216,0.13); color: #ce93d8; border: 1px solid rgba(206,147,216,0.28); }
-  .ta { font-size: 12px; font-weight: 700; color: rgba(255,255,255,0.88); margin-bottom: 7px; }
-  .tl { display: flex; flex-direction: column; gap: 5px; }
-  .tr { display: flex; justify-content: space-between; align-items: flex-start; gap: 6px; }
-  .tn { font-size: 11.5px; font-weight: 600; color: #4fc3f7; }
-  .td { font-size: 10px; color: rgba(255,255,255,0.4); line-height: 1.3; text-align: right; }
-  .pw { font-size: 9px; background: rgba(255,183,77,0.13); color: #ffb74d; border: 1px solid rgba(255,183,77,0.28); border-radius: 7px; padding: 1px 6px; white-space: nowrap; flex-shrink: 0; }
+  /* SLIDE 3 - TOOL GRID */
+  .tool-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;flex:1;}
+  .tc{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.07);border-radius:12px;padding:16px 18px;}
+  .tbadge{font-size:10px;font-weight:700;letter-spacing:1px;padding:3px 10px;border-radius:10px;text-transform:uppercase;display:inline-block;margin-bottom:10px;}
+  .tb-core{background:rgba(79,195,247,0.13);color:#4fc3f7;border:1px solid rgba(79,195,247,0.28);}
+  .tb-spec{background:rgba(129,199,132,0.13);color:#81c784;border:1px solid rgba(129,199,132,0.28);}
+  .tb-ag{background:rgba(206,147,216,0.13);color:#ce93d8;border:1px solid rgba(206,147,216,0.28);}
+  .ta{font-size:14px;font-weight:700;color:rgba(255,255,255,0.88);margin-bottom:9px;}
+  .tl{display:flex;flex-direction:column;gap:6px;}
+  .tr{display:flex;justify-content:space-between;align-items:flex-start;gap:6px;}
+  .tn{font-size:13px;font-weight:700;color:#4fc3f7;cursor:pointer;border-bottom:1px dashed rgba(79,195,247,0.4);padding-bottom:1px;transition:all 0.2s;}
+  .tn:hover{color:#81d4fa;border-bottom-color:#81d4fa;text-shadow:0 0 8px rgba(79,195,247,0.5);}
+  .td{font-size:11px;color:rgba(255,255,255,0.4);line-height:1.3;text-align:right;}
+  .pw{font-size:10px;background:rgba(255,183,77,0.13);color:#ffb74d;border:1px solid rgba(255,183,77,0.28);border-radius:7px;padding:2px 7px;white-space:nowrap;flex-shrink:0;}
 
   /* SLIDE 4 */
-  .plat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 14px; }
-  .pc { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07); border-radius: 12px; padding: 16px 14px; text-align: center; position: relative; }
-  .pc.top { border-color: rgba(79,195,247,0.38); background: rgba(79,195,247,0.055); }
-  .top-b { position: absolute; top: -9px; left: 50%; transform: translateX(-50%); background: #4fc3f7; color: #0a0e1a; font-size: 8px; font-weight: 800; letter-spacing: 1px; padding: 2px 9px; border-radius: 9px; white-space: nowrap; }
-  .pl { font-size: 24px; margin-bottom: 8px; }
-  .pn { font-size: 12px; font-weight: 700; margin-bottom: 4px; }
-  .pt { font-size: 10px; color: rgba(255,255,255,0.38); margin-bottom: 10px; }
-  .pb-wrap { display: flex; flex-direction: column; gap: 5px; }
-  .pb-row { display: flex; align-items: center; gap: 7px; }
-  .pb-lbl { font-size: 9px; color: rgba(255,255,255,0.4); width: 46px; text-align: right; flex-shrink: 0; }
-  .pb-track { flex: 1; height: 4px; background: rgba(255,255,255,0.07); border-radius: 3px; overflow: hidden; }
-  .pb-fill { height: 100%; border-radius: 3px; }
-  .fb { background: linear-gradient(90deg,#1565c0,#4fc3f7); }
-  .fg { background: linear-gradient(90deg,#2e7d32,#81c784); }
-  .fp { background: linear-gradient(90deg,#6a1b9a,#ce93d8); }
-  .fo { background: linear-gradient(90deg,#e65100,#ffb74d); }
-  .it { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07); border-radius: 10px; overflow: hidden; }
-  .ir { display: grid; grid-template-columns: 2fr 1.3fr 1.4fr 2.2fr; padding: 9px 18px; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 11px; }
-  .ir:last-child { border-bottom: none; }
-  .ir.hd { background: rgba(79,195,247,0.07); font-size: 10px; font-weight: 600; color: rgba(255,255,255,0.45); letter-spacing: 1px; }
-  .ir .ph { color: #4fc3f7; font-weight: 600; }
-  .ir .co { color: #81c784; font-weight: 600; }
+  .plat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:16px;}
+  .pc{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.07);border-radius:13px;padding:18px 16px;text-align:center;position:relative;}
+  .pc.top{border-color:rgba(79,195,247,0.38);background:rgba(79,195,247,0.055);}
+  .top-b{position:absolute;top:-10px;left:50%;transform:translateX(-50%);background:#4fc3f7;color:#0a0e1a;font-size:9px;font-weight:800;letter-spacing:1px;padding:3px 10px;border-radius:9px;white-space:nowrap;}
+  .pl{font-size:28px;margin-bottom:10px;}
+  .pn{font-size:14px;font-weight:700;margin-bottom:5px;}
+  .pt{font-size:11px;color:rgba(255,255,255,0.38);margin-bottom:12px;}
+  .pb-wrap{display:flex;flex-direction:column;gap:6px;}
+  .pb-row{display:flex;align-items:center;gap:8px;}
+  .pb-lbl{font-size:10px;color:rgba(255,255,255,0.4);width:50px;text-align:right;flex-shrink:0;}
+  .pb-track{flex:1;height:5px;background:rgba(255,255,255,0.07);border-radius:3px;overflow:hidden;}
+  .pb-fill{height:100%;border-radius:3px;}
+  .fb{background:linear-gradient(90deg,#1565c0,#4fc3f7)}
+  .fg{background:linear-gradient(90deg,#2e7d32,#81c784)}
+  .fp{background:linear-gradient(90deg,#6a1b9a,#ce93d8)}
+  .fo{background:linear-gradient(90deg,#e65100,#ffb74d)}
+  .it{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:11px;overflow:hidden;}
+  .ir{display:grid;grid-template-columns:2fr 1.3fr 1.4fr 2.2fr;padding:11px 20px;border-bottom:1px solid rgba(255,255,255,0.05);font-size:13px;}
+  .ir:last-child{border-bottom:none;}
+  .ir.hd{background:rgba(79,195,247,0.07);font-size:11px;font-weight:600;color:rgba(255,255,255,0.45);letter-spacing:1px;}
+  .ir .ph{color:#4fc3f7;font-weight:600;}
+  .ir .co{color:#81c784;font-weight:600;}
 
   /* SLIDE 5 */
-  .roadmap { display: flex; gap: 0; flex: 1; align-items: stretch; }
-  .pcol { flex: 1; padding: 16px; position: relative; }
-  .pcol::after { content:''; position:absolute; top:15%;right:0;height:70%;width:1px;background:linear-gradient(180deg,transparent,rgba(79,195,247,0.25),transparent); }
-  .pcol:last-child::after { display:none; }
-  .pnum { font-size: 10px; color: #4fc3f7; letter-spacing: 2px; font-weight: 600; margin-bottom: 4px; }
-  .ptitle { font-size: 15px; font-weight: 700; margin-bottom: 3px; }
-  .pper { font-size: 10px; color: rgba(255,255,255,0.38); margin-bottom: 13px; }
-  .pitems { display: flex; flex-direction: column; gap: 7px; }
-  .pi { border-left: 2px solid; border-radius: 0 8px 8px 0; padding: 9px 11px; background: rgba(255,255,255,0.035); }
-  .pi1 { border-color: #4fc3f7; }
-  .pi2 { border-color: #81c784; }
-  .pi3 { border-color: #ce93d8; }
-  .pitool { font-size: 11.5px; font-weight: 600; color: rgba(255,255,255,0.88); }
-  .pidesc { font-size: 10px; color: rgba(255,255,255,0.42); margin-top: 2px; line-height: 1.45; }
-  .pimp { font-size: 9px; margin-top: 5px; display: inline-block; padding: 2px 7px; border-radius: 7px; }
-  .ib { background:rgba(79,195,247,0.1);color:#4fc3f7; }
-  .ig { background:rgba(129,199,132,0.1);color:#81c784; }
-  .ip { background:rgba(206,147,216,0.1);color:#ce93d8; }
-  .bbar { background: rgba(79,195,247,0.07); border: 1px solid rgba(79,195,247,0.18); border-radius: 9px; padding: 11px 20px; display: flex; justify-content: space-between; align-items: center; margin-top: 12px; }
-  .bbar-txt { font-size: 12px; color: rgba(255,255,255,0.65); line-height: 1.6; }
-  .bbar-txt strong { color: #4fc3f7; }
-  .bbar-num { font-size: 20px; font-weight: 800; color: #4fc3f7; }
-  .bbar-unit { font-size: 10px; color: rgba(255,255,255,0.38); margin-left: 3px; }
+  .roadmap{display:flex;gap:0;flex:1;align-items:stretch;}
+  .pcol{flex:1;padding:18px;position:relative;}
+  .pcol::after{content:'';position:absolute;top:15%;right:0;height:70%;width:1px;background:linear-gradient(180deg,transparent,rgba(79,195,247,0.25),transparent);}
+  .pcol:last-child::after{display:none;}
+  .pnum{font-size:11px;color:#4fc3f7;letter-spacing:2px;font-weight:600;margin-bottom:5px;}
+  .ptitle{font-size:17px;font-weight:700;margin-bottom:4px;}
+  .pper{font-size:12px;color:rgba(255,255,255,0.38);margin-bottom:15px;}
+  .pitems{display:flex;flex-direction:column;gap:9px;}
+  .pi{border-left:2px solid;border-radius:0 9px 9px 0;padding:11px 13px;background:rgba(255,255,255,0.035);}
+  .pi1{border-color:#4fc3f7}
+  .pi2{border-color:#81c784}
+  .pi3{border-color:#ce93d8}
+  .pitool{font-size:13px;font-weight:600;color:rgba(255,255,255,0.88);}
+  .pidesc{font-size:11px;color:rgba(255,255,255,0.42);margin-top:3px;line-height:1.5;}
+  .pimp{font-size:10px;margin-top:6px;display:inline-block;padding:3px 9px;border-radius:8px;}
+  .ib{background:rgba(79,195,247,0.1);color:#4fc3f7}
+  .ig{background:rgba(129,199,132,0.1);color:#81c784}
+  .ip{background:rgba(206,147,216,0.1);color:#ce93d8}
+  .bbar{background:rgba(79,195,247,0.07);border:1px solid rgba(79,195,247,0.18);border-radius:10px;padding:13px 22px;display:flex;justify-content:space-between;align-items:center;margin-top:14px;}
+  .bbar-txt{font-size:14px;color:rgba(255,255,255,0.65);line-height:1.7;}
+  .bbar-txt strong{color:#4fc3f7;}
+  .bbar-num{font-size:24px;font-weight:800;color:#4fc3f7;}
+  .bbar-unit{font-size:11px;color:rgba(255,255,255,0.38);margin-left:4px;}
+
+  /* ===== POPUP ===== */
+  .popup-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.75);z-index:1000;align-items:center;justify-content:center;backdrop-filter:blur(6px);}
+  .popup-overlay.show{display:flex;}
+  .popup{background:linear-gradient(145deg,#0d1b3e,#0a1628);border:1px solid rgba(79,195,247,0.3);border-radius:20px;width:820px;max-width:95vw;max-height:90vh;overflow-y:auto;position:relative;box-shadow:0 24px 80px rgba(0,0,0,0.7);}
+  .popup-close{position:sticky;top:0;z-index:10;display:flex;justify-content:flex-end;padding:16px 20px 0;background:linear-gradient(145deg,#0d1b3e,#0a1628);}
+  .popup-close button{background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);color:#fff;width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center;transition:all 0.2s;}
+  .popup-close button:hover{background:rgba(255,255,255,0.22);}
+  .popup-body{padding:8px 32px 32px;}
+  .popup-header{display:flex;align-items:center;gap:16px;margin-bottom:20px;}
+  .popup-icon{font-size:36px;}
+  .popup-title-wrap{}
+  .popup-category{font-size:11px;letter-spacing:2px;color:#4fc3f7;font-weight:600;margin-bottom:4px;}
+  .popup-title{font-size:26px;font-weight:800;}
+  .popup-tagline{font-size:14px;color:rgba(255,255,255,0.5);margin-top:4px;}
+  .popup-img{width:100%;height:200px;object-fit:cover;border-radius:12px;margin-bottom:20px;border:1px solid rgba(255,255,255,0.08);}
+  .popup-img-fallback{width:100%;height:200px;border-radius:12px;margin-bottom:20px;border:1px solid rgba(79,195,247,0.2);display:flex;align-items:center;justify-content:center;font-size:48px;background:rgba(79,195,247,0.05);}
+  .popup-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:18px;}
+  .popup-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:16px;}
+  .popup-card-title{font-size:11px;letter-spacing:1px;color:rgba(255,255,255,0.4);font-weight:600;margin-bottom:8px;text-transform:uppercase;}
+  .popup-card-content{font-size:13px;color:rgba(255,255,255,0.78);line-height:1.7;}
+  .popup-card-content ul{padding-left:16px;}
+  .popup-card-content li{margin-bottom:4px;}
+  .popup-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:18px;}
+  .popup-stat{background:rgba(79,195,247,0.06);border:1px solid rgba(79,195,247,0.18);border-radius:10px;padding:14px;text-align:center;}
+  .popup-stat .sv{font-size:22px;font-weight:800;color:#4fc3f7;}
+  .popup-stat .sl{font-size:11px;color:rgba(255,255,255,0.45);margin-top:3px;}
+  .popup-links{display:flex;gap:10px;flex-wrap:wrap;}
+  .popup-link{display:inline-flex;align-items:center;gap:6px;padding:9px 18px;border-radius:20px;font-size:13px;font-weight:600;cursor:pointer;text-decoration:none;transition:all 0.2s;}
+  .pl-web{background:rgba(79,195,247,0.12);border:1px solid rgba(79,195,247,0.3);color:#4fc3f7;}
+  .pl-web:hover{background:rgba(79,195,247,0.22);}
+  .pl-yt{background:rgba(255,82,82,0.12);border:1px solid rgba(255,82,82,0.3);color:#ff5252;}
+  .pl-yt:hover{background:rgba(255,82,82,0.22);}
+  .popup-cost{background:rgba(129,199,132,0.06);border:1px solid rgba(129,199,132,0.2);border-radius:10px;padding:12px 16px;margin-bottom:18px;display:flex;align-items:center;gap:10px;}
+  .popup-cost-label{font-size:11px;color:#81c784;font-weight:700;letter-spacing:1px;white-space:nowrap;}
+  .popup-cost-val{font-size:14px;color:rgba(255,255,255,0.75);}
+  .full-width{grid-column:1/-1;}
+
+  /* scrollbar */
+  .popup::-webkit-scrollbar{width:6px;}
+  .popup::-webkit-scrollbar-track{background:transparent;}
+  .popup::-webkit-scrollbar-thumb{background:rgba(79,195,247,0.3);border-radius:3px;}
 </style>
 </head>
 <body>
+
+<!-- ===== POPUP OVERLAY ===== -->
+<div class="popup-overlay" id="popupOverlay" onclick="closePopupOutside(event)">
+  <div class="popup" id="popupBox">
+    <div class="popup-close"><button onclick="closePopup()">✕</button></div>
+    <div class="popup-body" id="popupContent"></div>
+  </div>
+</div>
+
 <div class="slides">
 
   <!-- SLIDE 1: COVER -->
   <div class="slide bg1 active" id="s1">
     <div class="deco" style="width:550px;height:550px;background:radial-gradient(circle,rgba(21,101,192,0.18),transparent);right:-180px;top:-180px;"></div>
-    <div class="deco" style="width:280px;height:280px;background:radial-gradient(circle,rgba(13,71,161,0.15),transparent);left:-90px;bottom:-90px;"></div>
     <div class="slide-num">01 / 05</div>
-    <div style="display:flex;flex-direction:column;justify-content:center;height:100%;max-width:580px;">
+    <div style="display:flex;flex-direction:column;justify-content:center;height:100%;max-width:600px;">
       <div class="cover-tag">DOOSAN ENERBILITY · 사업관리팀</div>
       <div class="cover-main">발전소 기자재 공급<br>사업관리 혁신을 위한<br><span class="hl">Agentic AI</span> 전략</div>
       <div class="cover-desc">18가지 핵심 사업관리 업무에 최적화된 Agentic AI 도구 분석 및<br>투자 의사결정을 위한 실행 로드맵 제안</div>
@@ -154,9 +207,8 @@
     <div class="watermark">DOOSAN ENERBILITY</div>
   </div>
 
-  <!-- SLIDE 2: 핵심 업무 -->
+  <!-- SLIDE 2 -->
   <div class="slide bg2" id="s2">
-    <div class="deco" style="width:450px;height:450px;background:radial-gradient(circle,rgba(13,71,161,0.12),transparent);right:-120px;bottom:-120px;"></div>
     <div class="slide-num">02 / 05</div>
     <div class="lbl">Project Business Management</div>
     <div class="ttl">발전소 기자재 사업관리 <span>핵심 업무 체계</span></div>
@@ -175,28 +227,87 @@
     <div class="watermark">DOOSAN ENERBILITY</div>
   </div>
 
-  <!-- SLIDE 3: AI 도구 매핑 -->
+  <!-- SLIDE 3: AI TOOL MAPPING -->
   <div class="slide bg3" id="s3">
-    <div class="deco" style="width:380px;height:380px;background:radial-gradient(circle,rgba(49,27,146,0.14),transparent);left:-80px;top:-80px;"></div>
     <div class="slide-num">03 / 05</div>
-    <div class="lbl">Agentic AI Tool Mapping</div>
+    <div class="lbl">Agentic AI Tool Mapping — 클릭하면 상세 소개 팝업</div>
     <div class="ttl">영역별 <span>최적 Agentic AI</span> 도구 분석</div>
-    <div class="sub">광범위한 리서치 기반 — 현재 가장 많이 사용되고 가장 강력한 도구 선별</div>
+    <div class="sub">각 AI Tool 이름을 클릭하면 상세 소개자료를 확인할 수 있습니다</div>
     <div class="divider"></div>
     <div class="tool-grid">
-      <div class="tc"><span class="tbadge tb-core">CORE</span><div class="ta">① 착수 & 계획</div><div class="tl"><div class="tr"><span class="tn">Icertis</span><span class="pw">⚡ Most Powerful</span></div><div class="tr"><span style="font-size:10px;color:rgba(255,255,255,0.38)">계약 검토·리스크 자동 분석 (8,000+ 기업)</span></div><div class="tr" style="margin-top:5px"><span class="tn">EcoSys (Hexagon)</span><span class="pw">⚡ #1 EPC</span></div><div class="tr"><span style="font-size:10px;color:rgba(255,255,255,0.38)">WBS·예산 AI 벤치마킹 (Bechtel·Fluor 사용)</span></div><div class="tr" style="margin-top:5px"><span class="tn">MS Copilot</span><span class="td">킥오프 문서 자동생성</span></div></div></div>
-      <div class="tc"><span class="tbadge tb-core">CORE</span><div class="ta">② 원가 & 변경관리</div><div class="tl"><div class="tr"><span class="tn">EcoSys + SAP Joule</span><span class="pw">⚡ Most Powerful</span></div><div class="tr"><span style="font-size:10px;color:rgba(255,255,255,0.38)">AI EAC 예측·EVM·Monte Carlo 시뮬레이션</span></div><div class="tr" style="margin-top:5px"><span class="tn">ServiceNow AI</span><span class="td">게이트·승인 자동 라우팅</span></div><div class="tr" style="margin-top:5px"><span class="tn">Power BI Copilot</span><span class="td">자연어 원가 리포팅</span></div></div></div>
-      <div class="tc"><span class="tbadge tb-spec">SPECIALIST</span><div class="ta">③ 구매 & 자재</div><div class="tl"><div class="tr"><span class="tn">SAP Ariba + Joule</span><span class="pw">⚡ Most Used</span></div><div class="tr"><span style="font-size:10px;color:rgba(255,255,255,0.38)">자율 소싱·PO 자동매칭 (5M+ 기업 네트워크)</span></div><div class="tr" style="margin-top:5px"><span class="tn">Jaggaer</span><span class="td">BOM 연계 구매관리</span></div><div class="tr" style="margin-top:5px"><span class="tn">Resilinc</span><span class="td">공급망 리스크 AI 경보</span></div></div></div>
-      <div class="tc"><span class="tbadge tb-spec">SPECIALIST</span><div class="ta">④ 문서 & 품질</div><div class="tl"><div class="tr"><span class="tn">Oracle Aconex</span><span class="pw">⚡ Industry Std</span></div><div class="tr"><span style="font-size:10px;color:rgba(255,255,255,0.38)">EPC 문서관리 글로벌 표준 플랫폼</span></div><div class="tr" style="margin-top:5px"><span class="tn">ETQ Reliance</span><span class="td">NCR 자동분류 (처리시간 40~60%↓)</span></div></div></div>
-      <div class="tc"><span class="tbadge tb-spec">SPECIALIST</span><div class="ta">⑤ 제작 & 물류</div><div class="tl"><div class="tr"><span class="tn">AVEVA</span><span class="pw">⚡ Most Powerful</span></div><div class="tr"><span style="font-size:10px;color:rgba(255,255,255,0.38)">공정 디지털 트윈·AI 납기 예측 (GE Vernova·Siemens 사용)</span></div><div class="tr" style="margin-top:5px"><span class="tn">project44</span><span class="td">운송 ETA 95%+ 정확도</span></div><div class="tr" style="margin-top:5px"><span class="tn">Descartes</span><span class="td">통관·무역규정 AI 자동화</span></div></div></div>
-      <div class="tc"><span class="tbadge tb-ag">AGENTIC</span><div class="ta">⑥⑦ 커뮤니케이션·재무</div><div class="tl"><div class="tr"><span class="tn">Salesforce Agentforce</span><span class="pw">⚡ Most Powerful</span></div><div class="tr"><span style="font-size:10px;color:rgba(255,255,255,0.38)">24/7 자율 고객 응대 에이전트</span></div><div class="tr" style="margin-top:5px"><span class="tn">HighRadius</span><span class="td">수금 AI — 95%+ 자동 매칭</span></div><div class="tr" style="margin-top:5px"><span class="tn">SAP RAR + Joule</span><span class="td">IFRS 15 매출인식 자동화</span></div></div></div>
+
+      <div class="tc">
+        <span class="tbadge tb-core">CORE</span>
+        <div class="ta">① 착수 & 계획</div>
+        <div class="tl">
+          <div class="tr"><span class="tn" onclick="showTool('icertis')">Icertis</span><span class="pw">⚡ Most Powerful</span></div>
+          <div style="font-size:11px;color:rgba(255,255,255,0.38);margin-bottom:4px;">계약 검토·리스크 자동 분석</div>
+          <div class="tr"><span class="tn" onclick="showTool('ecosys')">EcoSys (Hexagon)</span><span class="pw">⚡ #1 EPC</span></div>
+          <div style="font-size:11px;color:rgba(255,255,255,0.38);margin-bottom:4px;">WBS·예산 AI 벤치마킹</div>
+          <div class="tr"><span class="tn" onclick="showTool('copilot')">MS Copilot</span><span class="td">킥오프 문서 자동생성</span></div>
+        </div>
+      </div>
+
+      <div class="tc">
+        <span class="tbadge tb-core">CORE</span>
+        <div class="ta">② 원가 & 변경관리</div>
+        <div class="tl">
+          <div class="tr"><span class="tn" onclick="showTool('joule')">SAP Joule</span><span class="pw">⚡ Most Powerful</span></div>
+          <div style="font-size:11px;color:rgba(255,255,255,0.38);margin-bottom:4px;">AI EAC 예측·EVM 자동화</div>
+          <div class="tr"><span class="tn" onclick="showTool('servicenow')">ServiceNow AI</span><span class="td">게이트·승인 자동 라우팅</span></div>
+          <div class="tr" style="margin-top:4px"><span class="tn" onclick="showTool('powerbi')">Power BI Copilot</span><span class="td">자연어 원가 리포팅</span></div>
+        </div>
+      </div>
+
+      <div class="tc">
+        <span class="tbadge tb-core">CORE</span>
+        <div class="ta">③ 구매 & 자재</div>
+        <div class="tl">
+          <div class="tr"><span class="tn" onclick="showTool('ariba')">SAP Ariba + Joule</span><span class="pw">⚡ Most Used</span></div>
+          <div style="font-size:11px;color:rgba(255,255,255,0.38);margin-bottom:4px;">자율 소싱·PO 자동매칭</div>
+          <div class="tr"><span class="tn" onclick="showTool('jaggaer')">Jaggaer</span><span class="td">BOM 연계 구매관리</span></div>
+          <div class="tr" style="margin-top:4px"><span class="tn" onclick="showTool('resilinc')">Resilinc</span><span class="td">공급망 리스크 AI 경보</span></div>
+        </div>
+      </div>
+
+      <div class="tc">
+        <span class="tbadge tb-spec">SPECIALIST</span>
+        <div class="ta">④ 문서 & 품질</div>
+        <div class="tl">
+          <div class="tr"><span class="tn" onclick="showTool('aconex')">Oracle Aconex</span><span class="pw">⚡ Industry Std</span></div>
+          <div style="font-size:11px;color:rgba(255,255,255,0.38);margin-bottom:4px;">EPC 문서관리 글로벌 표준</div>
+          <div class="tr"><span class="tn" onclick="showTool('etq')">ETQ Reliance</span><span class="td">NCR 자동분류 40~60%↓</span></div>
+        </div>
+      </div>
+
+      <div class="tc">
+        <span class="tbadge tb-spec">SPECIALIST</span>
+        <div class="ta">⑤ 제작 & 물류</div>
+        <div class="tl">
+          <div class="tr"><span class="tn" onclick="showTool('aveva')">AVEVA</span><span class="pw">⚡ Most Powerful</span></div>
+          <div style="font-size:11px;color:rgba(255,255,255,0.38);margin-bottom:4px;">공정 디지털 트윈·납기 예측</div>
+          <div class="tr"><span class="tn" onclick="showTool('p44')">project44</span><span class="td">운송 ETA 95%+ 정확도</span></div>
+          <div class="tr" style="margin-top:4px"><span class="tn" onclick="showTool('descartes')">Descartes</span><span class="td">통관·무역 AI 자동화</span></div>
+        </div>
+      </div>
+
+      <div class="tc">
+        <span class="tbadge tb-ag">AGENTIC</span>
+        <div class="ta">⑥⑦ 커뮤니케이션·재무</div>
+        <div class="tl">
+          <div class="tr"><span class="tn" onclick="showTool('agentforce')">Salesforce Agentforce</span><span class="pw">⚡ Most Powerful</span></div>
+          <div style="font-size:11px;color:rgba(255,255,255,0.38);margin-bottom:4px;">24/7 자율 고객 응대 에이전트</div>
+          <div class="tr"><span class="tn" onclick="showTool('highradius')">HighRadius</span><span class="td">수금 AI 95%+ 자동매칭</span></div>
+          <div class="tr" style="margin-top:4px"><span class="tn" onclick="showTool('saprar')">SAP RAR + Joule</span><span class="td">IFRS 15 매출인식 자동화</span></div>
+        </div>
+      </div>
+
     </div>
     <div class="watermark">DOOSAN ENERBILITY</div>
   </div>
 
-  <!-- SLIDE 4: 플랫폼 비교 -->
+  <!-- SLIDE 4 -->
   <div class="slide bg4" id="s4">
-    <div class="deco" style="width:420px;height:420px;background:radial-gradient(circle,rgba(13,71,161,0.12),transparent);right:-100px;top:-100px;"></div>
     <div class="slide-num">04 / 05</div>
     <div class="lbl">Platform Comparison & Investment</div>
     <div class="ttl">핵심 플랫폼 <span>역량 비교</span> & 투자 규모</div>
@@ -217,9 +328,8 @@
     <div class="watermark">DOOSAN ENERBILITY</div>
   </div>
 
-  <!-- SLIDE 5: 로드맵 -->
+  <!-- SLIDE 5 -->
   <div class="slide bg5" id="s5">
-    <div class="deco" style="width:480px;height:480px;background:radial-gradient(circle,rgba(26,35,126,0.14),transparent);right:-140px;bottom:-140px;"></div>
     <div class="slide-num">05 / 05</div>
     <div class="lbl">Implementation Roadmap & Conclusion</div>
     <div class="ttl"><span>3단계 실행 로드맵</span> & 기대효과</div>
@@ -255,28 +365,315 @@
     </div>
     <div class="watermark">DOOSAN ENERBILITY</div>
   </div>
-
 </div>
+
 <div class="nav">
   <button onclick="prev()">◀ 이전</button>
   <div class="dot-nav" id="dn"></div>
   <span class="counter" id="ct">1 / 5</span>
   <button onclick="next()">다음 ▶</button>
 </div>
+
 <script>
-  let cur=0;
-  const slides=document.querySelectorAll('.slide');
-  const N=slides.length;
-  const dn=document.getElementById('dn');
-  const ct=document.getElementById('ct');
-  for(let i=0;i<N;i++){const d=document.createElement('div');d.className='dot'+(i===0?' active':'');d.onclick=()=>go(i);dn.appendChild(d);}
-  function go(n){slides[cur].classList.remove('active');dn.children[cur].classList.remove('active');cur=(n+N)%N;slides[cur].classList.add('active');dn.children[cur].classList.add('active');ct.textContent=(cur+1)+' / '+N;}
-  function next(){go(cur+1);}
-  function prev(){go(cur-1);}
-  document.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key==='ArrowDown')next();if(e.key==='ArrowLeft'||e.key==='ArrowUp')prev();});
-  let sx=0;
-  document.addEventListener('touchstart',e=>{sx=e.touches[0].clientX;});
-  document.addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>50){dx<0?next():prev();}});
+// ===== SLIDE NAV =====
+let cur=0;
+const slides=document.querySelectorAll('.slide');
+const N=slides.length;
+const dn=document.getElementById('dn');
+const ct=document.getElementById('ct');
+for(let i=0;i<N;i++){const d=document.createElement('div');d.className='dot'+(i===0?' active':'');d.onclick=()=>go(i);dn.appendChild(d);}
+function go(n){slides[cur].classList.remove('active');dn.children[cur].classList.remove('active');cur=(n+N)%N;slides[cur].classList.add('active');dn.children[cur].classList.add('active');ct.textContent=(cur+1)+' / '+N;}
+function next(){go(cur+1);}
+function prev(){go(cur-1);}
+document.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key==='ArrowDown')next();if(e.key==='ArrowLeft'||e.key==='ArrowUp')prev();});
+let sx=0;
+document.addEventListener('touchstart',e=>{sx=e.touches[0].clientX;});
+document.addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>50&&!document.getElementById('popupOverlay').classList.contains('show')){dx<0?next():prev();}});
+
+// ===== TOOL DATA =====
+const tools = {
+  icertis: {
+    icon:'📄', category:'① 착수 & 계획 — 계약관리',
+    title:'Icertis Contract Intelligence',
+    tagline:'세계 1위 AI 계약 지능화 플랫폼',
+    img:'https://www.icertis.com/wp-content/uploads/2023/09/icertis-platform-hero.jpg',
+    imgAlt:'Icertis AI 계약 분석 대시보드',
+    core:'계약서 전체를 AI가 읽고 리스크 조항·의무사항·위반 가능성을 자동 분석. 다국어 계약 동시 분석, SAP 완전 통합. ABB·Airbus·BASF 등 8,000+ 기업 사용.',
+    agentic:'<ul><li>계약 협상 자율화 — AI가 상대방 초안 검토 후 표준 조항 대비 편차 자동 플래그</li><li>납기·페널티 조항 자동 추출 → 캘린더 자동 등록</li><li>변경계약(Amendment) 원본 대비 차이 자동 비교·리포팅</li><li>계약 의무사항 이행 현황 자율 모니터링</li></ul>',
+    auto:'<ul><li>계약 리스크 조항 자동 추출 및 등급 분류</li><li>납기·페널티 조항 자동 캘린더 등록</li><li>Amendment 원본 대비 차이 자동 비교</li><li>계약 만료·갱신 자동 알림</li></ul>',
+    stats:[{v:'80%↓',l:'계약 검토 시간'},{v:'40%↓',l:'계약 리스크'},{v:'8,000+',l:'글로벌 기업 사용'}],
+    cost:'Enterprise 협의 (연간 $150K~$500K+)',
+    web:'https://www.icertis.com',
+    yt:'https://www.youtube.com/results?search_query=Icertis+Contract+Intelligence+demo'
+  },
+  ecosys: {
+    icon:'📊', category:'① 착수 & 계획 / ② 원가관리',
+    title:'EcoSys (Hexagon)',
+    tagline:'EPC 업계 표준 AI 프로젝트 원가관리 플랫폼',
+    img:'https://hexagon.com/content/dam/hexagon/blogs/2023/ecosys-project-cost-management.jpg',
+    imgAlt:'EcoSys 프로젝트 원가 대시보드',
+    core:'수백만 건 EPC 프로젝트 데이터 학습 기반 AI 원가예측. WBS 자동 생성, Monte Carlo 시뮬레이션, 완공 원가 확률 분포 자동 산출. Bechtel·Fluor·Shell·Jacobs 사용.',
+    agentic:'<ul><li>과거 유사 프로젝트 대비 원가 자동 벤치마킹</li><li>EVM(획득가치관리) 지표 자동 계산 및 보고서 생성</li><li>원가 초과 징후 감지 시 자동 조기 경보 발송</li><li>AI 기반 월간/연간 원가 전망(EAC) 자율 업데이트</li></ul>',
+    auto:'<ul><li>WBS별 목표예산 AI 자동 추천</li><li>월간 원가 전망(EAC) 자동 계산</li><li>원가 초과 조기 경보 자동 발송</li><li>EVM 보고서 자동 생성</li></ul>',
+    stats:[{v:'30%↑',l:'원가예측 정확도'},{v:'60%↓',l:'보고서 작성 시간'},{v:'EPC #1',l:'업계 표준 플랫폼'}],
+    cost:'연간 $80K~$300K (프로젝트 규모 기준)',
+    web:'https://hexagon.com/products/ecosys',
+    yt:'https://www.youtube.com/results?search_query=EcoSys+Hexagon+project+cost+management'
+  },
+  copilot: {
+    icon:'💻', category:'① 착수 & 계획 / ⑥ 커뮤니케이션',
+    title:'Microsoft 365 Copilot',
+    tagline:'Word·Excel·Teams·Outlook 전체 AI 내장 — 즉시 적용 가능',
+    img:'https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/RWRQL6?resMode=sharp2&op_usm=1.5,0.65,15,0&wid=1920&hei=600&qlt=100&fmt=png-alpha&fit=constrain',
+    imgAlt:'Microsoft Copilot 업무 자동화 화면',
+    core:'기존 M365 환경에서 즉시 사용 가능. Word·Excel·PowerPoint·Teams·Outlook 전체에 AI 내장. Copilot Studio로 커스텀 에이전트 구축, 1,400+ 외부 시스템 연결.',
+    agentic:'<ul><li>SharePoint 내 전체 문서를 학습해 사내 지식 AI로 즉시 활용</li><li>Teams 회의 자동 요약 및 액션아이템 자동 추출·배정</li><li>SAP·Oracle 데이터 연동으로 보고서 자동 생성</li><li>이메일 초안 자동 생성 및 후속 조치 자동화</li></ul>',
+    auto:'<ul><li>킥오프 문서·회의록 자동 생성</li><li>주간 보고서 초안 자동 작성</li><li>이메일 초안 자동 생성</li><li>Excel 데이터 자연어 분석</li></ul>',
+    stats:[{v:'29%↑',l:'업무 생산성'},{v:'64%↓',l:'회의 준비 시간'},{v:'$30',l:'/user/월'}],
+    cost:'$30/user/월 (M365 E3/E5 추가)',
+    web:'https://copilot.microsoft.com',
+    yt:'https://www.youtube.com/watch?v=S7xTBa93TX8'
+  },
+  joule: {
+    icon:'⚙️', category:'② 원가 & 변경관리 / ③ 구매',
+    title:'SAP Joule',
+    tagline:'SAP S/4HANA 내장 AI — 두산에너빌리티 즉시 적용 가능',
+    img:'https://www.sap.com/content/dam/application/imagebankglobal/en/photography-stock/it-technology/2023/sap-joule-ai-assistant-dashboard.jpg',
+    imgAlt:'SAP Joule AI 어시스턴트 대시보드',
+    core:'SAP S/4HANA 내장 AI 어시스턴트. 자연어로 ERP 전체 조작. "이번 달 원가 초과 프로젝트 TOP5"→ 즉시 분석·보고서 생성. 두산에너빌리티 기존 SAP 환경에서 추가 구축 없이 즉시 사용.',
+    agentic:'<ul><li>FI·CO·MM·PP·SD 전 모듈 자율 작업 수행</li><li>구매요청(PR) 자동 생성 및 승인 라우팅</li><li>인보이스 3-way 매칭 자동화</li><li>WBS별 실행원가 실시간 자연어 조회</li></ul>',
+    auto:'<ul><li>WBS별 실행원가 자연어 조회</li><li>구매요청(PR) 자동 생성</li><li>인보이스 3-way 매칭 자동화</li><li>월간 원가 전망 자동 업데이트</li></ul>',
+    stats:[{v:'40%↑',l:'ERP 업무 처리'},{v:'90%↓',l:'데이터 조회 시간'},{v:'무료',l:'기존 SAP 고객'}],
+    cost:'SAP S/4HANA 구독 포함 (추가 비용 없음)',
+    web:'https://www.sap.com/products/artificial-intelligence/ai-assistant.html',
+    yt:'https://www.youtube.com/results?search_query=SAP+Joule+AI+assistant+demo'
+  },
+  servicenow: {
+    icon:'🔄', category:'② 원가 & 변경관리 — 게이트/승인',
+    title:'ServiceNow AI Agents',
+    tagline:'엔터프라이즈 워크플로우 자동화 1위 — 승인·변경관리 특화',
+    img:'https://www.servicenow.com/content/dam/servicenow-assets/public/en-us/images/product-assets/agentic-ai/servicenow-ai-agents-hero.jpg',
+    imgAlt:'ServiceNow AI 에이전트 워크플로우',
+    core:'게이트 리뷰·변경 승인을 AI가 자동 라우팅·처리. 변경 요청 위험도 자동 분류. 저위험 자동 승인, 고위험 자동 에스컬레이션. Fluor·Jacobs·AECOM 사용.',
+    agentic:'<ul><li>변경요청 내용 분석 → 위험도 자동 분류 → 라우팅 자율 처리</li><li>사전 정의 임계값 내 저위험 변경 자동 승인</li><li>멀티스텝 승인 워크플로우 사람 개입 없이 자율 완료</li><li>SLA 위반 예측 시 자동 에스컬레이션</li></ul>',
+    auto:'<ul><li>게이트 승인 자동 라우팅</li><li>변경요청(CR) 위험도 자동 분류</li><li>벤더 온보딩 체크리스트 자동화</li><li>이슈 에스컬레이션 자동 처리</li></ul>',
+    stats:[{v:'70%↓',l:'승인 처리 시간'},{v:'85%',l:'워크플로우 자동화율'},{v:'Fortune 500',l:'주요 고객'}],
+    cost:'연간 $50K~$200K (모듈·사용자 수 기준)',
+    web:'https://www.servicenow.com/products/now-intelligence.html',
+    yt:'https://www.youtube.com/results?search_query=ServiceNow+AI+agents+workflow+automation'
+  },
+  powerbi: {
+    icon:'📈', category:'② 원가 & 변경관리 — 리포팅',
+    title:'Power BI Copilot',
+    tagline:'자연어 입력만으로 원가 대시보드 자동 생성',
+    img:'https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/power-bi-copilot-dashboard-2023?resMode=sharp2&wid=1920',
+    imgAlt:'Power BI Copilot 원가 분석 대시보드',
+    core:'자연어 질문만으로 대시보드 자동 생성. SAP·Oracle 실시간 연결. "올해 원가 초과 프로젝트 TOP5" 입력 → 차트·인사이트 즉시 생성.',
+    agentic:'<ul><li>이상 데이터 자동 탐지 후 관련자 자동 알림</li><li>프로젝트 성과 추세 AI 자동 분석·내러티브 생성</li><li>SAP WBS 데이터 실시간 연동 자동 갱신</li><li>임원 보고용 요약 대시보드 자동 생성</li></ul>',
+    auto:'<ul><li>월간 원가 현황 대시보드 자동 생성</li><li>납기 리스크 프로젝트 자동 하이라이트</li><li>임원 보고용 요약 자동 생성</li><li>SAP 데이터 실시간 연동 분석</li></ul>',
+    stats:[{v:'75%↓',l:'리포트 작성 시간'},{v:'실시간',l:'SAP 데이터 연동'},{v:'$10~20',l:'/user/월'}],
+    cost:'Power BI Pro $10/user/월 (M365 포함 시 무료)',
+    web:'https://powerbi.microsoft.com',
+    yt:'https://www.youtube.com/results?search_query=Power+BI+Copilot+natural+language+dashboard'
+  },
+  ariba: {
+    icon:'🛒', category:'③ 구매 & 자재 — 구매 자동화',
+    title:'SAP Ariba + Joule',
+    tagline:'세계 최대 B2B 구매 네트워크 (500만+ 기업) + AI 자동화',
+    img:'https://www.sap.com/content/dam/application/imagebankglobal/en/photography-stock/it-technology/2023/sap-ariba-procurement-dashboard.jpg',
+    imgAlt:'SAP Ariba 구매 자동화 대시보드',
+    core:'세계 최대 B2B 구매 네트워크 (500만+ 기업 연결). Joule AI가 최적 공급업체 자동 추천·PO 자동 생성. 구매 요청부터 PO 발행까지 사람 개입 없이 자율 처리.',
+    agentic:'<ul><li>공급업체 리드타임·품질·가격 AI 종합 평가 후 자동 선정</li><li>PR → PO 변환 자동화 (사람 승인 없이 자율 처리)</li><li>인보이스 3-way 매칭 자동화</li><li>납기 지연 공급업체 자동 경보 및 대안 소싱 자동 제안</li></ul>',
+    auto:'<ul><li>구매요청(PR) → PO 자동 변환</li><li>최적 벤더 AI 자동 추천</li><li>인보이스 자동 매칭·승인</li><li>납기 지연 공급업체 자동 경보</li></ul>',
+    stats:[{v:'50%↓',l:'구매 처리 비용'},{v:'80%↓',l:'승인 사이클'},{v:'5M+',l:'공급업체 네트워크'}],
+    cost:'연간 $100K~$500K (거래량 기준)',
+    web:'https://www.sap.com/products/spend-management/ariba-network.html',
+    yt:'https://www.youtube.com/results?search_query=SAP+Ariba+Joule+procurement+automation'
+  },
+  jaggaer: {
+    icon:'🔩', category:'③ 구매 & 자재 — 직접재 구매',
+    title:'Jaggaer',
+    tagline:'발전소 기자재 직접재(Direct Material) 구매 특화 AI 플랫폼',
+    img:'https://www.jaggaer.com/wp-content/uploads/2023/06/jaggaer-direct-procurement-ai-dashboard.jpg',
+    imgAlt:'Jaggaer 직접재 구매 AI 대시보드',
+    core:'BOM 직접 연계 구매 관리. 발전소 기자재 같은 복잡한 직접재 구매에 특화. Rolls-Royce·Mitsubishi·GE 사용. 공급업체 성과 AI 실시간 평가·랭킹.',
+    agentic:'<ul><li>BOM에서 자동으로 구매 요청 생성 → RFQ 자동 발송</li><li>공급업체 성과(납기·품질·가격)를 AI가 실시간 평가·랭킹</li><li>복잡한 RFQ 비교 분석 자동화</li><li>계약 갱신 시점 자동 알림 및 재협상 데이터 자동 제공</li></ul>',
+    auto:'<ul><li>BOM → 구매요청 자동 변환</li><li>공급업체 성과 AI 자동 평가</li><li>RFQ 자동 발송·비교 분석</li><li>계약 갱신 알림 자동화</li></ul>',
+    stats:[{v:'60%↓',l:'공급업체 온보딩'},{v:'45%↓',l:'구매 사이클'},{v:'직접재',l:'구매 특화'}],
+    cost:'연간 $80K~$250K (모듈 기준)',
+    web:'https://www.jaggaer.com',
+    yt:'https://www.youtube.com/results?search_query=Jaggaer+AI+direct+procurement+automation'
+  },
+  resilinc: {
+    icon:'🌐', category:'③ 구매 & 자재 — 공급망 리스크',
+    title:'Resilinc',
+    tagline:'글로벌 공급망 리스크 24/7 AI 자동 모니터링',
+    img:'https://www.resilinc.com/wp-content/uploads/2023/07/resilinc-supply-chain-risk-dashboard.jpg',
+    imgAlt:'Resilinc 공급망 리스크 모니터링 대시보드',
+    core:'전 세계 뉴스·소셜미디어·위성 데이터를 실시간 분석해 공급망 리스크 자동 평가. 자연재해·지정학적 이벤트·공장화재 등 24/7 탐지. Fortune 500 고객 다수.',
+    agentic:'<ul><li>글로벌 이벤트 감지 → 영향 공급업체 자동 매핑 → 대안 소싱 자동 추천</li><li>납기 영향 시뮬레이션 자율 실행</li><li>경쟁사 대비 4배 빠른 리스크 탐지</li><li>공급망 리스크 보고서 자동 생성</li></ul>',
+    auto:'<ul><li>공급업체 리스크 이벤트 자동 경보</li><li>납기 영향 자동 시뮬레이션</li><li>대안 소싱 옵션 자동 제시</li><li>공급망 리스크 보고서 자동 생성</li></ul>',
+    stats:[{v:'85%',l:'사전 탐지율'},{v:'4배',l:'경쟁사 대비 빠름'},{v:'24/7',l:'자율 모니터링'}],
+    cost:'연간 $30K~$150K (공급업체 수 기준)',
+    web:'https://www.resilinc.com',
+    yt:'https://www.youtube.com/results?search_query=Resilinc+supply+chain+risk+AI+monitoring'
+  },
+  aconex: {
+    icon:'📁', category:'④ 문서 & 품질 — 문서관리',
+    title:'Oracle Aconex',
+    tagline:'EPC 프로젝트 문서관리 글로벌 1위 — 네옴시티·올림픽 시설 적용',
+    img:'https://www.oracle.com/a/ocom/img/construction-aconex-document-management.jpg',
+    imgAlt:'Oracle Aconex 문서관리 시스템',
+    core:'EPC 프로젝트 문서관리 글로벌 1위. 세계 최대 인프라 프로젝트 적용. 서브미탈 자동 추적, 미제출 도서 AI 경보, 검토 사이클 자동화. Bechtel·Fluor·사우디 아람코 사용.',
+    agentic:'<ul><li>AI가 미제출 서브미탈 자동 경보 및 에스컬레이션</li><li>수만 건 도서 자동 분류·태깅</li><li>검토 기한 초과 문서 자동 에스컬레이션</li><li>Document Control Log 자동 업데이트</li></ul>',
+    auto:'<ul><li>고객제출도서 서브미탈 자동 추적</li><li>미제출·기한 초과 자동 경보</li><li>Document Control Log 자동 업데이트</li><li>검토 사이클 자동 관리</li></ul>',
+    stats:[{v:'90%↓',l:'문서 검색 시간'},{v:'0건',l:'서브미탈 누락'},{v:'글로벌 #1',l:'EPC 문서관리'}],
+    cost:'연간 $50K~$300K (프로젝트 규모 기준)',
+    web:'https://www.oracle.com/industries/construction-engineering/aconex/',
+    yt:'https://www.youtube.com/results?search_query=Oracle+Aconex+document+management+EPC'
+  },
+  etq: {
+    icon:'✅', category:'④ 문서 & 품질 — 품질관리',
+    title:'ETQ Reliance (Hexagon)',
+    tagline:'AI 기반 NCR 자동 분류·라우팅·근본원인 분석',
+    img:'https://www.etq.com/wp-content/uploads/2023/05/etq-reliance-quality-management-dashboard.jpg',
+    imgAlt:'ETQ Reliance 품질관리 AI 대시보드',
+    core:'Hexagon 계열 엔터프라이즈 품질관리 플랫폼. NCR 내용을 AI가 읽고 카테고리 자동 분류 → 담당자 자동 배정 → 유사 과거 사례 자동 연결. Siemens·Rolls-Royce 사용.',
+    agentic:'<ul><li>NCR 전체 프로세스 자율 실행 (분류→배정→추적→종결)</li><li>반복 불량 패턴 AI 자동 탐지 및 예방 조치 추천</li><li>Lesson Learned 자동 축적·유사 사례 자동 검색</li><li>품질 KPI 대시보드 자동 업데이트</li></ul>',
+    auto:'<ul><li>NCR/CAR 자동 분류·라우팅</li><li>반복 불량 패턴 자동 탐지</li><li>Lesson Learned 자동 축적·검색</li><li>품질 KPI 대시보드 자동 업데이트</li></ul>',
+    stats:[{v:'40~60%↓',l:'NCR 처리시간'},{v:'50%↓',l:'반복 불량'},{v:'Siemens',l:'·Rolls-Royce 사용'}],
+    cost:'연간 $40K~$150K (모듈·사용자 수 기준)',
+    web:'https://www.etq.com',
+    yt:'https://www.youtube.com/results?search_query=ETQ+Reliance+quality+management+NCR+automation'
+  },
+  aveva: {
+    icon:'🏭', category:'⑤ 제작 & 물류 — 제조·공정',
+    title:'AVEVA',
+    tagline:'발전소 제조업체 AI 디지털 트윈 1위 — GE Vernova·Siemens·두산 사용',
+    img:'https://www.aveva.com/content/dam/aveva/images/products/operations-control/aveva-manufacturing-execution-system.jpg',
+    imgAlt:'AVEVA 산업 AI 디지털 트윈 운영 화면',
+    core:'발전소 제조업체가 가장 많이 사용하는 산업 AI·디지털 트윈 플랫폼. 공정 디지털 트윈으로 FAT 전 가상 시험. 실시간 공정 데이터로 납기 지연 사전 예측. GE Vernova·Siemens Energy 사용.',
+    agentic:'<ul><li>공정 디지털 트윈 기반 FAT 전 가상 시험 자율 실행</li><li>실시간 공정 데이터 분석으로 납기 지연 사전 예측</li><li>AI가 생산 스케줄 자율 최적화</li><li>설비 이상 자동 탐지 → 예방정비 자동 스케줄링</li></ul>',
+    auto:'<ul><li>제작 공정 진도 자동 추적</li><li>FAT 결과 자동 기록·리포팅</li><li>납기 지연 리스크 AI 사전 경보</li><li>설비 이상 자동 탐지·알림</li></ul>',
+    stats:[{v:'36%↓',l:'비계획 다운타임'},{v:'92%',l:'납기 예측 정확도'},{v:'15%↑',l:'에너지 효율'}],
+    cost:'연간 $100K~$500K+ (플랜트 규모·모듈 기준)',
+    web:'https://www.aveva.com',
+    yt:'https://www.youtube.com/results?search_query=AVEVA+industrial+AI+digital+twin+manufacturing'
+  },
+  p44: {
+    icon:'🚢', category:'⑤ 제작 & 물류 — 운송 가시성',
+    title:'project44',
+    tagline:'해운·항공·육상 전 운송 실시간 가시성 — ETA 정확도 95%+',
+    img:'https://www.project44.com/hs-fs/hubfs/project44-supply-chain-visibility-platform.jpg',
+    imgAlt:'project44 글로벌 운송 실시간 추적 대시보드',
+    core:'해운·항공·육상·철도 전 운송 모드 실시간 가시성. AI 기반 ETA 예측 정확도 95%+. 17만5천+ 운송사 연결. 납기 지연 사전 경보 자동화.',
+    agentic:'<ul><li>전 세계 운송 데이터 AI 실시간 분석 → 지연 가능성 사전 예측</li><li>지연 감지 시 자동으로 고객·내부 팀 알림 발송</li><li>통관 상태 자동 모니터링 및 지연 경보</li><li>운송 경로 최적화 자율 추천</li></ul>',
+    auto:'<ul><li>기자재 운송 실시간 위치 추적</li><li>납기 지연 예측 자동 경보</li><li>통관 상태 자동 모니터링</li><li>운송 지연 고객 통보 자동화</li></ul>',
+    stats:[{v:'95%+',l:'ETA 예측 정확도'},{v:'175,000+',l:'연결 운송사'},{v:'30%↓',l:'고객 클레임'}],
+    cost:'연간 $30K~$120K (운송 볼륨 기준)',
+    web:'https://www.project44.com',
+    yt:'https://www.youtube.com/results?search_query=project44+supply+chain+visibility+AI'
+  },
+  descartes: {
+    icon:'🛃', category:'⑤ 제작 & 물류 — 통관·무역',
+    title:'Descartes Systems',
+    tagline:'발전소 기자재 수출통제·통관 AI 자동화 — 이중용도 품목 특화',
+    img:'https://www.descartes.com/sites/default/files/styles/hero_image/public/2023-07/descartes-global-trade-compliance-dashboard.jpg',
+    imgAlt:'Descartes 글로벌 무역 컴플라이언스 대시보드',
+    core:'글로벌 무역 컴플라이언스 AI 자동화. HS코드 자동 분류, 수출통제·제재 스크리닝, 무역규정 변경 자동 모니터링. 발전소 기자재 같은 이중용도 품목 수출통제 관리에 특히 중요.',
+    agentic:'<ul><li>200+ 국가 무역규정 AI 실시간 모니터링 → 위반 사전 차단</li><li>HS코드 자동 분류 및 수출허가 필요 여부 자율 판단</li><li>제재·금수 국가 자동 스크리닝</li><li>통관 서류 자동 생성</li></ul>',
+    auto:'<ul><li>HS코드 자동 분류·검증</li><li>수출허가 필요 여부 자동 판단</li><li>제재·금수 국가 자동 스크리닝</li><li>통관 서류 자동 생성</li></ul>',
+    stats:[{v:'70%',l:'통관 서류 자동화'},{v:'85%↓',l:'컴플라이언스 위반'},{v:'200+',l:'국가 규정 모니터링'}],
+    cost:'연간 $20K~$80K (거래량·모듈 기준)',
+    web:'https://www.descartes.com',
+    yt:'https://www.youtube.com/results?search_query=Descartes+trade+compliance+AI+customs+automation'
+  },
+  agentforce: {
+    icon:'🤖', category:'⑥ 커뮤니케이션 / ⑦ 재무',
+    title:'Salesforce Agentforce',
+    tagline:'진정한 자율 AI 에이전트 — 24/7 고객 응대·수금 자율 처리',
+    img:'https://www.salesforce.com/content/dam/web/en_us/www/images/agentforce/agentforce-hero-image.jpg',
+    imgAlt:'Salesforce Agentforce 자율 AI 에이전트 운영 화면',
+    core:'2024 Dreamforce 공개 차세대 자율 AI 에이전트. Atlas Reasoning Engine 기반. 단순 챗봇이 아닌 진정한 자율 에이전트 — 스스로 판단·행동·완료. 납기변경 안내·보증 클레임·결제 독촉 자율 처리.',
+    agentic:'<ul><li>고객 문의를 24/7 자율 분석·응답·처리 완료 (사람 개입 없음)</li><li>납기변경 공문 자동 작성·발송</li><li>보증 클레임 자동 접수·처리·종결</li><li>미수금 독촉 자동화 — AI가 최적 시점·방식 자율 결정</li></ul>',
+    auto:'<ul><li>고객 납기 문의 24/7 자율 응대</li><li>납기변경 공문 자동 발송</li><li>보증 클레임 자동 접수·처리</li><li>미수금 독촉 자동화</li></ul>',
+    stats:[{v:'80%',l:'고객 응대 자동화'},{v:'90%↓',l:'응답 시간'},{v:'$2/건',l:'소비 기반 과금'}],
+    cost:'$2/대화 + Salesforce CRM $75~300/user/월',
+    web:'https://www.salesforce.com/agentforce/',
+    yt:'https://www.youtube.com/results?search_query=Salesforce+Agentforce+autonomous+AI+agent+demo'
+  },
+  highradius: {
+    icon:'💳', category:'⑦ 재무 & 종결 — 수금관리',
+    title:'HighRadius',
+    tagline:'SAP 플래티넘 파트너 — 수금 AI 95%+ 자동 매칭',
+    img:'https://www.highradius.com/wp-content/uploads/2023/08/highradius-autonomous-receivables-ai-dashboard.jpg',
+    imgAlt:'HighRadius 수금 AI 자동화 대시보드',
+    core:'SAP 플래티넘 파트너. AI 기반 현금 매칭·수금 자동화. 청구서-입금 자동 매칭 95%+. 미수금 우선순위 AI 자동 정렬. 자동 독촉 이메일. 복잡한 진도 청구 잔액 추적에 특화.',
+    agentic:'<ul><li>청구서-입금 자동 매칭 95%+ (사람 개입 없이 자율 완료)</li><li>미수금 우선순위 AI 자동 정렬 및 독촉 자율 실행</li><li>결제 예측 모델로 현금흐름 자동 예측</li><li>신용한도 자동 조정 및 리스크 자율 모니터링</li></ul>',
+    auto:'<ul><li>진도 청구 잔액 자동 매칭</li><li>미수금 우선순위 AI 자동 분류</li><li>독촉 이메일 자동 발송</li><li>채권 수금 예측 자동화</li></ul>',
+    stats:[{v:'95%+',l:'현금 매칭 자동화'},{v:'25%↓',l:'미수금 회수 기간'},{v:'20%↓',l:'DSO'}],
+    cost:'연간 $50K~$200K (거래 볼륨·모듈 기준)',
+    web:'https://www.highradius.com',
+    yt:'https://www.youtube.com/results?search_query=HighRadius+AI+accounts+receivable+automation'
+  },
+  saprar: {
+    icon:'💰', category:'⑦ 재무 & 종결 — 매출인식',
+    title:'SAP RAR + Joule',
+    tagline:'IFRS 15 매출인식 완전 자동화 — 진행기준 자동 적용',
+    img:'https://www.sap.com/content/dam/application/imagebankglobal/en/photography-stock/finance/2023/sap-revenue-accounting-reporting-dashboard.jpg',
+    imgAlt:'SAP Revenue Accounting 매출인식 자동화 대시보드',
+    core:'IFRS 15 기준 매출인식 완전 자동화. 발전소 기자재 특유의 진행기준(투입법·산출법) 자동 적용. Joule AI로 자연어 조회. 계약 수정 시 거래가격 재배분 자동 처리.',
+    agentic:'<ul><li>수행의무 완료 시점 AI 자동 판단 → 매출인식 자율 처리</li><li>계약 수정 시 거래가격 재배분 자동 계산</li><li>Joule AI로 "이번 달 매출인식 현황" 자연어 조회</li><li>월간 결산 자동화로 재무팀 업무 60% 단축</li></ul>',
+    auto:'<ul><li>진도 기준 매출인식 자동 계산</li><li>계약 변경 시 수익 재배분 자동화</li><li>청구 마일스톤 도달 자동 감지</li><li>월간 매출 결산 자동화</li></ul>',
+    stats:[{v:'60%↓',l:'결산 작업'},{v:'100%',l:'IFRS 15 컴플라이언스'},{v:'SAP 내장',l:'추가 비용 없음'}],
+    cost:'SAP S/4HANA 구독 포함 모듈 (별도 협의)',
+    web:'https://www.sap.com/products/financial-management/revenue-accounting.html',
+    yt:'https://www.youtube.com/results?search_query=SAP+Revenue+Accounting+Reporting+IFRS15+automation'
+  }
+};
+
+// ===== POPUP FUNCTIONS =====
+function showTool(id) {
+  const t = tools[id];
+  if (!t) return;
+  const imgHtml = `<img class="popup-img" src="${t.img}" alt="${t.imgAlt}" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="popup-img-fallback" style="display:none">${t.icon}</div>`;
+  const statsHtml = t.stats.map(s=>`<div class="popup-stat"><div class="sv">${s.v}</div><div class="sl">${s.l}</div></div>`).join('');
+  document.getElementById('popupContent').innerHTML = `
+    <div class="popup-header">
+      <div class="popup-icon">${t.icon}</div>
+      <div class="popup-title-wrap">
+        <div class="popup-category">${t.category}</div>
+        <div class="popup-title">${t.title}</div>
+        <div class="popup-tagline">${t.tagline}</div>
+      </div>
+    </div>
+    ${imgHtml}
+    <div class="popup-stats">${statsHtml}</div>
+    <div class="popup-cost"><span class="popup-cost-label">💰 비용</span><span class="popup-cost-val">${t.cost}</span></div>
+    <div class="popup-grid">
+      <div class="popup-card">
+        <div class="popup-card-title">📌 소개 핵심</div>
+        <div class="popup-card-content">${t.core}</div>
+      </div>
+      <div class="popup-card">
+        <div class="popup-card-title">⚡ Agentic AI 강점</div>
+        <div class="popup-card-content">${t.agentic}</div>
+      </div>
+      <div class="popup-card full-width">
+        <div class="popup-card-title">🔧 사업관리 자동화 항목</div>
+        <div class="popup-card-content">${t.auto}</div>
+      </div>
+    </div>
+    <div class="popup-links">
+      <a class="popup-link pl-web" href="${t.web}" target="_blank">🌐 공식 웹사이트</a>
+      <a class="popup-link pl-yt" href="${t.yt}" target="_blank">▶ 소개 영상 보기</a>
+    </div>
+  `;
+  document.getElementById('popupOverlay').classList.add('show');
+}
+function closePopup() { document.getElementById('popupOverlay').classList.remove('show'); }
+function closePopupOutside(e) { if(e.target===document.getElementById('popupOverlay')) closePopup(); }
+document.addEventListener('keydown', e => { if(e.key==='Escape') closePopup(); });
 </script>
 </body>
 </html>
