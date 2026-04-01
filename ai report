@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agentic AI × 사업관리 | 두산에너빌리티</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', 'Apple SD Gothic Neo', sans-serif; background: #0a0e1a; color: #fff; overflow: hidden; }
+  .slides { width: 100vw; height: 100vh; position: relative; }
+  .slide { display: none; width: 100%; height: 100%; position: absolute; top: 0; left: 0; padding: 40px 56px; flex-direction: column; justify-content: flex-start; }
+  .slide.active { display: flex; }
+  .nav { position: fixed; bottom: 22px; left: 50%; transform: translateX(-50%); display: flex; align-items: center; gap: 14px; z-index: 100; }
+  .nav button { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: #fff; padding: 7px 20px; border-radius: 24px; cursor: pointer; font-size: 12px; transition: all 0.2s; }
+  .nav button:hover { background: rgba(255,255,255,0.22); }
+  .nav .counter { font-size: 12px; color: rgba(255,255,255,0.45); min-width: 40px; text-align: center; }
+  .dot-nav { display: flex; gap: 7px; }
+  .dot { width: 7px; height: 7px; border-radius: 50%; background: rgba(255,255,255,0.22); cursor: pointer; transition: all 0.2s; }
+  .dot.active { background: #4fc3f7; transform: scale(1.35); }
+  .bg1 { background: linear-gradient(135deg, #0a0e1a 0%, #0d1b3e 50%, #0a1628 100%); }
+  .bg2 { background: linear-gradient(135deg, #071428 0%, #0d2040 60%, #0a1a35 100%); }
+  .bg3 { background: linear-gradient(135deg, #060f24 0%, #0c1d3a 50%, #091525 100%); }
+  .bg4 { background: linear-gradient(135deg, #080d20 0%, #0b1a38 50%, #081422 100%); }
+  .bg5 { background: linear-gradient(135deg, #050c1c 0%, #0a1832 50%, #061020 100%); }
+  .deco { position: absolute; border-radius: 50%; pointer-events: none; }
+  .slide-num { position: absolute; top: 40px; right: 56px; font-size: 11px; color: rgba(255,255,255,0.18); letter-spacing: 1px; }
+  .watermark { position: absolute; bottom: 50px; right: 56px; font-size: 10px; color: rgba(255,255,255,0.12); letter-spacing: 2px; font-weight: 600; }
+  .lbl { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: #4fc3f7; margin-bottom: 6px; font-weight: 600; }
+  .ttl { font-size: 28px; font-weight: 700; line-height: 1.2; margin-bottom: 5px; }
+  .ttl span { color: #4fc3f7; }
+  .sub { font-size: 12px; color: rgba(255,255,255,0.45); margin-bottom: 20px; }
+  .divider { width: 50px; height: 3px; background: linear-gradient(90deg, #4fc3f7, #1565c0); border-radius: 2px; margin-bottom: 20px; }
+
+  /* SLIDE 1 */
+  .cover-tag { display: inline-flex; align-items: center; gap: 8px; background: rgba(79,195,247,0.1); border: 1px solid rgba(79,195,247,0.28); border-radius: 20px; padding: 5px 14px; font-size: 11px; color: #4fc3f7; letter-spacing: 2px; margin-bottom: 26px; width: fit-content; }
+  .cover-tag::before { content: '●'; font-size: 7px; animation: blink 1.5s infinite; }
+  @keyframes blink { 0%,100%{opacity:1}50%{opacity:0.3} }
+  .cover-main { font-size: 38px; font-weight: 800; line-height: 1.18; margin-bottom: 14px; }
+  .cover-main .hl { color: #4fc3f7; }
+  .cover-desc { font-size: 13px; color: rgba(255,255,255,0.5); max-width: 500px; line-height: 1.75; margin-bottom: 30px; }
+  .cover-meta { display: flex; gap: 28px; }
+  .cmi .l { font-size: 10px; color: rgba(255,255,255,0.3); letter-spacing: 1px; }
+  .cmi .v { font-size: 13px; color: rgba(255,255,255,0.78); font-weight: 500; }
+  .stat-cards { position: absolute; right: 56px; top: 50%; transform: translateY(-50%); display: flex; flex-direction: column; gap: 12px; }
+  .sc { background: rgba(255,255,255,0.04); border: 1px solid rgba(79,195,247,0.18); border-radius: 11px; padding: 16px 24px; text-align: center; }
+  .sc .n { font-size: 30px; font-weight: 800; color: #4fc3f7; line-height: 1; }
+  .sc .u { font-size: 11px; color: rgba(255,255,255,0.42); margin-top: 3px; }
+
+  /* SLIDE 2 */
+  .cat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; flex: 1; }
+  .cc { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07); border-radius: 11px; padding: 13px; position: relative; overflow: hidden; }
+  .cc::before { content:''; position:absolute; top:0;left:0;right:0;height:2px;border-radius:2px 2px 0 0; }
+  .c1::before{background:linear-gradient(90deg,#4fc3f7,#0288d1)}
+  .c2::before{background:linear-gradient(90deg,#81c784,#388e3c)}
+  .c3::before{background:linear-gradient(90deg,#ffb74d,#f57c00)}
+  .c4::before{background:linear-gradient(90deg,#ce93d8,#7b1fa2)}
+  .c5::before{background:linear-gradient(90deg,#ef9a9a,#c62828)}
+  .c6::before{background:linear-gradient(90deg,#80deea,#00838f)}
+  .c7::before{background:linear-gradient(90deg,#ffe082,#f9a825)}
+  .cc-icon { font-size: 18px; margin-bottom: 6px; }
+  .cc-name { font-size: 12px; font-weight: 700; margin-bottom: 7px; color: rgba(255,255,255,0.88); }
+  .cc-items { display: flex; flex-direction: column; gap: 3px; }
+  .ci { font-size: 10px; color: rgba(255,255,255,0.48); padding: 2px 0; border-bottom: 1px solid rgba(255,255,255,0.05); line-height: 1.4; }
+  .ci:last-child { border-bottom: none; }
+  .tot { display: inline-flex; align-items: center; gap: 6px; background: rgba(79,195,247,0.09); border: 1px solid rgba(79,195,247,0.22); border-radius: 18px; padding: 3px 12px; font-size: 11px; color: #4fc3f7; margin-bottom: 14px; }
+
+  /* SLIDE 3 */
+  .tool-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; flex: 1; }
+  .tc { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07); border-radius: 11px; padding: 14px 16px; }
+  .tbadge { font-size: 9px; font-weight: 700; letter-spacing: 1px; padding: 2px 9px; border-radius: 10px; text-transform: uppercase; display: inline-block; margin-bottom: 8px; }
+  .tb-core { background: rgba(79,195,247,0.13); color: #4fc3f7; border: 1px solid rgba(79,195,247,0.28); }
+  .tb-spec { background: rgba(129,199,132,0.13); color: #81c784; border: 1px solid rgba(129,199,132,0.28); }
+  .tb-ag { background: rgba(206,147,216,0.13); color: #ce93d8; border: 1px solid rgba(206,147,216,0.28); }
+  .ta { font-size: 12px; font-weight: 700; color: rgba(255,255,255,0.88); margin-bottom: 7px; }
+  .tl { display: flex; flex-direction: column; gap: 5px; }
+  .tr { display: flex; justify-content: space-between; align-items: flex-start; gap: 6px; }
+  .tn { font-size: 11.5px; font-weight: 600; color: #4fc3f7; }
+  .td { font-size: 10px; color: rgba(255,255,255,0.4); line-height: 1.3; text-align: right; }
+  .pw { font-size: 9px; background: rgba(255,183,77,0.13); color: #ffb74d; border: 1px solid rgba(255,183,77,0.28); border-radius: 7px; padding: 1px 6px; white-space: nowrap; flex-shrink: 0; }
+
+  /* SLIDE 4 */
+  .plat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 14px; }
+  .pc { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07); border-radius: 12px; padding: 16px 14px; text-align: center; position: relative; }
+  .pc.top { border-color: rgba(79,195,247,0.38); background: rgba(79,195,247,0.055); }
+  .top-b { position: absolute; top: -9px; left: 50%; transform: translateX(-50%); background: #4fc3f7; color: #0a0e1a; font-size: 8px; font-weight: 800; letter-spacing: 1px; padding: 2px 9px; border-radius: 9px; white-space: nowrap; }
+  .pl { font-size: 24px; margin-bottom: 8px; }
+  .pn { font-size: 12px; font-weight: 700; margin-bottom: 4px; }
+  .pt { font-size: 10px; color: rgba(255,255,255,0.38); margin-bottom: 10px; }
+  .pb-wrap { display: flex; flex-direction: column; gap: 5px; }
+  .pb-row { display: flex; align-items: center; gap: 7px; }
+  .pb-lbl { font-size: 9px; color: rgba(255,255,255,0.4); width: 46px; text-align: right; flex-shrink: 0; }
+  .pb-track { flex: 1; height: 4px; background: rgba(255,255,255,0.07); border-radius: 3px; overflow: hidden; }
+  .pb-fill { height: 100%; border-radius: 3px; }
+  .fb { background: linear-gradient(90deg,#1565c0,#4fc3f7); }
+  .fg { background: linear-gradient(90deg,#2e7d32,#81c784); }
+  .fp { background: linear-gradient(90deg,#6a1b9a,#ce93d8); }
+  .fo { background: linear-gradient(90deg,#e65100,#ffb74d); }
+  .it { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07); border-radius: 10px; overflow: hidden; }
+  .ir { display: grid; grid-template-columns: 2fr 1.3fr 1.4fr 2.2fr; padding: 9px 18px; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 11px; }
+  .ir:last-child { border-bottom: none; }
+  .ir.hd { background: rgba(79,195,247,0.07); font-size: 10px; font-weight: 600; color: rgba(255,255,255,0.45); letter-spacing: 1px; }
+  .ir .ph { color: #4fc3f7; font-weight: 600; }
+  .ir .co { color: #81c784; font-weight: 600; }
+
+  /* SLIDE 5 */
+  .roadmap { display: flex; gap: 0; flex: 1; align-items: stretch; }
+  .pcol { flex: 1; padding: 16px; position: relative; }
+  .pcol::after { content:''; position:absolute; top:15%;right:0;height:70%;width:1px;background:linear-gradient(180deg,transparent,rgba(79,195,247,0.25),transparent); }
+  .pcol:last-child::after { display:none; }
+  .pnum { font-size: 10px; color: #4fc3f7; letter-spacing: 2px; font-weight: 600; margin-bottom: 4px; }
+  .ptitle { font-size: 15px; font-weight: 700; margin-bottom: 3px; }
+  .pper { font-size: 10px; color: rgba(255,255,255,0.38); margin-bottom: 13px; }
+  .pitems { display: flex; flex-direction: column; gap: 7px; }
+  .pi { border-left: 2px solid; border-radius: 0 8px 8px 0; padding: 9px 11px; background: rgba(255,255,255,0.035); }
+  .pi1 { border-color: #4fc3f7; }
+  .pi2 { border-color: #81c784; }
+  .pi3 { border-color: #ce93d8; }
+  .pitool { font-size: 11.5px; font-weight: 600; color: rgba(255,255,255,0.88); }
+  .pidesc { font-size: 10px; color: rgba(255,255,255,0.42); margin-top: 2px; line-height: 1.45; }
+  .pimp { font-size: 9px; margin-top: 5px; display: inline-block; padding: 2px 7px; border-radius: 7px; }
+  .ib { background:rgba(79,195,247,0.1);color:#4fc3f7; }
+  .ig { background:rgba(129,199,132,0.1);color:#81c784; }
+  .ip { background:rgba(206,147,216,0.1);color:#ce93d8; }
+  .bbar { background: rgba(79,195,247,0.07); border: 1px solid rgba(79,195,247,0.18); border-radius: 9px; padding: 11px 20px; display: flex; justify-content: space-between; align-items: center; margin-top: 12px; }
+  .bbar-txt { font-size: 12px; color: rgba(255,255,255,0.65); line-height: 1.6; }
+  .bbar-txt strong { color: #4fc3f7; }
+  .bbar-num { font-size: 20px; font-weight: 800; color: #4fc3f7; }
+  .bbar-unit { font-size: 10px; color: rgba(255,255,255,0.38); margin-left: 3px; }
+</style>
+</head>
+<body>
+<div class="slides">
+
+  <!-- SLIDE 1: COVER -->
+  <div class="slide bg1 active" id="s1">
+    <div class="deco" style="width:550px;height:550px;background:radial-gradient(circle,rgba(21,101,192,0.18),transparent);right:-180px;top:-180px;"></div>
+    <div class="deco" style="width:280px;height:280px;background:radial-gradient(circle,rgba(13,71,161,0.15),transparent);left:-90px;bottom:-90px;"></div>
+    <div class="slide-num">01 / 05</div>
+    <div style="display:flex;flex-direction:column;justify-content:center;height:100%;max-width:580px;">
+      <div class="cover-tag">DOOSAN ENERBILITY · 사업관리팀</div>
+      <div class="cover-main">발전소 기자재 공급<br>사업관리 혁신을 위한<br><span class="hl">Agentic AI</span> 전략</div>
+      <div class="cover-desc">18가지 핵심 사업관리 업무에 최적화된 Agentic AI 도구 분석 및<br>투자 의사결정을 위한 실행 로드맵 제안</div>
+      <div class="cover-meta">
+        <div class="cmi"><div class="l">PREPARED BY</div><div class="v">사업관리팀</div></div>
+        <div class="cmi"><div class="l">DATE</div><div class="v">2026. 04</div></div>
+        <div class="cmi"><div class="l">VERSION</div><div class="v">Executive Report v1.0</div></div>
+      </div>
+    </div>
+    <div class="stat-cards">
+      <div class="sc"><div class="n">#1</div><div class="u">Gartner 선정<br>2025 전략 기술</div></div>
+      <div class="sc"><div class="n">15%</div><div class="u">2028년까지<br>업무 자율화 예측</div></div>
+      <div class="sc"><div class="n">20~30%</div><div class="u">AI 적용시<br>생산성 향상(McKinsey)</div></div>
+    </div>
+    <div class="watermark">DOOSAN ENERBILITY</div>
+  </div>
+
+  <!-- SLIDE 2: 핵심 업무 -->
+  <div class="slide bg2" id="s2">
+    <div class="deco" style="width:450px;height:450px;background:radial-gradient(circle,rgba(13,71,161,0.12),transparent);right:-120px;bottom:-120px;"></div>
+    <div class="slide-num">02 / 05</div>
+    <div class="lbl">Project Business Management</div>
+    <div class="ttl">발전소 기자재 사업관리 <span>핵심 업무 체계</span></div>
+    <div class="sub">18개 업무를 7대 영역으로 분류 — 계약부터 종결까지 Full-cycle 커버리지</div>
+    <div class="divider"></div>
+    <div class="tot">📋 총 18개 핵심 업무 · 7개 영역</div>
+    <div class="cat-grid">
+      <div class="cc c1"><div class="cc-icon">📄</div><div class="cc-name">① 착수 & 계획</div><div class="cc-items"><div class="ci">계약 검토 & 리스크 분석</div><div class="ci">킥오프 준비·진행</div><div class="ci">WBS & 목표예산 셋팅</div></div></div>
+      <div class="cc c2"><div class="cc-icon">💰</div><div class="cc-name">② 원가 & 변경관리</div><div class="cc-items"><div class="ci">원가 관리/통제 & Forecasting</div><div class="ci">변경관리 & 클레임</div><div class="ci">게이트/승인 관리</div></div></div>
+      <div class="cc c3"><div class="cc-icon">🔩</div><div class="cc-name">③ 구매 & 자재</div><div class="cc-items"><div class="ci">자재 & BOM 생성·관리</div><div class="ci">구매/하도 발주 (PR/PO)</div><div class="ci">Vendor Tracking 관리</div></div></div>
+      <div class="cc c4"><div class="cc-icon">📁</div><div class="cc-name">④ 문서 & 품질</div><div class="cc-items"><div class="ci">고객제출도서 서브미탈</div><div class="ci">품질 계획 및 관리</div><div class="ci">NCR/CAR 관리</div></div></div>
+      <div class="cc c5"><div class="cc-icon">🏭</div><div class="cc-name">⑤ 제작 & 물류</div><div class="cc-items"><div class="ci">제작·공정·FAT·납기 관리</div><div class="ci">포장·보존·물류 관리</div><div class="ci">운송·통관·Incoterms</div></div></div>
+      <div class="cc c6"><div class="cc-icon">📡</div><div class="cc-name">⑥ 커뮤니케이션</div><div class="cc-items"><div class="ci">고객 커뮤니케이션</div><div class="ci">내부 리뷰·조기 경보</div></div></div>
+      <div class="cc c7"><div class="cc-icon">💳</div><div class="cc-name">⑦ 재무 & 종결</div><div class="cc-items"><div class="ci">진도 청구/매출인식</div><div class="ci">수금·채권 관리</div><div class="ci">사후 이슈·보증·종결</div></div></div>
+    </div>
+    <div class="watermark">DOOSAN ENERBILITY</div>
+  </div>
+
+  <!-- SLIDE 3: AI 도구 매핑 -->
+  <div class="slide bg3" id="s3">
+    <div class="deco" style="width:380px;height:380px;background:radial-gradient(circle,rgba(49,27,146,0.14),transparent);left:-80px;top:-80px;"></div>
+    <div class="slide-num">03 / 05</div>
+    <div class="lbl">Agentic AI Tool Mapping</div>
+    <div class="ttl">영역별 <span>최적 Agentic AI</span> 도구 분석</div>
+    <div class="sub">광범위한 리서치 기반 — 현재 가장 많이 사용되고 가장 강력한 도구 선별</div>
+    <div class="divider"></div>
+    <div class="tool-grid">
+      <div class="tc"><span class="tbadge tb-core">CORE</span><div class="ta">① 착수 & 계획</div><div class="tl"><div class="tr"><span class="tn">Icertis</span><span class="pw">⚡ Most Powerful</span></div><div class="tr"><span style="font-size:10px;color:rgba(255,255,255,0.38)">계약 검토·리스크 자동 분석 (8,000+ 기업)</span></div><div class="tr" style="margin-top:5px"><span class="tn">EcoSys (Hexagon)</span><span class="pw">⚡ #1 EPC</span></div><div class="tr"><span style="font-size:10px;color:rgba(255,255,255,0.38)">WBS·예산 AI 벤치마킹 (Bechtel·Fluor 사용)</span></div><div class="tr" style="margin-top:5px"><span class="tn">MS Copilot</span><span class="td">킥오프 문서 자동생성</span></div></div></div>
+      <div class="tc"><span class="tbadge tb-core">CORE</span><div class="ta">② 원가 & 변경관리</div><div class="tl"><div class="tr"><span class="tn">EcoSys + SAP Joule</span><span class="pw">⚡ Most Powerful</span></div><div class="tr"><span style="font-size:10px;color:rgba(255,255,255,0.38)">AI EAC 예측·EVM·Monte Carlo 시뮬레이션</span></div><div class="tr" style="margin-top:5px"><span class="tn">ServiceNow AI</span><span class="td">게이트·승인 자동 라우팅</span></div><div class="tr" style="margin-top:5px"><span class="tn">Power BI Copilot</span><span class="td">자연어 원가 리포팅</span></div></div></div>
+      <div class="tc"><span class="tbadge tb-spec">SPECIALIST</span><div class="ta">③ 구매 & 자재</div><div class="tl"><div class="tr"><span class="tn">SAP Ariba + Joule</span><span class="pw">⚡ Most Used</span></div><div class="tr"><span style="font-size:10px;color:rgba(255,255,255,0.38)">자율 소싱·PO 자동매칭 (5M+ 기업 네트워크)</span></div><div class="tr" style="margin-top:5px"><span class="tn">Jaggaer</span><span class="td">BOM 연계 구매관리</span></div><div class="tr" style="margin-top:5px"><span class="tn">Resilinc</span><span class="td">공급망 리스크 AI 경보</span></div></div></div>
+      <div class="tc"><span class="tbadge tb-spec">SPECIALIST</span><div class="ta">④ 문서 & 품질</div><div class="tl"><div class="tr"><span class="tn">Oracle Aconex</span><span class="pw">⚡ Industry Std</span></div><div class="tr"><span style="font-size:10px;color:rgba(255,255,255,0.38)">EPC 문서관리 글로벌 표준 플랫폼</span></div><div class="tr" style="margin-top:5px"><span class="tn">ETQ Reliance</span><span class="td">NCR 자동분류 (처리시간 40~60%↓)</span></div></div></div>
+      <div class="tc"><span class="tbadge tb-spec">SPECIALIST</span><div class="ta">⑤ 제작 & 물류</div><div class="tl"><div class="tr"><span class="tn">AVEVA</span><span class="pw">⚡ Most Powerful</span></div><div class="tr"><span style="font-size:10px;color:rgba(255,255,255,0.38)">공정 디지털 트윈·AI 납기 예측 (GE Vernova·Siemens 사용)</span></div><div class="tr" style="margin-top:5px"><span class="tn">project44</span><span class="td">운송 ETA 95%+ 정확도</span></div><div class="tr" style="margin-top:5px"><span class="tn">Descartes</span><span class="td">통관·무역규정 AI 자동화</span></div></div></div>
+      <div class="tc"><span class="tbadge tb-ag">AGENTIC</span><div class="ta">⑥⑦ 커뮤니케이션·재무</div><div class="tl"><div class="tr"><span class="tn">Salesforce Agentforce</span><span class="pw">⚡ Most Powerful</span></div><div class="tr"><span style="font-size:10px;color:rgba(255,255,255,0.38)">24/7 자율 고객 응대 에이전트</span></div><div class="tr" style="margin-top:5px"><span class="tn">HighRadius</span><span class="td">수금 AI — 95%+ 자동 매칭</span></div><div class="tr" style="margin-top:5px"><span class="tn">SAP RAR + Joule</span><span class="td">IFRS 15 매출인식 자동화</span></div></div></div>
+    </div>
+    <div class="watermark">DOOSAN ENERBILITY</div>
+  </div>
+
+  <!-- SLIDE 4: 플랫폼 비교 -->
+  <div class="slide bg4" id="s4">
+    <div class="deco" style="width:420px;height:420px;background:radial-gradient(circle,rgba(13,71,161,0.12),transparent);right:-100px;top:-100px;"></div>
+    <div class="slide-num">04 / 05</div>
+    <div class="lbl">Platform Comparison & Investment</div>
+    <div class="ttl">핵심 플랫폼 <span>역량 비교</span> & 투자 규모</div>
+    <div class="sub">4대 엔터프라이즈 플랫폼 — 두산에너빌리티 환경에서의 적합도 평가</div>
+    <div class="divider"></div>
+    <div class="plat-grid">
+      <div class="pc top"><div class="top-b">★ RECOMMENDED</div><div class="pl">⚙️</div><div class="pn">SAP Joule</div><div class="pt">기존 S/4HANA 완벽 연계</div><div class="pb-wrap"><div class="pb-row"><span class="pb-lbl">ERP통합</span><div class="pb-track"><div class="pb-fill fb" style="width:98%"></div></div></div><div class="pb-row"><span class="pb-lbl">원가관리</span><div class="pb-track"><div class="pb-fill fb" style="width:92%"></div></div></div><div class="pb-row"><span class="pb-lbl">구매자동화</span><div class="pb-track"><div class="pb-fill fb" style="width:90%"></div></div></div><div class="pb-row"><span class="pb-lbl">도입용이</span><div class="pb-track"><div class="pb-fill fb" style="width:88%"></div></div></div></div></div>
+      <div class="pc top"><div class="top-b">★ RECOMMENDED</div><div class="pl">💻</div><div class="pn">Microsoft Copilot</div><div class="pt">협업·커뮤니케이션 최강</div><div class="pb-wrap"><div class="pb-row"><span class="pb-lbl">문서처리</span><div class="pb-track"><div class="pb-fill fg" style="width:95%"></div></div></div><div class="pb-row"><span class="pb-lbl">커버리지</span><div class="pb-track"><div class="pb-fill fg" style="width:90%"></div></div></div><div class="pb-row"><span class="pb-lbl">도입비용</span><div class="pb-track"><div class="pb-fill fg" style="width:85%"></div></div></div><div class="pb-row"><span class="pb-lbl">도입용이</span><div class="pb-track"><div class="pb-fill fg" style="width:92%"></div></div></div></div></div>
+      <div class="pc"><div class="pl">☁️</div><div class="pn">Salesforce Agentforce</div><div class="pt">고객 대면 업무 자율화</div><div class="pb-wrap"><div class="pb-row"><span class="pb-lbl">고객응대</span><div class="pb-track"><div class="pb-fill fp" style="width:96%"></div></div></div><div class="pb-row"><span class="pb-lbl">수금관리</span><div class="pb-track"><div class="pb-fill fp" style="width:88%"></div></div></div><div class="pb-row"><span class="pb-lbl">에이전트</span><div class="pb-track"><div class="pb-fill fp" style="width:90%"></div></div></div><div class="pb-row"><span class="pb-lbl">ERP통합</span><div class="pb-track"><div class="pb-fill fp" style="width:65%"></div></div></div></div></div>
+      <div class="pc"><div class="pl">🔄</div><div class="pn">ServiceNow AI</div><div class="pt">내부 승인·워크플로우</div><div class="pb-wrap"><div class="pb-row"><span class="pb-lbl">승인관리</span><div class="pb-track"><div class="pb-fill fo" style="width:95%"></div></div></div><div class="pb-row"><span class="pb-lbl">변경관리</span><div class="pb-track"><div class="pb-fill fo" style="width:88%"></div></div></div><div class="pb-row"><span class="pb-lbl">워크플로우</span><div class="pb-track"><div class="pb-fill fo" style="width:92%"></div></div></div><div class="pb-row"><span class="pb-lbl">도입비용</span><div class="pb-track"><div class="pb-fill fo" style="width:55%"></div></div></div></div></div>
+    </div>
+    <div class="it">
+      <div class="ir hd"><span>PHASE</span><span>기간</span><span>투자 규모</span><span>주요 도구 & 업무</span></div>
+      <div class="ir"><span class="ph">Phase 1 — Quick Wins</span><span style="color:rgba(255,255,255,0.55)">1~6개월</span><span class="co">$30/user/월</span><span style="color:rgba(255,255,255,0.5)">MS Copilot + SAP Joule → 즉시 생산성 향상</span></div>
+      <div class="ir"><span class="ph">Phase 2 — 전문 도구</span><span style="color:rgba(255,255,255,0.55)">6~18개월</span><span class="co">$500K~2M/년</span><span style="color:rgba(255,255,255,0.5)">Icertis·EcoSys·HighRadius·Agentforce 도입</span></div>
+      <div class="ir"><span class="ph">Phase 3 — 통합 에이전트</span><span style="color:rgba(255,255,255,0.55)">18~36개월</span><span class="co">$1M~3M</span><span style="color:rgba(255,255,255,0.5)">커스텀 AI 에이전트 구축·시스템 통합 완성</span></div>
+    </div>
+    <div class="watermark">DOOSAN ENERBILITY</div>
+  </div>
+
+  <!-- SLIDE 5: 로드맵 -->
+  <div class="slide bg5" id="s5">
+    <div class="deco" style="width:480px;height:480px;background:radial-gradient(circle,rgba(26,35,126,0.14),transparent);right:-140px;bottom:-140px;"></div>
+    <div class="slide-num">05 / 05</div>
+    <div class="lbl">Implementation Roadmap & Conclusion</div>
+    <div class="ttl"><span>3단계 실행 로드맵</span> & 기대효과</div>
+    <div class="sub">단계적 투자로 리스크 최소화 — Phase 1부터 즉각적인 ROI 실현</div>
+    <div class="divider"></div>
+    <div class="roadmap">
+      <div class="pcol">
+        <div class="pnum">PHASE 01</div><div class="ptitle">즉시 실행</div><div class="pper">1 ~ 6개월</div>
+        <div class="pitems">
+          <div class="pi pi1"><div class="pitool">Microsoft 365 Copilot</div><div class="pidesc">문서작성·회의록·보고서 AI 자동화. 기존 M365 환경에 즉시 적용 가능</div><span class="pimp ib">커뮤니케이션 50% 시간절감</span></div>
+          <div class="pi pi1"><div class="pitool">SAP Joule 활성화</div><div class="pidesc">기존 S/4HANA에서 자연어로 원가조회·구매 자동화. 별도 구축 불필요</div><span class="pimp ib">ERP 업무 자동화 즉시 적용</span></div>
+        </div>
+      </div>
+      <div class="pcol">
+        <div class="pnum">PHASE 02</div><div class="ptitle">전문 도구 도입</div><div class="pper">6 ~ 18개월</div>
+        <div class="pitems">
+          <div class="pi pi2"><div class="pitool">Icertis 계약 AI</div><div class="pidesc">계약검토·리스크 자동분석. SAP 완전 통합. 8,000+ 글로벌 기업 사용</div><span class="pimp ig">계약 리스크 사전 차단</span></div>
+          <div class="pi pi2"><div class="pitool">EcoSys 원가관리</div><div class="pidesc">AI 원가예측·EVM·Monte Carlo. EPC 업계 표준 도구</div><span class="pimp ig">원가 초과 조기 경보</span></div>
+          <div class="pi pi2"><div class="pitool">HighRadius 수금 AI</div><div class="pidesc">95%+ 자동 현금매칭. 채권 우선순위 AI 자동화</div><span class="pimp ig">수금 효율 95%+ 달성</span></div>
+        </div>
+      </div>
+      <div class="pcol">
+        <div class="pnum">PHASE 03</div><div class="ptitle">통합 에이전트 완성</div><div class="pper">18 ~ 36개월</div>
+        <div class="pitems">
+          <div class="pi pi3"><div class="pitool">커스텀 AI 에이전트</div><div class="pidesc">LangGraph / Semantic Kernel 기반. 계약→원가→구매→납기→수금 전 과정 연계 자율 에이전트</div><span class="pimp ip">Cross-functional 자율화</span></div>
+          <div class="pi pi3"><div class="pitool">Oracle Aconex + ETQ</div><div class="pidesc">문서관리·품질 AI 통합. 글로벌 EPC 표준 플랫폼 완성</div><span class="pimp ip">Full 디지털 트윈 달성</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="bbar">
+      <div class="bbar-txt">총 투자 대비 효과 — 프로젝트 비용 초과·일정 지연·품질 실패 예방 가치 기준<br><strong>핵심 메시지:</strong> 단일 도구가 아닌 <strong>통합 아키텍처</strong>가 진정한 경쟁 우위를 만든다</div>
+      <div><span class="bbar-num">$2M~5M</span><span class="bbar-unit">/ 년 (Full Stack)<br>프로젝트 매출의 0.5~1%</span></div>
+    </div>
+    <div class="watermark">DOOSAN ENERBILITY</div>
+  </div>
+
+</div>
+<div class="nav">
+  <button onclick="prev()">◀ 이전</button>
+  <div class="dot-nav" id="dn"></div>
+  <span class="counter" id="ct">1 / 5</span>
+  <button onclick="next()">다음 ▶</button>
+</div>
+<script>
+  let cur=0;
+  const slides=document.querySelectorAll('.slide');
+  const N=slides.length;
+  const dn=document.getElementById('dn');
+  const ct=document.getElementById('ct');
+  for(let i=0;i<N;i++){const d=document.createElement('div');d.className='dot'+(i===0?' active':'');d.onclick=()=>go(i);dn.appendChild(d);}
+  function go(n){slides[cur].classList.remove('active');dn.children[cur].classList.remove('active');cur=(n+N)%N;slides[cur].classList.add('active');dn.children[cur].classList.add('active');ct.textContent=(cur+1)+' / '+N;}
+  function next(){go(cur+1);}
+  function prev(){go(cur-1);}
+  document.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key==='ArrowDown')next();if(e.key==='ArrowLeft'||e.key==='ArrowUp')prev();});
+  let sx=0;
+  document.addEventListener('touchstart',e=>{sx=e.touches[0].clientX;});
+  document.addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>50){dx<0?next():prev();}});
+</script>
+</body>
+</html>
