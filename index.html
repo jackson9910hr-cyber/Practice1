@@ -11,212 +11,269 @@ body{font-family:'Segoe UI','Apple SD Gothic Neo',sans-serif;color:#1a2340;}
 @media(min-width:769px){
   body{background:#f0f4fa;overflow:hidden;}
   .slides{width:100vw;height:100vh;position:relative;}
-  .slide{display:none;width:100%;height:100%;position:absolute;top:0;left:0;padding:32px 48px;flex-direction:column;}
+  .slide{display:none;width:100%;height:100%;position:absolute;top:0;left:0;padding:30px 46px;flex-direction:column;}
   .slide.active{display:flex;}
-  .nav{position:fixed;bottom:16px;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:12px;z-index:200;background:rgba(255,255,255,0.95);backdrop-filter:blur(12px);padding:7px 18px;border-radius:32px;box-shadow:0 4px 24px rgba(26,35,64,0.13);border:1px solid rgba(26,35,64,0.08);}
+  .nav{position:fixed;bottom:14px;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:12px;z-index:200;background:rgba(255,255,255,0.95);backdrop-filter:blur(12px);padding:7px 18px;border-radius:32px;box-shadow:0 4px 24px rgba(26,35,64,0.13);border:1px solid rgba(26,35,64,0.08);}
 }
 @media(max-width:768px){
   body{background:#f0f4fa;overflow-y:auto;}
   .slides{width:100%;}
-  .slide{display:none;width:100%;padding:20px 16px 80px;flex-direction:column;}
+  .slide{display:none;width:100%;padding:18px 14px 80px;flex-direction:column;}
   .slide.active{display:flex;}
-  .nav{position:fixed;bottom:12px;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:10px;z-index:200;background:rgba(255,255,255,0.97);padding:6px 14px;border-radius:28px;box-shadow:0 4px 20px rgba(26,35,64,0.15);border:1px solid rgba(26,35,64,0.08);}
+  .nav{position:fixed;bottom:10px;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:10px;z-index:200;background:rgba(255,255,255,0.97);padding:6px 14px;border-radius:28px;box-shadow:0 4px 20px rgba(26,35,64,0.15);border:1px solid rgba(26,35,64,0.08);}
 }
-.nav button{background:linear-gradient(135deg,#1e3a8a,#2563eb);border:none;color:#fff;padding:7px 20px;border-radius:20px;cursor:pointer;font-size:13px;font-weight:600;}
-.nav button:hover{opacity:0.9;}
-.counter{font-size:13px;color:#64748b;min-width:44px;text-align:center;font-weight:600;}
+.nav button{background:linear-gradient(135deg,#1e3a8a,#2563eb);border:none;color:#fff;padding:7px 20px;border-radius:20px;cursor:pointer;font-size:14px;font-weight:600;}
+.counter{font-size:14px;color:#64748b;min-width:44px;text-align:center;font-weight:600;}
 .dot-nav{display:flex;gap:7px;}
 .dot{width:8px;height:8px;border-radius:50%;background:#cbd5e1;cursor:pointer;transition:all 0.2s;}
 .dot.active{background:#2563eb;transform:scale(1.4);}
 
 .bg1{background:linear-gradient(145deg,#0f172a 0%,#1e3a8a 45%,#1e40af 100%);}
 .bg2{background:linear-gradient(145deg,#f8fafc,#eff6ff,#f0f9ff);}
-.bg3{background:linear-gradient(145deg,#f8fafc,#f0fdf4,#eff6ff);}
+.bg3{background:linear-gradient(145deg,#f0f4ff,#e8f0fe,#eef2ff);}
 .bg4{background:linear-gradient(145deg,#0f172a,#1e3a8a,#0f172a);}
 .bg5{background:linear-gradient(145deg,#f8fafc,#fef9ec,#fff7ed);}
 
 @media(min-width:769px){
-  .slide-num{position:absolute;top:32px;right:48px;font-size:12px;letter-spacing:2px;font-weight:600;}
+  .slide-num{position:absolute;top:30px;right:46px;font-size:12px;letter-spacing:2px;font-weight:600;}
   .sn-light{color:rgba(255,255,255,0.35);}
   .sn-dark{color:rgba(26,35,64,0.3);}
-  .wm{position:absolute;bottom:44px;right:48px;font-size:11px;letter-spacing:2px;font-weight:700;}
+  .wm{position:absolute;bottom:42px;right:46px;font-size:11px;letter-spacing:2px;font-weight:700;}
   .wm-light{color:rgba(255,255,255,0.2);}
   .wm-dark{color:rgba(26,35,64,0.15);}
 }
 @media(max-width:768px){.slide-num,.wm{display:none;}}
 
-.lbl{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#2563eb;margin-bottom:6px;font-weight:700;}
-.ttl{font-size:26px;font-weight:800;line-height:1.2;margin-bottom:4px;color:#0f172a;}
+.lbl{font-size:12px;letter-spacing:3px;text-transform:uppercase;color:#2563eb;margin-bottom:6px;font-weight:700;}
+.ttl{font-size:28px;font-weight:800;line-height:1.2;margin-bottom:4px;color:#0f172a;}
 .ttl span{color:#2563eb;}
-.sub{font-size:12px;color:#64748b;margin-bottom:14px;}
-.divider{width:44px;height:3px;background:linear-gradient(90deg,#2563eb,#60a5fa);border-radius:2px;margin-bottom:14px;}
-@media(max-width:768px){.ttl{font-size:20px;}.sub{font-size:11px;}}
+.sub{font-size:14px;color:#64748b;margin-bottom:12px;}
+.divider{width:44px;height:3px;background:linear-gradient(90deg,#2563eb,#60a5fa);border-radius:2px;margin-bottom:12px;}
+@media(max-width:768px){.ttl{font-size:22px;}.sub{font-size:12px;}}
 
-/* ── SLIDE 1 ── */
-.cover-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.25);border-radius:24px;padding:5px 16px;font-size:12px;color:#93c5fd;letter-spacing:2px;margin-bottom:18px;width:fit-content;}
-.cover-badge::before{content:'●';font-size:8px;animation:blink 1.5s infinite;color:#60a5fa;}
-@keyframes blink{0%,100%{opacity:1}50%{opacity:0.3}}
-.cover-main{font-size:42px;font-weight:900;line-height:1.12;margin-bottom:14px;color:#fff;letter-spacing:-1px;}
-.cover-main .hl{color:#60a5fa;}
-.cover-desc{font-size:17px;color:rgba(255,255,255,0.65);max-width:560px;line-height:1.8;margin-bottom:28px;}
-.cover-meta{display:flex;gap:36px;flex-wrap:wrap;}
-.cmi .l{font-size:11px;color:rgba(255,255,255,0.4);letter-spacing:1px;text-transform:uppercase;}
-.cmi .v{font-size:15px;color:rgba(255,255,255,0.88);font-weight:700;margin-top:2px;}
-@media(min-width:769px){
-  .cover-wrap{display:flex;flex-direction:column;justify-content:center;height:100%;max-width:580px;}
-  .stat-cards{position:absolute;right:48px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:12px;}
-}
-@media(max-width:768px){
-  .cover-wrap{margin-bottom:20px;}
-  .cover-main{font-size:26px;}
-  .cover-desc{font-size:14px;margin-bottom:16px;}
-  .stat-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:16px;}
-  .cmi .v{font-size:13px;}
-}
-.sc{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.18);border-radius:12px;padding:16px 20px;text-align:center;}
-.sc .n{font-size:28px;font-weight:900;color:#60a5fa;line-height:1;}
-.sc .u{font-size:11px;color:rgba(255,255,255,0.5);margin-top:4px;line-height:1.5;}
-@media(max-width:768px){.sc{padding:10px 8px;}.sc .n{font-size:20px;}.sc .u{font-size:9px;}}
-
-/* ── SCROLL INNER ── */
+/* SCROLL */
 @media(min-width:769px){
   .si{flex:1;overflow-y:auto;padding-bottom:6px;}
   .si::-webkit-scrollbar{width:4px;}
   .si::-webkit-scrollbar-thumb{background:#bfdbfe;border-radius:2px;}
 }
-@media(max-width:768px){.si{}}
 
-/* ── SLIDE 2: 현황 진단 ── */
+/* SLIDE 1 */
+.cover-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.25);border-radius:24px;padding:5px 16px;font-size:13px;color:#93c5fd;letter-spacing:2px;margin-bottom:16px;width:fit-content;}
+.cover-badge::before{content:'●';font-size:8px;animation:blink 1.5s infinite;color:#60a5fa;}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0.3}}
+.cover-main{font-size:44px;font-weight:900;line-height:1.12;margin-bottom:14px;color:#fff;letter-spacing:-1px;}
+.cover-main .hl{color:#60a5fa;}
+.cover-desc{font-size:18px;color:rgba(255,255,255,0.65);max-width:560px;line-height:1.8;margin-bottom:26px;}
+.cover-meta{display:flex;gap:32px;flex-wrap:wrap;}
+.cmi .l{font-size:12px;color:rgba(255,255,255,0.4);letter-spacing:1px;text-transform:uppercase;}
+.cmi .v{font-size:16px;color:rgba(255,255,255,0.88);font-weight:700;margin-top:2px;}
+@media(min-width:769px){
+  .cover-wrap{display:flex;flex-direction:column;justify-content:center;height:100%;max-width:580px;}
+  .stat-cards{position:absolute;right:46px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:12px;}
+}
+@media(max-width:768px){
+  .cover-wrap{margin-bottom:18px;}
+  .cover-main{font-size:26px;}
+  .cover-desc{font-size:14px;margin-bottom:14px;}
+  .stat-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:14px;}
+  .cmi .v{font-size:13px;}
+}
+.sc{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.18);border-radius:12px;padding:16px 20px;text-align:center;}
+.sc .n{font-size:28px;font-weight:900;color:#60a5fa;line-height:1;}
+.sc .u{font-size:12px;color:rgba(255,255,255,0.5);margin-top:4px;line-height:1.5;}
+@media(max-width:768px){.sc{padding:10px 8px;}.sc .n{font-size:20px;}.sc .u{font-size:9px;}}
+
+/* SLIDE 2 */
 .diag-grid{display:grid;gap:12px;}
 @media(min-width:769px){.diag-grid{grid-template-columns:1fr 1fr;}}
-@media(max-width:768px){.diag-grid{grid-template-columns:1fr;}}
-
 .diag-card{background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:18px;box-shadow:0 2px 12px rgba(26,35,64,0.06);}
 .diag-card.alert{border-color:#fca5a5;background:linear-gradient(145deg,#fff,#fff5f5);}
 .diag-card.good{border-color:#86efac;background:linear-gradient(145deg,#fff,#f0fdf4);}
 .diag-card.warn{border-color:#fcd34d;background:linear-gradient(145deg,#fff,#fffbeb);}
 .diag-head{display:flex;align-items:center;gap:10px;margin-bottom:12px;}
 .diag-icon{font-size:24px;}
-.diag-title{font-size:16px;font-weight:800;color:#0f172a;}
-.diag-tag{font-size:10px;font-weight:700;padding:2px 8px;border-radius:8px;margin-left:auto;}
+.diag-title{font-size:17px;font-weight:800;color:#0f172a;}
+.diag-tag{font-size:11px;font-weight:700;padding:3px 9px;border-radius:8px;margin-left:auto;}
 .tag-red{background:#fee2e2;color:#dc2626;}
 .tag-green{background:#dcfce7;color:#16a34a;}
 .tag-yellow{background:#fef9c3;color:#ca8a04;}
-.diag-items{display:flex;flex-direction:column;gap:6px;}
-.diag-item{display:flex;align-items:flex-start;gap:8px;font-size:13px;color:#475569;line-height:1.5;}
-.diag-item::before{content:'•';color:#94a3b8;flex-shrink:0;margin-top:1px;}
+.diag-items{display:flex;flex-direction:column;gap:7px;}
+.diag-item{font-size:14px;color:#475569;line-height:1.5;display:flex;align-items:flex-start;gap:8px;}
+.diag-item::before{content:'•';color:#94a3b8;flex-shrink:0;}
 .diag-item.bad::before{content:'⚠';color:#ef4444;}
 .diag-item.ok::before{content:'✓';color:#16a34a;}
 .situation-banner{background:linear-gradient(135deg,#1e3a8a,#2563eb);border-radius:12px;padding:16px 20px;margin-bottom:14px;display:flex;align-items:center;gap:12px;}
 .situation-banner .icon{font-size:28px;}
-.situation-banner .text{color:#fff;font-size:14px;line-height:1.7;}
+.situation-banner .text{color:#fff;font-size:15px;line-height:1.7;}
 .situation-banner .text strong{color:#93c5fd;}
 
-/* ── SLIDE 3: 자동화 전략 ── */
-.strategy-grid{display:grid;gap:12px;flex:1;}
-@media(min-width:769px){.strategy-grid{grid-template-columns:repeat(3,1fr);}}
-@media(max-width:768px){.strategy-grid{grid-template-columns:1fr;}}
+/* ═══════════════════════════════
+   SLIDE 3 — 완전 재설계
+═══════════════════════════════ */
+.s3-grid{display:grid;gap:14px;}
+@media(min-width:769px){.s3-grid{grid-template-columns:repeat(3,1fr);}}
 
-.str-card{background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:16px;box-shadow:0 2px 12px rgba(26,35,64,0.06);display:flex;flex-direction:column;}
-.str-head{display:flex;align-items:center;gap:10px;margin-bottom:12px;}
-.str-num{width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:800;flex-shrink:0;}
-.str-title{font-size:15px;font-weight:800;color:#0f172a;}
-.str-sub{font-size:11px;color:#64748b;margin-top:1px;}
-.pain-box{background:#fff5f5;border:1px solid #fecaca;border-radius:8px;padding:10px 12px;margin-bottom:10px;}
-.pain-title{font-size:10px;font-weight:700;color:#dc2626;letter-spacing:1px;margin-bottom:5px;}
-.pain-text{font-size:11px;color:#7f1d1d;line-height:1.6;}
-.sol-box{background:#f0fdf4;border:1px solid #bbf7d0;border-radius:8px;padding:10px 12px;margin-bottom:10px;flex:1;}
-.sol-title{font-size:10px;font-weight:700;color:#16a34a;letter-spacing:1px;margin-bottom:5px;}
-.sol-items{display:flex;flex-direction:column;gap:4px;}
-.sol-item{font-size:11px;color:#14532d;line-height:1.5;display:flex;align-items:flex-start;gap:5px;}
-.sol-item::before{content:'→';color:#16a34a;flex-shrink:0;font-weight:700;}
-.tool-row{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px;}
-.tool-chip{font-size:10px;font-weight:700;padding:3px 8px;border-radius:8px;cursor:pointer;border-bottom:1px dashed;}
-.tc-blue{background:#eff6ff;color:#2563eb;border-color:#93c5fd;}
-.tc-green{background:#f0fdf4;color:#16a34a;border-color:#86efac;}
-.tc-orange{background:#fff7ed;color:#ea580c;border-color:#fed7aa;}
-.tc-purple{background:#faf5ff;color:#7c3aed;border-color:#ddd6fe;}
-.effect-row{display:flex;gap:6px;margin-top:8px;}
-.eff-badge{font-size:10px;font-weight:800;padding:3px 8px;border-radius:8px;background:#eff6ff;color:#2563eb;}
+/* 전략 카드 */
+.str-card{background:#fff;border-radius:16px;padding:0;box-shadow:0 4px 20px rgba(26,35,64,0.1);overflow:hidden;border:2px solid #e2e8f0;display:flex;flex-direction:column;}
+.str-header{padding:16px 18px 14px;position:relative;}
+.str-header-1{background:linear-gradient(135deg,#1e3a8a,#2563eb);}
+.str-header-2{background:linear-gradient(135deg,#065f46,#16a34a);}
+.str-header-3{background:linear-gradient(135deg,#92400e,#d97706);}
+.str-num-badge{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,0.2);font-size:16px;font-weight:900;color:#fff;margin-bottom:8px;}
+.str-title{font-size:17px;font-weight:800;color:#fff;line-height:1.2;}
+.str-subtitle{font-size:13px;color:rgba(255,255,255,0.7);margin-top:3px;}
+.str-body{padding:16px 18px;flex:1;display:flex;flex-direction:column;gap:12px;}
 
-/* ── SLIDE 4: 실행 로드맵 ── */
-.roadmap-wrap{flex:1;display:flex;flex-direction:column;gap:10px;}
-.phase-card{border-radius:14px;padding:16px 20px;position:relative;overflow:hidden;}
-.ph-0{background:linear-gradient(135deg,rgba(37,99,235,0.08),rgba(37,99,235,0.03));border:2px solid #2563eb;}
-.ph-1{background:linear-gradient(135deg,rgba(22,163,74,0.08),rgba(22,163,74,0.03));border:2px solid #16a34a;}
-.ph-2{background:linear-gradient(135deg,rgba(234,88,12,0.08),rgba(234,88,12,0.03));border:1px solid #fed7aa;}
-.phase-head{display:flex;align-items:center;gap:12px;margin-bottom:12px;flex-wrap:wrap;}
-.ph-badge{font-size:11px;font-weight:800;padding:4px 12px;border-radius:12px;white-space:nowrap;}
-.ph-badge-0{background:#2563eb;color:#fff;}
-.ph-badge-1{background:#16a34a;color:#fff;}
-.ph-badge-2{background:#ea580c;color:#fff;}
-.ph-title{font-size:16px;font-weight:800;color:#0f172a;}
-.ph-period{font-size:12px;color:#64748b;margin-left:auto;}
-.ph-grid{display:grid;gap:8px;}
-@media(min-width:769px){.ph-grid{grid-template-columns:repeat(3,1fr);}}
-@media(max-width:768px){.ph-grid{grid-template-columns:1fr;}}
-.ph-item{background:rgba(255,255,255,0.8);border-radius:10px;padding:12px;}
-.ph-item-title{font-size:12px;font-weight:700;color:#0f172a;margin-bottom:4px;}
-.ph-item-desc{font-size:11px;color:#475569;line-height:1.6;}
-.ph-item-effect{font-size:10px;font-weight:700;margin-top:5px;color:#2563eb;}
-.condition-box{background:rgba(251,191,36,0.1);border:1px solid #fcd34d;border-radius:10px;padding:12px 16px;margin-bottom:10px;}
-.condition-title{font-size:11px;font-weight:800;color:#92400e;margin-bottom:5px;}
-.condition-text{font-size:12px;color:#78350f;line-height:1.6;}
+/* 현재 고통 */
+.pain-section{background:#fff5f5;border:1.5px solid #fecaca;border-radius:10px;padding:12px 14px;}
+.pain-label{font-size:11px;font-weight:800;color:#dc2626;letter-spacing:1px;margin-bottom:8px;display:flex;align-items:center;gap:5px;}
+.pain-items{display:flex;flex-direction:column;gap:5px;}
+.pain-item{font-size:13px;color:#7f1d1d;line-height:1.5;display:flex;gap:7px;align-items:flex-start;}
+.pain-item::before{content:'😤';font-size:11px;flex-shrink:0;margin-top:1px;}
 
-/* ── SLIDE 5: SAP 확인 & 즉시 실행 ── */
+/* 자동화 솔루션 — 플로우 방식 */
+.sol-section{background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:10px;padding:12px 14px;flex:1;}
+.sol-label{font-size:11px;font-weight:800;color:#16a34a;letter-spacing:1px;margin-bottom:10px;display:flex;align-items:center;gap:5px;}
+.flow-wrap{display:flex;flex-direction:column;gap:6px;}
+.flow-step{display:flex;align-items:flex-start;gap:8px;}
+.flow-icon{width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0;margin-top:1px;}
+.fi-1{background:#dbeafe;color:#1d4ed8;}
+.fi-2{background:#d1fae5;color:#065f46;}
+.fi-3{background:#fef3c7;color:#92400e;}
+.fi-4{background:#ede9fe;color:#6d28d9;}
+.fi-5{background:#fce7f3;color:#9d174d;}
+.fi-6{background:#e0f2fe;color:#0369a1;}
+.flow-text{font-size:13px;color:#14532d;line-height:1.55;font-weight:500;}
+.flow-arrow{text-align:center;font-size:11px;color:#86efac;font-weight:700;margin:-2px 0;}
+
+/* AI 도구 섹션 — 강조 */
+.tool-section{background:linear-gradient(135deg,#f0f9ff,#eff6ff);border:2px solid #2563eb;border-radius:12px;padding:14px;}
+.tool-section-label{font-size:12px;font-weight:800;color:#1e3a8a;letter-spacing:1px;margin-bottom:10px;display:flex;align-items:center;gap:6px;}
+.tool-section-label::before{content:'🤖';font-size:14px;}
+.tool-cards{display:flex;flex-direction:column;gap:8px;}
+.tool-card-item{background:#fff;border:1.5px solid #bfdbfe;border-radius:10px;padding:10px 12px;display:flex;align-items:center;gap:10px;transition:all 0.2s;text-decoration:none;}
+.tool-card-item:hover{border-color:#2563eb;box-shadow:0 3px 12px rgba(37,99,235,0.2);transform:translateY(-1px);}
+.tci-icon{font-size:20px;flex-shrink:0;}
+.tci-info{flex:1;min-width:0;}
+.tci-name{font-size:14px;font-weight:800;color:#1e3a8a;}
+.tci-desc{font-size:11px;color:#64748b;margin-top:1px;line-height:1.3;}
+.tci-badge{font-size:10px;font-weight:700;padding:3px 8px;border-radius:8px;background:#eff6ff;color:#2563eb;white-space:nowrap;flex-shrink:0;}
+.tci-badge.green{background:#dcfce7;color:#16a34a;}
+.tci-badge.orange{background:#fff7ed;color:#ea580c;}
+.link-btn{display:inline-flex;align-items:center;gap:5px;padding:6px 12px;border-radius:16px;font-size:12px;font-weight:700;text-decoration:none;transition:all 0.2s;border:none;cursor:pointer;}
+.lb-blue{background:linear-gradient(135deg,#2563eb,#3b82f6);color:#fff;}
+.lb-green{background:linear-gradient(135deg,#16a34a,#22c55e);color:#fff;}
+.lb-orange{background:linear-gradient(135deg,#ea580c,#f97316);color:#fff;}
+.lb-purple{background:linear-gradient(135deg,#7c3aed,#8b5cf6);color:#fff;}
+.lb-gray{background:#f1f5f9;color:#475569;border:1px solid #e2e8f0;}
+.link-btn:hover{opacity:0.9;transform:translateY(-1px);}
+
+/* 효과 배지 */
+.effect-section{display:flex;gap:6px;flex-wrap:wrap;}
+.eff-badge{font-size:12px;font-weight:800;padding:4px 10px;border-radius:8px;background:#eff6ff;color:#2563eb;border:1px solid #bfdbfe;}
+.eff-badge.green{background:#dcfce7;color:#16a34a;border-color:#86efac;}
+.eff-badge.orange{background:#fff7ed;color:#ea580c;border-color:#fed7aa;}
+
+/* ═══════════════════════════════
+   SLIDE 4 — AI 도입 강조
+═══════════════════════════════ */
+.s4-ai-banner{background:linear-gradient(135deg,#0f172a,#1e3a8a);border-radius:16px;padding:20px 24px;margin-bottom:14px;}
+.s4-banner-head{display:flex;align-items:center;gap:12px;margin-bottom:16px;}
+.s4-banner-icon{font-size:36px;}
+.s4-banner-title{font-size:22px;font-weight:900;color:#fff;}
+.s4-banner-sub{font-size:14px;color:rgba(255,255,255,0.6);margin-top:2px;}
+.ai-tools-grid{display:grid;gap:10px;}
+@media(min-width:769px){.ai-tools-grid{grid-template-columns:repeat(3,1fr);}}
+
+.ai-tool-card{background:rgba(255,255,255,0.08);border:1.5px solid rgba(255,255,255,0.2);border-radius:14px;padding:16px;transition:all 0.2s;}
+.ai-tool-card.recommend{border-color:#60a5fa;background:rgba(96,165,250,0.12);}
+.ai-tool-card:hover{border-color:#60a5fa;background:rgba(96,165,250,0.1);}
+.atc-head{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
+.atc-icon{font-size:28px;}
+.atc-name{font-size:16px;font-weight:800;color:#fff;}
+.atc-tag{font-size:10px;font-weight:700;padding:3px 8px;border-radius:8px;background:rgba(96,165,250,0.2);color:#93c5fd;margin-left:auto;white-space:nowrap;}
+.atc-tag.top{background:rgba(251,191,36,0.2);color:#fbbf24;}
+.atc-condition{font-size:12px;color:#fbbf24;background:rgba(251,191,36,0.1);border:1px solid rgba(251,191,36,0.3);border-radius:7px;padding:5px 10px;margin-bottom:8px;}
+.atc-items{display:flex;flex-direction:column;gap:5px;margin-bottom:10px;}
+.atc-item{font-size:13px;color:rgba(255,255,255,0.75);line-height:1.5;display:flex;gap:6px;align-items:flex-start;}
+.atc-item::before{content:'→';color:#60a5fa;flex-shrink:0;font-weight:700;}
+.atc-effect{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:10px;}
+.atc-eff{font-size:11px;font-weight:700;padding:3px 8px;border-radius:7px;background:rgba(52,211,153,0.15);color:#6ee7b7;border:1px solid rgba(52,211,153,0.3);}
+.atc-links{display:flex;gap:6px;flex-wrap:wrap;}
+.atc-link{display:inline-flex;align-items:center;gap:4px;padding:6px 12px;border-radius:14px;font-size:12px;font-weight:700;text-decoration:none;transition:all 0.2s;cursor:pointer;border:none;}
+.al-blue{background:rgba(37,99,235,0.3);color:#93c5fd;border:1px solid rgba(37,99,235,0.4);}
+.al-blue:hover{background:rgba(37,99,235,0.5);}
+.al-red{background:rgba(220,38,38,0.3);color:#fca5a5;border:1px solid rgba(220,38,38,0.4);}
+.al-red:hover{background:rgba(220,38,38,0.5);}
+.al-green{background:rgba(22,163,74,0.3);color:#86efac;border:1px solid rgba(22,163,74,0.4);}
+.al-green:hover{background:rgba(22,163,74,0.5);}
+
+/* 즉시 실행 (덜 강조) */
+.s4-quick-section{background:#f8fafc;border:1px solid #e2e8f0;border-radius:14px;padding:16px 20px;}
+.s4-quick-title{font-size:15px;font-weight:700;color:#64748b;margin-bottom:12px;display:flex;align-items:center;gap:8px;}
+.quick-grid{display:grid;gap:8px;}
+@media(min-width:769px){.quick-grid{grid-template-columns:repeat(3,1fr);}}
+.quick-item{background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:12px 14px;}
+.quick-item-title{font-size:13px;font-weight:700;color:#475569;margin-bottom:4px;}
+.quick-item-desc{font-size:12px;color:#94a3b8;line-height:1.5;}
+.quick-item-period{font-size:11px;font-weight:700;color:#2563eb;margin-top:5px;}
+
+/* SLIDE 5 */
 .check-grid{display:grid;gap:12px;margin-bottom:14px;}
-@media(min-width:769px){.check-grid{grid-template-columns:1fr 1fr 1fr;}}
-@media(max-width:768px){.check-grid{grid-template-columns:1fr;}}
+@media(min-width:769px){.check-grid{grid-template-columns:repeat(3,1fr);}}
 .check-card{background:#fff;border-radius:14px;padding:16px;box-shadow:0 2px 12px rgba(26,35,64,0.06);border:1px solid #e2e8f0;}
 .check-card.active{border-color:#2563eb;background:linear-gradient(145deg,#fff,#eff6ff);}
 .check-head{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
 .check-icon{font-size:24px;}
-.check-name{font-size:14px;font-weight:800;color:#0f172a;}
+.check-name{font-size:15px;font-weight:800;color:#0f172a;}
 .check-status{font-size:10px;font-weight:700;padding:2px 8px;border-radius:8px;margin-left:auto;}
 .cs-active{background:#dcfce7;color:#16a34a;}
 .cs-check{background:#fef9c3;color:#ca8a04;}
-.cs-no{background:#fee2e2;color:#dc2626;}
-.check-items{display:flex;flex-direction:column;gap:5px;}
-.check-item{font-size:12px;color:#475569;line-height:1.5;display:flex;gap:6px;}
-.check-item .ci-icon{flex-shrink:0;}
-
+.check-items{display:flex;flex-direction:column;gap:6px;}
+.check-item{font-size:13px;color:#475569;line-height:1.5;display:flex;gap:6px;}
 .action-box{background:linear-gradient(135deg,#1e3a8a,#2563eb);border-radius:14px;padding:18px 22px;}
-.action-title{font-size:14px;font-weight:800;color:#fff;margin-bottom:12px;}
+.action-title{font-size:15px;font-weight:800;color:#fff;margin-bottom:12px;}
 .action-grid{display:grid;gap:10px;}
 @media(min-width:769px){.action-grid{grid-template-columns:repeat(3,1fr);}}
-@media(max-width:768px){.action-grid{grid-template-columns:1fr;}}
 .action-item{background:rgba(255,255,255,0.1);border-radius:10px;padding:12px;}
 .action-num{font-size:20px;font-weight:900;color:#60a5fa;line-height:1;}
-.action-desc{font-size:12px;color:rgba(255,255,255,0.8);margin-top:3px;line-height:1.5;}
-.action-when{font-size:10px;color:#93c5fd;font-weight:700;margin-top:4px;}
+.action-desc{font-size:13px;color:rgba(255,255,255,0.8);margin-top:3px;line-height:1.5;}
+.action-when{font-size:11px;color:#93c5fd;font-weight:700;margin-top:4px;}
+.decision-box{background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:16px 18px;margin-top:12px;}
+.decision-title{font-size:14px;font-weight:800;color:#0f172a;margin-bottom:10px;}
+.decision-items{display:flex;flex-direction:column;gap:8px;}
+.di{display:flex;gap:10px;align-items:flex-start;}
+.di-badge{font-size:11px;font-weight:800;padding:3px 9px;border-radius:7px;white-space:nowrap;flex-shrink:0;}
+.di-text{font-size:13px;color:#475569;line-height:1.6;}
 
-/* ── POPUP ── */
+/* POPUP */
 .popup-overlay{display:none;position:fixed;inset:0;background:rgba(15,23,42,0.65);z-index:1000;align-items:center;justify-content:center;backdrop-filter:blur(8px);padding:12px;}
 .popup-overlay.show{display:flex;}
-.popup{background:#fff;border-radius:20px;width:100%;max-width:800px;max-height:90vh;overflow-y:auto;box-shadow:0 32px 80px rgba(15,23,42,0.25);border:1px solid #e2e8f0;}
+.popup{background:#fff;border-radius:20px;width:100%;max-width:820px;max-height:90vh;overflow-y:auto;box-shadow:0 32px 80px rgba(15,23,42,0.25);border:1px solid #e2e8f0;}
 .popup::-webkit-scrollbar{width:5px;}
 .popup::-webkit-scrollbar-thumb{background:#cbd5e1;border-radius:3px;}
-.popup-topbar{position:sticky;top:0;z-index:10;background:#fff;padding:14px 20px 12px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #f1f5f9;}
-.popup-title{font-size:18px;font-weight:800;color:#0f172a;}
-.popup-close{background:#f1f5f9;border:none;color:#64748b;width:34px;height:34px;border-radius:50%;cursor:pointer;font-size:15px;display:flex;align-items:center;justify-content:center;}
-.popup-body{padding:20px;}
-.popup-section{margin-bottom:18px;}
-.popup-section-title{font-size:12px;letter-spacing:1px;color:#94a3b8;font-weight:700;text-transform:uppercase;margin-bottom:8px;padding-bottom:5px;border-bottom:1px solid #f1f5f9;}
-.popup-text{font-size:13px;color:#334155;line-height:1.8;}
-.popup-text ul{padding-left:16px;}
-.popup-text li{margin-bottom:5px;}
-.popup-steps{display:flex;flex-direction:column;gap:8px;}
+.popup-topbar{position:sticky;top:0;z-index:10;background:#fff;padding:16px 22px 14px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #f1f5f9;}
+.popup-title{font-size:20px;font-weight:800;color:#0f172a;}
+.popup-close{background:#f1f5f9;border:none;color:#64748b;width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;}
+.popup-body{padding:22px;}
+.popup-section{margin-bottom:20px;}
+.popup-section-title{font-size:13px;letter-spacing:1px;color:#94a3b8;font-weight:700;text-transform:uppercase;margin-bottom:10px;padding-bottom:6px;border-bottom:1px solid #f1f5f9;}
+.popup-text{font-size:14px;color:#334155;line-height:1.85;}
+.popup-text ul{padding-left:18px;}
+.popup-text li{margin-bottom:6px;}
+.popup-steps{display:flex;flex-direction:column;gap:10px;}
 .popup-step{display:flex;gap:12px;align-items:flex-start;}
-.popup-step-num{width:26px;height:26px;background:#2563eb;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex-shrink:0;}
-.popup-step-text{font-size:13px;color:#334155;line-height:1.6;padding-top:3px;}
-.popup-link{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:16px;font-size:12px;font-weight:700;text-decoration:none;margin-top:4px;transition:all 0.2s;}
+.popup-step-num{width:28px;height:28px;background:#2563eb;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;flex-shrink:0;}
+.popup-step-text{font-size:13px;color:#334155;line-height:1.65;padding-top:4px;}
+.popup-cost-box{background:linear-gradient(145deg,#f0fdf4,#ecfdf5);border:1px solid #bbf7d0;border-radius:10px;padding:14px 16px;margin-top:10px;}
+.popup-cost-label{font-size:11px;color:#16a34a;font-weight:800;letter-spacing:1px;}
+.popup-cost-val{font-size:14px;color:#166534;font-weight:700;margin-top:4px;line-height:1.6;}
+.popup-links{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px;}
+.popup-link{display:inline-flex;align-items:center;gap:6px;padding:9px 16px;border-radius:16px;font-size:13px;font-weight:700;text-decoration:none;transition:all 0.2s;}
 .pl-blue{background:linear-gradient(135deg,#2563eb,#3b82f6);color:#fff;}
 .pl-red{background:linear-gradient(135deg,#dc2626,#ef4444);color:#fff;}
-.pl-gray{background:#f1f5f9;color:#475569;}
-.popup-links{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px;}
-.popup-cost-box{background:linear-gradient(145deg,#f0fdf4,#ecfdf5);border:1px solid #bbf7d0;border-radius:10px;padding:12px 16px;margin-top:10px;}
-.popup-cost-label{font-size:10px;color:#16a34a;font-weight:800;letter-spacing:1px;}
-.popup-cost-val{font-size:14px;color:#166534;font-weight:700;margin-top:3px;}
+.pl-green{background:linear-gradient(135deg,#16a34a,#22c55e);color:#fff;}
 </style>
 </head>
 <body>
@@ -245,7 +302,7 @@ body{font-family:'Segoe UI','Apple SD Gothic Neo',sans-serif;color:#1a2340;}
     <div class="cover-meta">
       <div class="cmi"><div class="l">Prepared By</div><div class="v">두산에너빌리티 사업관리 담당자</div></div>
       <div class="cmi"><div class="l">Date</div><div class="v">2026. 04</div></div>
-      <div class="cmi"><div class="l">Version</div><div class="v">v2.0 — 맞춤형 전략</div></div>
+      <div class="cmi"><div class="l">Version</div><div class="v">v2.0 맞춤형 전략</div></div>
     </div>
   </div>
   <div class="stat-cards">
@@ -266,15 +323,11 @@ body{font-family:'Segoe UI','Apple SD Gothic Neo',sans-serif;color:#1a2340;}
   <div class="si">
     <div class="situation-banner">
       <div class="icon">⚡</div>
-      <div class="text"><strong>핵심 상황:</strong> 수주 급증으로 업무량은 2~3배 늘었지만 인력은 그대로 → 기존 시스템으로는 처리 불가 → <strong>자동화로 사람 손을 줄여야 함</strong></div>
+      <div class="text"><strong>핵심 상황:</strong> 수주 급증으로 업무량은 2~3배 늘었지만 인력은 그대로 → 기존 시스템으로는 처리 불가 → <strong>Agentic AI 자동화로 사람 손을 줄여야 함</strong></div>
     </div>
     <div class="diag-grid">
       <div class="diag-card good">
-        <div class="diag-head">
-          <div class="diag-icon">✅</div>
-          <div class="diag-title">이미 갖춰진 것</div>
-          <span class="diag-tag tag-green">강점</span>
-        </div>
+        <div class="diag-head"><div class="diag-icon">✅</div><div class="diag-title">이미 갖춰진 것</div><span class="diag-tag tag-green">강점</span></div>
         <div class="diag-items">
           <div class="diag-item ok">SAP ERP — 핵심 업무 전산화 완료</div>
           <div class="diag-item ok">Microsoft 365 Copilot — 이미 사용 중</div>
@@ -284,11 +337,7 @@ body{font-family:'Segoe UI','Apple SD Gothic Neo',sans-serif;color:#1a2340;}
         </div>
       </div>
       <div class="diag-card alert">
-        <div class="diag-head">
-          <div class="diag-icon">🔴</div>
-          <div class="diag-title">지금 당장 터지는 문제</div>
-          <span class="diag-tag tag-red">시급</span>
-        </div>
+        <div class="diag-head"><div class="diag-icon">🔴</div><div class="diag-title">지금 당장 터지는 문제</div><span class="diag-tag tag-red">시급</span></div>
         <div class="diag-items">
           <div class="diag-item bad">고객 납기 문의·이메일 처리만으로 하루가 끝남</div>
           <div class="diag-item bad">수백 건 서브미탈 기한 추적을 Excel로 수동 관리</div>
@@ -297,24 +346,19 @@ body{font-family:'Segoe UI','Apple SD Gothic Neo',sans-serif;color:#1a2340;}
           <div class="diag-item bad">PR/PO 처리 건수 폭증 — 담당자 처리 한계</div>
         </div>
       </div>
-      <div class="diag-card warn">
-        <div class="diag-head">
-          <div class="diag-icon">⚠️</div>
-          <div class="diag-title">먼저 확인해야 할 것</div>
-          <span class="diag-tag tag-yellow">선행 조건</span>
-        </div>
-        <div class="diag-items">
-          <div class="diag-item">SAP 버전 확인 필수 (IT팀에 문의)</div>
-          <div class="diag-item">ECC 6.0이면 → 자동화 방식 A</div>
-          <div class="diag-item">S/4HANA 온프레미스면 → 자동화 방식 B</div>
-          <div class="diag-item">S/4HANA Cloud (RISE)면 → 자동화 방식 C (최강)</div>
-          <div class="diag-item">Power Automate 라이선스 현황 확인</div>
-        </div>
+    </div>
+    <div class="diag-card warn" style="margin-top:12px;">
+      <div class="diag-head"><div class="diag-icon">⚠️</div><div class="diag-title">AI 도입 전 먼저 확인해야 할 것 — IT팀에 문의</div><span class="diag-tag tag-yellow">선행 조건</span></div>
+      <div class="diag-items" style="display:grid;grid-template-columns:1fr 1fr;gap:7px;">
+        <div class="diag-item">SAP 버전: ECC 6.0 / S/4HANA 온프레미스 / S/4HANA Cloud 중 무엇인가?</div>
+        <div class="diag-item">SAP 버전에 따라 Joule, iRPA 등 적용 방식이 결정됨</div>
+        <div class="diag-item">Power Automate 라이선스 범위 확인</div>
+        <div class="diag-item">SAP-Power BI 현재 연동 방식 확인</div>
       </div>
     </div>
     <div style="margin-top:12px;background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:14px 18px;">
-      <div style="font-size:12px;font-weight:700;color:#0f172a;margin-bottom:8px;">📌 왜 외부 AI 플랫폼보다 내부 자동화가 먼저인가?</div>
-      <div style="font-size:12px;color:#475569;line-height:1.8;">EcoSys, Icertis 같은 전문 플랫폼은 구현에 12~18개월이 필요합니다. 지금 당장 수주 급증으로 터지는 문제는 <strong>이미 가지고 있는 SAP + M365를 제대로 연결하는 자동화</strong>로 4~8주 안에 해결할 수 있습니다. 빠른 효과를 먼저 내고, 고도화는 병행하는 전략이 최적입니다.</div>
+      <div style="font-size:14px;font-weight:700;color:#0f172a;margin-bottom:6px;">📌 전략 방향: 빠른 효과 + AI 고도화 병행</div>
+      <div style="font-size:13px;color:#475569;line-height:1.8;">이미 보유한 M365(Power Automate+SharePoint)로 <strong>4주 안에 즉각적 자동화</strong>를 구현하면서, <strong>SAP Joule·EcoSys 등 Agentic AI 플랫폼을 병행 도입</strong>해 근본적인 업무 자동화를 실현합니다.</div>
     </div>
   </div>
   <div class="wm wm-dark">DOOSAN ENERBILITY</div>
@@ -325,338 +369,550 @@ body{font-family:'Segoe UI','Apple SD Gothic Neo',sans-serif;color:#1a2340;}
   <div class="slide-num sn-dark">03 / 05</div>
   <div class="lbl">3 Core Automation Strategies</div>
   <div class="ttl">시급한 <span>3대 영역</span> 자동화 전략</div>
-  <div class="sub">고객관리 · 원가/예산 · 고객문서관리 — 실질적 자동화 방안</div>
+  <div class="sub">각 영역별 현재 고통 → 자동화 흐름 → 적용 AI 도구를 한눈에 확인하세요</div>
   <div class="divider"></div>
   <div class="si">
-    <div class="strategy-grid">
+    <div class="s3-grid">
 
-      <!-- 전략 1: 고객 커뮤니케이션 -->
+      <!-- ① 고객 커뮤니케이션 -->
       <div class="str-card">
-        <div class="str-head">
-          <div class="str-num" style="background:#eff6ff;color:#2563eb;">①</div>
-          <div>
-            <div class="str-title">고객 커뮤니케이션 자동화</div>
-            <div class="str-sub">납기 문의·이메일·클레임 대응</div>
+        <div class="str-header str-header-1">
+          <div class="str-num-badge">①</div>
+          <div class="str-title">고객 커뮤니케이션 자동화</div>
+          <div class="str-subtitle">납기 문의 · 이메일 · 클레임 자동 대응</div>
+        </div>
+        <div class="str-body">
+          <div class="pain-section">
+            <div class="pain-label">⚠ 지금 이런 상황</div>
+            <div class="pain-items">
+              <div class="pain-item">수십 개 프로젝트 고객에서 동시에 납기 문의·변경 요청 폭주</div>
+              <div class="pain-item">담당자가 이메일만 처리하다 하루가 끝남</div>
+              <div class="pain-item">미답변 누락으로 고객 불만·클레임 발생</div>
+            </div>
           </div>
-        </div>
-        <div class="pain-box">
-          <div class="pain-title">⚠ 현재 고통</div>
-          <div class="pain-text">수십 개 프로젝트 고객에서 동시에 납기 문의·도서 검토 결과·변경 요청이 쏟아짐. 담당자가 이메일만 처리하다 하루가 끝남. 미답변 누락으로 고객 불만 발생.</div>
-        </div>
-        <div class="sol-box">
-          <div class="sol-title">✅ 자동화 솔루션</div>
-          <div class="sol-items">
-            <div class="sol-item">고객 이메일 수신 → 프로젝트 번호 자동 인식 → 유형 자동 분류 (납기문의/도서검토/변경/클레임)</div>
-            <div class="sol-item">미답변 48시간 초과 시 담당자+팀장 Teams 자동 알림</div>
-            <div class="sol-item">Copilot으로 납기 변경 통보 이메일 초안 자동 생성 (한/영)</div>
-            <div class="sol-item">고객별 커뮤니케이션 이력 Power BI 자동 대시보드</div>
-            <div class="sol-item">납기 D-30/14/7 도달 시 고객 사전 통보 이메일 자동 발송</div>
+          <div class="sol-section">
+            <div class="sol-label">✅ 자동화하면 이렇게 바뀝니다</div>
+            <div class="flow-wrap">
+              <div class="flow-step">
+                <div class="flow-icon fi-1">📧</div>
+                <div class="flow-text"><strong>고객 이메일 수신</strong> → AI가 프로젝트 번호 자동 인식 + 유형 분류 (납기문의/변경/클레임)</div>
+              </div>
+              <div class="flow-arrow">↓</div>
+              <div class="flow-step">
+                <div class="flow-icon fi-2">📋</div>
+                <div class="flow-text"><strong>SharePoint에 자동 등록</strong> → 담당자 자동 배정 + 처리 기한 자동 설정</div>
+              </div>
+              <div class="flow-arrow">↓</div>
+              <div class="flow-step">
+                <div class="flow-icon fi-3">🤖</div>
+                <div class="flow-text"><strong>Copilot이 답변 초안 자동 생성</strong> → 담당자는 검토·발송만 (작성 시간 70%↓)</div>
+              </div>
+              <div class="flow-arrow">↓</div>
+              <div class="flow-step">
+                <div class="flow-icon fi-4">⏰</div>
+                <div class="flow-text"><strong>48시간 미답변 시</strong> → 담당자+팀장에게 Teams 자동 알림 (누락 방지)</div>
+              </div>
+              <div class="flow-arrow">↓</div>
+              <div class="flow-step">
+                <div class="flow-icon fi-5">📅</div>
+                <div class="flow-text"><strong>납기 D-30/14/7 도달 시</strong> → 고객 사전 통보 이메일 자동 발송</div>
+              </div>
+            </div>
           </div>
-        </div>
-        <div class="tool-row">
-          <span class="tool-chip tc-blue" onclick="showPopup('powerAutomate')">Power Automate</span>
-          <span class="tool-chip tc-blue" onclick="showPopup('copilot365')">M365 Copilot</span>
-          <span class="tool-chip tc-blue" onclick="showPopup('powerbi365')">Power BI</span>
-        </div>
-        <div class="effect-row">
-          <span class="eff-badge">이메일 처리 60%↓</span>
-          <span class="eff-badge">누락 0건</span>
+          <div class="tool-section">
+            <div class="tool-section-label">적용 AI 도구 — 클릭하여 상세 확인</div>
+            <div class="tool-cards">
+              <div class="tool-card-item" onclick="showPopup('powerAutomate')">
+                <div class="tci-icon">⚡</div>
+                <div class="tci-info">
+                  <div class="tci-name">Power Automate</div>
+                  <div class="tci-desc">이메일 분류·알림·라우팅 자동화</div>
+                </div>
+                <span class="tci-badge">즉시 적용</span>
+              </div>
+              <div class="tool-card-item" onclick="showPopup('copilot365')">
+                <div class="tci-icon">💬</div>
+                <div class="tci-info">
+                  <div class="tci-name">M365 Copilot</div>
+                  <div class="tci-desc">고객 이메일 초안 자동 생성 (한/영)</div>
+                </div>
+                <span class="tci-badge">이미 보유</span>
+              </div>
+              <div class="tool-card-item" onclick="showPopup('agentforce')">
+                <div class="tci-icon">🤖</div>
+                <div class="tci-info">
+                  <div class="tci-name">Salesforce Agentforce</div>
+                  <div class="tci-desc">24/7 자율 고객 응대 AI 에이전트</div>
+                </div>
+                <span class="tci-badge orange">AI 고도화</span>
+              </div>
+            </div>
+            <div style="display:flex;gap:8px;margin-top:10px;flex-wrap:wrap;">
+              <a href="https://powerautomate.microsoft.com" target="_blank" class="link-btn lb-blue">🌐 Power Automate</a>
+              <a href="https://www.salesforce.com/agentforce/" target="_blank" class="link-btn lb-orange">🌐 Agentforce</a>
+            </div>
+          </div>
+          <div class="effect-section">
+            <span class="eff-badge">이메일 처리 60%↓</span>
+            <span class="eff-badge green">누락 Zero</span>
+            <span class="eff-badge orange">24/7 자동 대응</span>
+          </div>
         </div>
       </div>
 
-      <!-- 전략 2: 원가/예산 -->
+      <!-- ② 원가·예산 -->
       <div class="str-card">
-        <div class="str-head">
-          <div class="str-num" style="background:#f0fdf4;color:#16a34a;">②</div>
-          <div>
-            <div class="str-title">원가·예산 실시간 자동화</div>
-            <div class="str-sub">조기경보·Forecasting·월말 집계</div>
+        <div class="str-header str-header-2">
+          <div class="str-num-badge">②</div>
+          <div class="str-title">원가·예산 실시간 자동화</div>
+          <div class="str-subtitle">조기경보 · Forecasting · 월말 집계 자동화</div>
+        </div>
+        <div class="str-body">
+          <div class="pain-section">
+            <div class="pain-label">⚠ 지금 이런 상황</div>
+            <div class="pain-items">
+              <div class="pain-item">SAP에서 데이터 뽑아 Excel 붙여넣기 반복 → 프로젝트 늘수록 더 힘들어짐</div>
+              <div class="pain-item">원가 초과 징조를 월말에야 파악 → 이미 늦음</div>
+              <div class="pain-item">Forecasting 수작업 업데이트 → 항상 시차 발생</div>
+            </div>
           </div>
-        </div>
-        <div class="pain-box">
-          <div class="pain-title">⚠ 현재 고통</div>
-          <div class="pain-text">SAP에서 데이터 뽑아 Excel 가공 반복. 월말이 돼야 원가 초과 파악. Forecasting 업데이트 수작업. 프로젝트 수 증가로 집계 시간 폭증.</div>
-        </div>
-        <div class="sol-box">
-          <div class="sol-title">✅ 자동화 솔루션</div>
-          <div class="sol-items">
-            <div class="sol-item">SAP ↔ Power BI 실시간 직접 연결 → Excel 수동 작업 완전 제거</div>
-            <div class="sol-item">원가 소진율 > 진도율 +10% 시 자동 경보 (Yellow), +20% 시 팀장 자동 보고 (Red)</div>
-            <div class="sol-item">EAC 자동 계산 공식 내장 → Forecasting 수작업 70% 제거</div>
-            <div class="sol-item">Power BI Copilot: "이번 달 원가 초과 프로젝트" 자연어 조회</div>
-            <div class="sol-item">SAP 버전 S/4HANA 확인 시 → Joule로 자연어 ERP 직접 조작</div>
+          <div class="sol-section">
+            <div class="sol-label">✅ 자동화하면 이렇게 바뀝니다</div>
+            <div class="flow-wrap">
+              <div class="flow-step">
+                <div class="flow-icon fi-1">⚙️</div>
+                <div class="flow-text"><strong>SAP ↔ Power BI 실시간 연결</strong> → Excel 수동 작업 완전 제거 (매일 자동 갱신)</div>
+              </div>
+              <div class="flow-arrow">↓</div>
+              <div class="flow-step">
+                <div class="flow-icon fi-2">📊</div>
+                <div class="flow-text"><strong>원가 소진율 자동 계산</strong> → 진도율 대비 +10% 초과 시 Yellow 경보, +20% 시 Red 경보 자동 발송</div>
+              </div>
+              <div class="flow-arrow">↓</div>
+              <div class="flow-step">
+                <div class="flow-icon fi-3">🔮</div>
+                <div class="flow-text"><strong>EAC 자동 계산</strong> → Forecasting 수작업 70% 제거 (발주 잔액+실행원가 자동 집계)</div>
+              </div>
+              <div class="flow-arrow">↓</div>
+              <div class="flow-step">
+                <div class="flow-icon fi-4">💬</div>
+                <div class="flow-text"><strong>자연어 조회</strong> → "이번 달 원가 초과 프로젝트 TOP5" 입력만으로 즉시 결과</div>
+              </div>
+              <div class="flow-arrow">↓</div>
+              <div class="flow-step">
+                <div class="flow-icon fi-5">🧠</div>
+                <div class="flow-text"><strong>SAP Joule (S/4HANA 확인 시)</strong> → 자연어로 SAP 직접 조작, 원가 이상 자율 감지·보고</div>
+              </div>
+            </div>
           </div>
-        </div>
-        <div class="tool-row">
-          <span class="tool-chip tc-green" onclick="showPopup('sapPowerBI')">SAP↔Power BI 연동</span>
-          <span class="tool-chip tc-blue" onclick="showPopup('powerAutomate')">Power Automate</span>
-          <span class="tool-chip tc-green" onclick="showPopup('joule')">SAP Joule (조건부)</span>
-        </div>
-        <div class="effect-row">
-          <span class="eff-badge">월말 집계 75%↓</span>
-          <span class="eff-badge">조기경보 자동화</span>
+          <div class="tool-section">
+            <div class="tool-section-label">적용 AI 도구 — 클릭하여 상세 확인</div>
+            <div class="tool-cards">
+              <div class="tool-card-item" onclick="showPopup('sapPowerBI')">
+                <div class="tci-icon">🔗</div>
+                <div class="tci-info">
+                  <div class="tci-name">SAP ↔ Power BI 연동</div>
+                  <div class="tci-desc">실시간 원가 데이터 자동 반영</div>
+                </div>
+                <span class="tci-badge">1~2개월</span>
+              </div>
+              <div class="tool-card-item" onclick="showPopup('joule')">
+                <div class="tci-icon">⚙️</div>
+                <div class="tci-info">
+                  <div class="tci-name">SAP Joule</div>
+                  <div class="tci-desc">자연어 ERP 조작 + 원가 자율 에이전트</div>
+                </div>
+                <span class="tci-badge orange">S/4HANA 조건부</span>
+              </div>
+              <div class="tool-card-item" onclick="showPopup('ecosys')">
+                <div class="tci-icon">📈</div>
+                <div class="tci-info">
+                  <div class="tci-name">EcoSys (Hexagon)</div>
+                  <div class="tci-desc">EPC 원가관리 AI 고도화 플랫폼</div>
+                </div>
+                <span class="tci-badge orange">AI 고도화</span>
+              </div>
+            </div>
+            <div style="display:flex;gap:8px;margin-top:10px;flex-wrap:wrap;">
+              <a href="https://www.sap.com/products/artificial-intelligence/ai-assistant.html" target="_blank" class="link-btn lb-blue">🌐 SAP Joule</a>
+              <a href="https://hexagon.com/products/ecosys" target="_blank" class="link-btn lb-green">🌐 EcoSys</a>
+              <a href="https://www.youtube.com/results?search_query=SAP+Joule+demo+2025" target="_blank" class="link-btn lb-gray">▶ 데모 영상</a>
+            </div>
+          </div>
+          <div class="effect-section">
+            <span class="eff-badge">월말 집계 75%↓</span>
+            <span class="eff-badge green">조기경보 자동화</span>
+            <span class="eff-badge orange">EAC 자동 계산</span>
+          </div>
         </div>
       </div>
 
-      <!-- 전략 3: 고객 문서 관리 -->
+      <!-- ③ 고객 문서 관리 -->
       <div class="str-card">
-        <div class="str-head">
-          <div class="str-num" style="background:#fff7ed;color:#ea580c;">③</div>
-          <div>
-            <div class="str-title">고객 문서(서브미탈) 자동화</div>
-            <div class="str-sub">DCL 추적·알림·검토결과 관리</div>
+        <div class="str-header str-header-3">
+          <div class="str-num-badge">③</div>
+          <div class="str-title">고객 문서(서브미탈) 자동화</div>
+          <div class="str-subtitle">DCL 추적 · 기한 알림 · 검토결과 관리</div>
+        </div>
+        <div class="str-body">
+          <div class="pain-section">
+            <div class="pain-label">⚠ 지금 이런 상황</div>
+            <div class="pain-items">
+              <div class="pain-item">수백~수천 건 서브미탈을 Excel로 수동 추적 → 수주 늘수록 감당 불가</div>
+              <div class="pain-item">자동 알림 없어 매일 Excel 열어서 기한 확인</div>
+              <div class="pain-item">기한 누락 → 계약 위반·클레임 → 직접적 손실</div>
+            </div>
           </div>
-        </div>
-        <div class="pain-box">
-          <div class="pain-title">⚠ 현재 고통</div>
-          <div class="pain-text">수백~수천 건 서브미탈을 Excel DCL로 수동 추적. 자동 알림 없어 담당자가 매일 Excel 열어 확인. 기한 누락 시 계약 위반·클레임 발생.</div>
-        </div>
-        <div class="sol-box">
-          <div class="sol-title">✅ 자동화 솔루션</div>
-          <div class="sol-items">
-            <div class="sol-item">Excel DCL → SharePoint List 전환 → 자동화 기반 구축</div>
-            <div class="sol-item">제출 기한 D-14/7/1 자동 알림 → Teams + 이메일</div>
-            <div class="sol-item">기한 초과 시 팀장+PM 즉시 자동 에스컬레이션</div>
-            <div class="sol-item">고객 검토 결과 이메일 수신 → 상태 자동 업데이트 (Approved/RFA/Rejected)</div>
-            <div class="sol-item">Rejected 시 재제출 담당자 자동 배정 + 기한 자동 설정</div>
-            <div class="sol-item">전체 서브미탈 현황 Power BI 대시보드 자동 갱신</div>
+          <div class="sol-section">
+            <div class="sol-label">✅ 자동화하면 이렇게 바뀝니다</div>
+            <div class="flow-wrap">
+              <div class="flow-step">
+                <div class="flow-icon fi-1">📂</div>
+                <div class="flow-text"><strong>Excel DCL → SharePoint List 전환</strong> → 자동화 가능한 데이터베이스로 전환 (IT팀 1~2주)</div>
+              </div>
+              <div class="flow-arrow">↓</div>
+              <div class="flow-step">
+                <div class="flow-icon fi-2">🔔</div>
+                <div class="flow-text"><strong>기한 D-14/7/1 자동 알림</strong> → 담당자+팀장에게 Teams·이메일 자동 발송 (사람이 확인 안 해도 됨)</div>
+              </div>
+              <div class="flow-arrow">↓</div>
+              <div class="flow-step">
+                <div class="flow-icon fi-3">🚨</div>
+                <div class="flow-text"><strong>기한 초과 시</strong> → 팀장+PM에게 즉시 자동 에스컬레이션 (클레임 사전 방지)</div>
+              </div>
+              <div class="flow-arrow">↓</div>
+              <div class="flow-step">
+                <div class="flow-icon fi-4">📩</div>
+                <div class="flow-text"><strong>고객 검토 결과 이메일 수신</strong> → 서브미탈 상태 자동 업데이트 (Approved/RFA/Rejected)</div>
+              </div>
+              <div class="flow-arrow">↓</div>
+              <div class="flow-step">
+                <div class="flow-icon fi-5">🔄</div>
+                <div class="flow-text"><strong>Rejected 시</strong> → 재제출 담당자 자동 배정 + 기한 자동 계산 + 알림 자동 발송</div>
+              </div>
+              <div class="flow-arrow">↓</div>
+              <div class="flow-step">
+                <div class="flow-icon fi-6">📊</div>
+                <div class="flow-text"><strong>Power BI 대시보드</strong> → 전체 서브미탈 현황 실시간 자동 갱신 (임원 현황 파악)</div>
+              </div>
+            </div>
           </div>
-        </div>
-        <div class="tool-row">
-          <span class="tool-chip tc-orange" onclick="showPopup('sharePoint')">SharePoint + Lists</span>
-          <span class="tool-chip tc-blue" onclick="showPopup('powerAutomate')">Power Automate</span>
-          <span class="tool-chip tc-blue" onclick="showPopup('powerbi365')">Power BI</span>
-        </div>
-        <div class="effect-row">
-          <span class="eff-badge">누락 리스크 Zero</span>
-          <span class="eff-badge">추적 업무 80%↓</span>
+          <div class="tool-section">
+            <div class="tool-section-label">적용 AI 도구 — 클릭하여 상세 확인</div>
+            <div class="tool-cards">
+              <div class="tool-card-item" onclick="showPopup('sharePoint')">
+                <div class="tci-icon">🗄️</div>
+                <div class="tci-info">
+                  <div class="tci-name">SharePoint + Lists</div>
+                  <div class="tci-desc">자동화 가능한 DCL 데이터베이스 구축</div>
+                </div>
+                <span class="tci-badge">1~2주</span>
+              </div>
+              <div class="tool-card-item" onclick="showPopup('powerAutomate')">
+                <div class="tci-icon">⚡</div>
+                <div class="tci-info">
+                  <div class="tci-name">Power Automate</div>
+                  <div class="tci-desc">기한 알림·에스컬레이션·상태 자동 업데이트</div>
+                </div>
+                <span class="tci-badge">즉시 적용</span>
+              </div>
+              <div class="tool-card-item" onclick="showPopup('aconex')">
+                <div class="tci-icon">📁</div>
+                <div class="tci-info">
+                  <div class="tci-name">Oracle Aconex</div>
+                  <div class="tci-desc">EPC 문서관리 전문 AI 플랫폼 (#1)</div>
+                </div>
+                <span class="tci-badge orange">AI 고도화</span>
+              </div>
+            </div>
+            <div style="display:flex;gap:8px;margin-top:10px;flex-wrap:wrap;">
+              <a href="https://powerautomate.microsoft.com" target="_blank" class="link-btn lb-blue">🌐 Power Automate</a>
+              <a href="https://www.oracle.com/industries/construction-engineering/aconex/" target="_blank" class="link-btn lb-blue">🌐 Oracle Aconex</a>
+              <a href="https://www.youtube.com/results?search_query=Oracle+Aconex+EPC+document+management" target="_blank" class="link-btn lb-gray">▶ 데모 영상</a>
+            </div>
+          </div>
+          <div class="effect-section">
+            <span class="eff-badge">누락 리스크 Zero</span>
+            <span class="eff-badge green">추적 업무 80%↓</span>
+            <span class="eff-badge orange">클레임 사전 방지</span>
+          </div>
         </div>
       </div>
 
-    </div>
-
-    <!-- 추가 자동화 영역 -->
-    <div style="margin-top:12px;background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:14px 18px;">
-      <div style="font-size:12px;font-weight:700;color:#0f172a;margin-bottom:8px;">🔧 추가 자동화: PR/PO 처리 자동화 (구매 폭증 대응)</div>
-      <div style="display:grid;gap:8px;" class="extra-grid">
-        <div style="font-size:12px;color:#475569;line-height:1.8;">
-          표준 자재(반복 구매) → SAP iRPA 또는 SAP Workflow로 <strong>사람 개입 없이 자동 PO 생성</strong>.
-          고단가·신규·특수 자재만 사람이 검토하는 구조로 전환하면 PR/PO 처리 건수의 60~70%가 자동화됩니다.
-          <span class="tool-chip tc-purple" onclick="showPopup('sapIRPA')" style="margin-left:6px;">SAP iRPA</span>
-          <span class="tool-chip tc-green" onclick="showPopup('sapWorkflow')" style="margin-left:4px;">SAP Workflow</span>
-        </div>
-      </div>
     </div>
   </div>
   <div class="wm wm-dark">DOOSAN ENERBILITY</div>
 </div>
 
-<!-- ══ SLIDE 4: 실행 로드맵 ══ -->
-<div class="slide bg2" id="s4">
-  <div class="slide-num sn-dark">04 / 05</div>
-  <div class="lbl">Implementation Roadmap</div>
-  <div class="ttl">단계별 <span>실행 로드맵</span></div>
-  <div class="sub">빠른 효과부터 먼저 — 추가 비용 없이 4주 안에 첫 자동화 가동 가능</div>
-  <div class="divider"></div>
+<!-- ══ SLIDE 4: AI 도입 로드맵 ══ -->
+<div class="slide bg4" id="s4">
+  <div class="slide-num sn-light">04 / 05</div>
+  <div class="lbl" style="color:#93c5fd;">Agentic AI Implementation Roadmap</div>
+  <div class="ttl" style="color:#fff;">핵심 <span style="color:#60a5fa;">Agentic AI 도입</span> 로드맵</div>
+  <div class="sub" style="color:rgba(255,255,255,0.55);">근본적 업무 자동화를 위한 AI 플랫폼 도입 — 비용 제한 없이 최적 구성</div>
+  <div class="divider" style="background:linear-gradient(90deg,#60a5fa,#818cf8);"></div>
   <div class="si">
 
-    <div class="condition-box">
-      <div class="condition-title">⚠️ 선행 조건 — IT팀에 먼저 확인하세요</div>
-      <div class="condition-text">
-        <strong>① SAP 버전:</strong> ECC 6.0 / S/4HANA 온프레미스 / S/4HANA Cloud (RISE) 중 어느 것인가? → 버전에 따라 Joule, iRPA 적용 방식이 결정됩니다.<br>
-        <strong>② Power Automate 라이선스:</strong> 현재 M365 플랜에 포함 여부 확인 (대부분 포함되어 있음)<br>
-        <strong>③ SAP-Power BI 연동 현황:</strong> 현재 SAP 데이터를 Power BI로 어떻게 가져오는지 확인
+    <!-- AI 도구 도입 섹션 — 메인 강조 -->
+    <div class="s4-ai-banner">
+      <div class="s4-banner-head">
+        <div class="s4-banner-icon">🤖</div>
+        <div>
+          <div class="s4-banner-title">도입 권장 Agentic AI 플랫폼</div>
+          <div class="s4-banner-sub">두산에너빌리티 사업관리 업무를 실질적으로 자율화하는 핵심 AI 도구</div>
+        </div>
+      </div>
+      <div class="ai-tools-grid">
+
+        <!-- SAP Joule -->
+        <div class="ai-tool-card recommend">
+          <div class="atc-head">
+            <div class="atc-icon">⚙️</div>
+            <div class="atc-name">SAP Joule</div>
+            <span class="atc-tag top">★ 최우선 추천</span>
+          </div>
+          <div class="atc-condition">⚠️ SAP S/4HANA Cloud 버전 확인 필요 (IT팀 문의)</div>
+          <div class="atc-items">
+            <div class="atc-item">자연어로 SAP 전체 조작 — "P-003 이번달 원가 초과 얼마야?" 즉시 응답</div>
+            <div class="atc-item">PR→PO 자율 생성 (표준 자재는 사람 없이 자동 처리)</div>
+            <div class="atc-item">마일스톤 달성 감지 → 청구 문서 자동 생성 (IFRS 15)</div>
+            <div class="atc-item">원가 이상 자동 감지 → 담당자 자동 알림</div>
+            <div class="atc-item">SAP 기존 구독 포함 (S/4HANA Cloud 시 추가 비용 최소)</div>
+          </div>
+          <div class="atc-effect">
+            <span class="atc-eff">ERP 업무 40%↑ 자동화</span>
+            <span class="atc-eff">자연어 ERP 조작</span>
+          </div>
+          <div class="atc-links">
+            <a href="https://www.sap.com/products/artificial-intelligence/ai-assistant.html" target="_blank" class="atc-link al-blue">🌐 공식 사이트</a>
+            <a href="https://www.youtube.com/results?search_query=SAP+Joule+TechEd+2024+demo" target="_blank" class="atc-link al-red">▶ 데모 영상</a>
+            <span class="atc-link al-green" onclick="showPopup('joule')" style="cursor:pointer;">📋 상세 정보</span>
+          </div>
+        </div>
+
+        <!-- EcoSys -->
+        <div class="ai-tool-card recommend">
+          <div class="atc-head">
+            <div class="atc-icon">📊</div>
+            <div class="atc-name">EcoSys (Hexagon)</div>
+            <span class="atc-tag top">★ 원가관리 핵심</span>
+          </div>
+          <div class="atc-items">
+            <div class="atc-item">EPC 업계 원가관리 골드 스탠다드 — Bechtel·Fluor·Shell·삼성ENG 사용</div>
+            <div class="atc-item">EVM 자동화 — CPI/SPI 자동 계산, 원가 초과 AI 예측</div>
+            <div class="atc-item">변경관리 전 주기 자동화 (스코프 변경 → 원가·납기 영향 즉시 시뮬레이션)</div>
+            <div class="atc-item">SAP S/4HANA 양방향 실시간 통합</div>
+            <div class="atc-item">임원 포트폴리오 뷰 — 전체 수주 잔고 원가 현황 한눈에</div>
+          </div>
+          <div class="atc-effect">
+            <span class="atc-eff">원가 초과 5~15% 방지</span>
+            <span class="atc-eff">보고 사이클 60%↓</span>
+          </div>
+          <div class="atc-links">
+            <a href="https://hexagon.com/products/ecosys" target="_blank" class="atc-link al-blue">🌐 공식 사이트</a>
+            <a href="https://www.youtube.com/results?search_query=Hexagon+EcoSys+project+controls+demo" target="_blank" class="atc-link al-red">▶ 데모 영상</a>
+            <span class="atc-link al-green" onclick="showPopup('ecosys')" style="cursor:pointer;">📋 상세 정보</span>
+          </div>
+        </div>
+
+        <!-- Oracle Aconex -->
+        <div class="ai-tool-card">
+          <div class="atc-head">
+            <div class="atc-icon">📁</div>
+            <div class="atc-name">Oracle Aconex</div>
+            <span class="atc-tag">문서관리 #1</span>
+          </div>
+          <div class="atc-items">
+            <div class="atc-item">EPC 프로젝트 문서관리 글로벌 1위 (500M+ 문서·20,000+ 프로젝트)</div>
+            <div class="atc-item">서브미탈 자동 추적 — 기한 초과 AI 자동 경보·에스컬레이션</div>
+            <div class="atc-item">고객 검토 결과 자동 처리 → 재제출 자동 배정</div>
+            <div class="atc-item">NEOM·파리올림픽·Bechtel·Fluor·삼성엔지니어링 사용</div>
+          </div>
+          <div class="atc-effect">
+            <span class="atc-eff">서브미탈 누락 Zero</span>
+            <span class="atc-eff">검토 40~60%↓</span>
+          </div>
+          <div class="atc-links">
+            <a href="https://www.oracle.com/industries/construction-engineering/aconex/" target="_blank" class="atc-link al-blue">🌐 공식 사이트</a>
+            <a href="https://www.youtube.com/results?search_query=Oracle+Aconex+EPC+document+management" target="_blank" class="atc-link al-red">▶ 데모 영상</a>
+            <span class="atc-link al-green" onclick="showPopup('aconex')" style="cursor:pointer;">📋 상세 정보</span>
+          </div>
+        </div>
+
+        <!-- SAP Ariba -->
+        <div class="ai-tool-card">
+          <div class="atc-head">
+            <div class="atc-icon">🛒</div>
+            <div class="atc-name">SAP Ariba + Joule</div>
+            <span class="atc-tag">구매 자동화</span>
+          </div>
+          <div class="atc-items">
+            <div class="atc-item">세계 최대 B2B 구매 네트워크 (5.5M+ 공급업체)</div>
+            <div class="atc-item">PR→PO 자율 처리 — 표준 자재는 사람 없이 자동 발주</div>
+            <div class="atc-item">공급업체 납기 지연 AI 자동 감지 → 대안 소싱 자동 추천</div>
+            <div class="atc-item">인보이스 3-way 매칭 자동화 (PO·입고·인보이스)</div>
+          </div>
+          <div class="atc-effect">
+            <span class="atc-eff">구매 처리 50%↓</span>
+            <span class="atc-eff">승인 사이클 80%↓</span>
+          </div>
+          <div class="atc-links">
+            <a href="https://www.sap.com/products/spend-management/ariba-network.html" target="_blank" class="atc-link al-blue">🌐 공식 사이트</a>
+            <a href="https://www.youtube.com/results?search_query=SAP+Ariba+Joule+procurement+2025" target="_blank" class="atc-link al-red">▶ 데모 영상</a>
+          </div>
+        </div>
+
+        <!-- HighRadius -->
+        <div class="ai-tool-card">
+          <div class="atc-head">
+            <div class="atc-icon">💳</div>
+            <div class="atc-name">HighRadius</div>
+            <span class="atc-tag">수금·재무 AI</span>
+          </div>
+          <div class="atc-items">
+            <div class="atc-item">수주 급증 = 청구 건수 급증 → 97%+ 현금 자동 매칭</div>
+            <div class="atc-item">미수금 우선순위 AI 자동 분류 + 독촉 자동화</div>
+            <div class="atc-item">진도 청구 잔액 자동 추적 (IFRS 15 기반)</div>
+            <div class="atc-item">SAP 플래티넘 파트너 — SAP FI 완전 통합</div>
+          </div>
+          <div class="atc-effect">
+            <span class="atc-eff">현금 매칭 97%+ 자동</span>
+            <span class="atc-eff">DSO 20%↓</span>
+          </div>
+          <div class="atc-links">
+            <a href="https://www.highradius.com" target="_blank" class="atc-link al-blue">🌐 공식 사이트</a>
+            <a href="https://www.youtube.com/results?search_query=HighRadius+autonomous+receivables+demo" target="_blank" class="atc-link al-red">▶ 데모 영상</a>
+          </div>
+        </div>
+
+        <!-- project44 -->
+        <div class="ai-tool-card">
+          <div class="atc-head">
+            <div class="atc-icon">🚢</div>
+            <div class="atc-name">project44</div>
+            <span class="atc-tag">물류 가시성</span>
+          </div>
+          <div class="atc-items">
+            <div class="atc-item">기자재 운송 실시간 추적 (해운·항공·육상·175,000+ 운송사)</div>
+            <div class="atc-item">납기 지연 AI 예측 → 고객 자동 사전 통보</div>
+            <div class="atc-item">ETA 예측 정확도 95%+ → 체선료·클레임 감소</div>
+            <div class="atc-item">수주 급증 시 물류 추적 부담 자동 해소</div>
+          </div>
+          <div class="atc-effect">
+            <span class="atc-eff">운송 가시성 100%</span>
+            <span class="atc-eff">체선료 30%↓</span>
+          </div>
+          <div class="atc-links">
+            <a href="https://www.project44.com" target="_blank" class="atc-link al-blue">🌐 공식 사이트</a>
+            <a href="https://www.youtube.com/results?search_query=project44+supply+chain+visibility+demo" target="_blank" class="atc-link al-red">▶ 데모 영상</a>
+          </div>
+        </div>
+
       </div>
     </div>
 
-    <div class="roadmap-wrap">
-
-      <div class="phase-card ph-0">
-        <div class="phase-head">
-          <span class="ph-badge ph-badge-0">Phase 0 — 즉시 시작</span>
-          <div class="ph-title">추가 비용 없이 지금 당장</div>
-          <span class="ph-period">1~4주</span>
-        </div>
-        <div class="ph-grid">
-          <div class="ph-item">
-            <div class="ph-item-title">📧 서브미탈 자동 추적·알림</div>
-            <div class="ph-item-desc">Excel DCL → SharePoint List 전환 후 Power Automate로 D-14/7/1 자동 알림 구축. IT팀 1~2명이면 충분.</div>
-            <div class="ph-item-effect">→ 누락 리스크 즉시 Zero</div>
-          </div>
-          <div class="ph-item">
-            <div class="ph-item-title">📬 고객 이메일 자동 분류</div>
-            <div class="ph-item-desc">Outlook + Power Automate로 수신 이메일 자동 분류·등록. 미답변 자동 알림 구축.</div>
-            <div class="ph-item-effect">→ 이메일 누락 방지</div>
-          </div>
-          <div class="ph-item">
-            <div class="ph-item-title">📊 원가 초과 자동 경보</div>
-            <div class="ph-item-desc">Power BI + Power Automate 연동으로 원가 소진율 임계치 초과 시 자동 Teams 알림.</div>
-            <div class="ph-item-effect">→ 조기 경보 체계 구축</div>
-          </div>
-        </div>
-        <div style="margin-top:10px;font-size:11px;color:#2563eb;font-weight:700;">💰 추가 비용: 거의 없음 (M365 라이선스 포함) · 구축 인력: IT팀 내부</div>
+    <!-- 즉시 실행 (덜 강조) -->
+    <div class="s4-quick-section">
+      <div class="s4-quick-title">
+        <span>💡</span>
+        <span>AI 플랫폼 도입 전 — 기존 M365로 즉시 실행 가능한 것 (추가 예산 없음)</span>
       </div>
-
-      <div class="phase-card ph-1">
-        <div class="phase-head">
-          <span class="ph-badge ph-badge-1">Phase 1 — 단기</span>
-          <div class="ph-title">SAP 연동 자동화</div>
-          <span class="ph-period">1~3개월</span>
+      <div class="quick-grid">
+        <div class="quick-item">
+          <div class="quick-item-title">📂 서브미탈 자동 추적·알림</div>
+          <div class="quick-item-desc">Excel DCL → SharePoint + Power Automate 알림</div>
+          <div class="quick-item-period">→ 1~2주 내 구축 가능</div>
         </div>
-        <div class="ph-grid">
-          <div class="ph-item">
-            <div class="ph-item-title">⚙️ SAP ↔ Power BI 실시간 연동</div>
-            <div class="ph-item-desc">SAP OData/BW 연동으로 Power BI에 실시간 원가 데이터 자동 반영. Excel 수동 작업 완전 제거.</div>
-            <div class="ph-item-effect">→ 월말 집계 작업 75% 단축</div>
-          </div>
-          <div class="ph-item">
-            <div class="ph-item-title">🔄 SAP PR/PO 자동화</div>
-            <div class="ph-item-desc">SAP Workflow 또는 iRPA로 표준 자재 자동 PO 생성. 고단가·특수 자재만 수동 검토.</div>
-            <div class="ph-item-effect">→ 구매 처리량 2배 향상</div>
-          </div>
-          <div class="ph-item">
-            <div class="ph-item-title">📱 모바일 진도율 입력</div>
-            <div class="ph-item-desc">SAP Fiori 앱 또는 Power Apps로 현장/협력사가 직접 진도율 입력 → SAP 자동 업데이트.</div>
-            <div class="ph-item-effect">→ 진도 집계 수작업 제거</div>
-          </div>
+        <div class="quick-item">
+          <div class="quick-item-title">📧 고객 이메일 자동 분류</div>
+          <div class="quick-item-desc">Outlook + Power Automate로 미답변 자동 알림</div>
+          <div class="quick-item-period">→ 2~3주 내 구축 가능</div>
         </div>
-        <div style="margin-top:10px;font-size:11px;color:#16a34a;font-weight:700;">💰 비용: SAP 컨설팅 $50K~$200K (SAP 버전에 따라 다름) · IT팀 + SAP 파트너사 협력</div>
+        <div class="quick-item">
+          <div class="quick-item-title">📊 SAP↔Power BI 연동</div>
+          <div class="quick-item-desc">원가 초과 자동 경보 + Excel 수작업 제거</div>
+          <div class="quick-item-period">→ 4~8주 내 구축 (IT팀 협력)</div>
+        </div>
       </div>
-
-      <div class="phase-card ph-2">
-        <div class="phase-head">
-          <span class="ph-badge ph-badge-2">Phase 2 — 중기</span>
-          <div class="ph-title">AI 고도화 플랫폼 도입</div>
-          <span class="ph-period">6~18개월</span>
-        </div>
-        <div class="ph-grid">
-          <div class="ph-item">
-            <div class="ph-item-title">⚙️ SAP Joule 활성화</div>
-            <div class="ph-item-desc">S/4HANA Cloud 확인 시 즉시 활성화. 자연어로 ERP 직접 조작. Joule Agents로 구매·청구 자율 처리.</div>
-            <div class="ph-item-effect">→ ERP 업무 40% 자동화</div>
-          </div>
-          <div class="ph-item">
-            <div class="ph-item-title">📊 EcoSys 원가관리</div>
-            <div class="ph-item-desc">수주 물량이 구조적으로 늘어난 경우. EVM 자동화, 변경관리, 포트폴리오 관리 고도화. SAP 양방향 통합.</div>
-            <div class="ph-item-effect">→ 원가 초과 5~15% 방지</div>
-          </div>
-          <div class="ph-item">
-            <div class="ph-item-title">📦 project44 물류 가시성</div>
-            <div class="ph-item-desc">기자재 운송 실시간 추적. 납기 지연 AI 예측 자동 경보. 고객 통보 자동화.</div>
-            <div class="ph-item-effect">→ 체선료·지연 클레임 감소</div>
-          </div>
-        </div>
-        <div style="margin-top:10px;font-size:11px;color:#ea580c;font-weight:700;">💰 비용: Joule BTP $100K~$500K/년 · EcoSys $700K~$2.5M (구현 포함) · project44 $100K~$400K/년</div>
-      </div>
-
     </div>
   </div>
-  <div class="wm wm-dark">DOOSAN ENERBILITY</div>
+  <div class="wm wm-light">DOOSAN ENERBILITY</div>
 </div>
 
-<!-- ══ SLIDE 5: 지금 당장 해야 할 일 ══ -->
+<!-- ══ SLIDE 5: 실행 계획 ══ -->
 <div class="slide bg5" id="s5">
   <div class="slide-num sn-dark">05 / 05</div>
   <div class="lbl">Next Actions</div>
   <div class="ttl">지금 <span>당장 해야 할 일</span></div>
-  <div class="sub">회의 끝나고 바로 실행 가능한 액션 아이템 — 추가 예산 결재 없이 시작 가능</div>
+  <div class="sub">IT팀 확인 → 즉시 실행 → AI 플랫폼 도입 결정 순으로 진행</div>
   <div class="divider"></div>
   <div class="si">
-
-    <!-- 보유 자산 현황 -->
-    <div style="margin-bottom:12px;">
-      <div style="font-size:12px;font-weight:700;color:#0f172a;margin-bottom:8px;">🔍 Step 1 — IT팀 확인 사항 (이번 주 내)</div>
-      <div class="check-grid">
-        <div class="check-card">
-          <div class="check-head">
-            <div class="check-icon">⚙️</div>
-            <div class="check-name">SAP 버전</div>
-            <span class="check-status cs-check">확인 필요</span>
-          </div>
-          <div class="check-items">
-            <div class="check-item"><span class="ci-icon">❓</span>"ECC 6.0인가, S/4HANA인가?"</div>
-            <div class="check-item"><span class="ci-icon">❓</span>"클라우드(RISE)인가, 온프레미스인가?"</div>
-            <div class="check-item"><span class="ci-icon">💡</span>S/4HANA Cloud면 Joule 즉시 활성화 가능</div>
-          </div>
+    <div style="font-size:14px;font-weight:700;color:#0f172a;margin-bottom:10px;">🔍 Step 1 — IT팀 확인 사항 (이번 주 내)</div>
+    <div class="check-grid">
+      <div class="check-card">
+        <div class="check-head"><div class="check-icon">⚙️</div><div class="check-name">SAP 버전 확인</div><span class="check-status cs-check">확인 필요</span></div>
+        <div class="check-items">
+          <div class="check-item"><span>❓</span>"ECC 6.0인가, S/4HANA인가?"</div>
+          <div class="check-item"><span>❓</span>"클라우드(RISE)인가, 온프레미스인가?"</div>
+          <div class="check-item"><span>💡</span>S/4HANA Cloud → SAP Joule 즉시 활성화 가능</div>
+          <div class="check-item"><span>💡</span>ECC → SAP iRPA 또는 S/4HANA 전환 검토</div>
         </div>
-        <div class="check-card active">
-          <div class="check-head">
-            <div class="check-icon">🔵</div>
-            <div class="check-name">M365 보유 현황</div>
-            <span class="check-status cs-active">이미 보유</span>
-          </div>
-          <div class="check-items">
-            <div class="check-item"><span class="ci-icon">✅</span>MS Copilot — 사용 중</div>
-            <div class="check-item"><span class="ci-icon">✅</span>Power BI — 사용 중</div>
-            <div class="check-item"><span class="ci-icon">❓</span>Power Automate 라이선스 범위 확인</div>
-            <div class="check-item"><span class="ci-icon">❓</span>SharePoint 스토리지 여유 확인</div>
-          </div>
+      </div>
+      <div class="check-card active">
+        <div class="check-head"><div class="check-icon">🔵</div><div class="check-name">M365 보유 현황</div><span class="check-status cs-active">이미 보유</span></div>
+        <div class="check-items">
+          <div class="check-item"><span>✅</span>MS Copilot — 사용 중</div>
+          <div class="check-item"><span>✅</span>Power BI — 사용 중</div>
+          <div class="check-item"><span>❓</span>Power Automate 라이선스 범위 확인</div>
+          <div class="check-item"><span>❓</span>SharePoint 스토리지 여유 확인</div>
         </div>
-        <div class="check-card">
-          <div class="check-head">
-            <div class="check-icon">👥</div>
-            <div class="check-name">구축 담당자 지정</div>
-            <span class="check-status cs-check">지정 필요</span>
-          </div>
-          <div class="check-items">
-            <div class="check-item"><span class="ci-icon">💡</span>IT팀 Power Automate 담당자 1명</div>
-            <div class="check-item"><span class="ci-icon">💡</span>사업관리팀 요구사항 담당자 1명</div>
-            <div class="check-item"><span class="ci-icon">💡</span>SAP 담당자 1명 (Phase 1 대비)</div>
-          </div>
+      </div>
+      <div class="check-card">
+        <div class="check-head"><div class="check-icon">👥</div><div class="check-name">담당자 지정</div><span class="check-status cs-check">지정 필요</span></div>
+        <div class="check-items">
+          <div class="check-item"><span>💡</span>IT팀 Power Automate 담당 1명</div>
+          <div class="check-item"><span>💡</span>사업관리팀 요구사항 담당 1명</div>
+          <div class="check-item"><span>💡</span>SAP 담당자 1명 (Joule 검토)</div>
+          <div class="check-item"><span>💡</span>AI 플랫폼 벤더 미팅 일정 조율</div>
         </div>
       </div>
     </div>
 
-    <!-- 즉시 실행 액션 -->
-    <div class="action-box">
-      <div class="action-title">🚀 Step 2 — 즉시 실행 (추가 예산 없이 지금 바로)</div>
+    <div class="action-box" style="margin-bottom:12px;">
+      <div class="action-title">🚀 Step 2 — 즉시 실행 (추가 예산 없이 4주 내)</div>
       <div class="action-grid">
         <div class="action-item">
           <div class="action-num">1주</div>
-          <div class="action-desc">Excel 서브미탈 DCL을 SharePoint List로 옮기기. 컬럼 구조만 잡으면 됨. IT팀 반나절 작업.</div>
+          <div class="action-desc">Excel 서브미탈 DCL → SharePoint List 전환. IT팀 반나절 작업.</div>
           <div class="action-when">담당: IT팀 + 사업관리팀</div>
         </div>
         <div class="action-item">
-          <div class="action-num">2주</div>
-          <div class="action-desc">Power Automate로 서브미탈 기한 D-7/1 자동 알림 구축. 기한 초과 시 팀장 자동 에스컬레이션.</div>
-          <div class="action-when">담당: IT팀 Power Automate 담당</div>
+          <div class="action-num">2~3주</div>
+          <div class="action-desc">Power Automate 서브미탈 기한 알림 + 고객 이메일 자동 분류 구축.</div>
+          <div class="action-when">담당: IT팀 Power Automate</div>
         </div>
         <div class="action-item">
-          <div class="action-num">3~4주</div>
-          <div class="action-desc">고객 이메일 자동 분류 + 원가 초과 자동 경보 구축. Power BI 기존 대시보드에 알림 연동.</div>
-          <div class="action-when">담당: IT팀 + 사업관리팀 협력</div>
+          <div class="action-num">4~8주</div>
+          <div class="action-desc">SAP↔Power BI 실시간 연동 + 원가 초과 자동 경보 구축.</div>
+          <div class="action-when">담당: IT팀 + SAP 담당자</div>
         </div>
       </div>
     </div>
 
-    <!-- 의사결정 요약 -->
-    <div style="margin-top:12px;background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:14px 18px;">
-      <div style="font-size:13px;font-weight:800;color:#0f172a;margin-bottom:8px;">📋 임원 의사결정 요약</div>
-      <div style="display:grid;gap:6px;">
-        <div style="display:flex;gap:10px;align-items:flex-start;font-size:12px;color:#475569;line-height:1.6;">
-          <span style="background:#dcfce7;color:#16a34a;font-weight:800;padding:2px 8px;border-radius:6px;white-space:nowrap;font-size:10px;">즉시</span>
-          <span>추가 예산 없이 M365 기반 자동화 3종 구축 지시 → 4주 안에 서브미탈·이메일·원가 경보 자동화 가동</span>
-        </div>
-        <div style="display:flex;gap:10px;align-items:flex-start;font-size:12px;color:#475569;line-height:1.6;">
-          <span style="background:#fef9c3;color:#ca8a04;font-weight:800;padding:2px 8px;border-radius:6px;white-space:nowrap;font-size:10px;">1개월</span>
-          <span>IT팀에 SAP 버전 확인 지시 → 버전에 따라 SAP 연동 자동화 예산 책정 ($50K~$200K 수준)</span>
-        </div>
-        <div style="display:flex;gap:10px;align-items:flex-start;font-size:12px;color:#475569;line-height:1.6;">
-          <span style="background:#eff6ff;color:#2563eb;font-weight:800;padding:2px 8px;border-radius:6px;white-space:nowrap;font-size:10px;">3개월</span>
-          <span>SAP-Power BI 실시간 연동 + PR/PO 자동화 구축 완료 → 사업관리 반복 업무 40~50% 감소 목표</span>
-        </div>
-        <div style="display:flex;gap:10px;align-items:flex-start;font-size:12px;color:#475569;line-height:1.6;">
-          <span style="background:#f3f4f6;color:#374151;font-weight:800;padding:2px 8px;border-radius:6px;white-space:nowrap;font-size:10px;">6개월+</span>
-          <span>수주 물량이 구조적 증가 확인 시 EcoSys 원가관리 + Joule AI 에이전트 고도화 투자 결정</span>
-        </div>
+    <div class="decision-box">
+      <div class="decision-title">📋 임원 의사결정 요약</div>
+      <div class="decision-items">
+        <div class="di"><span class="di-badge" style="background:#dcfce7;color:#16a34a;">즉시</span><span class="di-text">추가 예산 없이 M365 기반 자동화 3종 구축 지시 → 4주 안에 서브미탈·이메일·원가경보 자동화 가동</span></div>
+        <div class="di"><span class="di-badge" style="background:#fef9c3;color:#ca8a04;">1개월</span><span class="di-text">SAP 버전 확인 + SAP Joule / EcoSys / Oracle Aconex 벤더 데모 미팅 일정 잡기</span></div>
+        <div class="di"><span class="di-badge" style="background:#eff6ff;color:#2563eb;">3개월</span><span class="di-text">SAP Joule 활성화 (S/4HANA Cloud 확인 시) + SAP↔Power BI 연동 완료 → 반복 업무 40~50% 감소</span></div>
+        <div class="di"><span class="di-badge" style="background:#f3f4f6;color:#374151;">6~18개월</span><span class="di-text">EcoSys(원가관리) + Oracle Aconex(문서관리) + HighRadius(수금) 도입 → 사업관리 업무 70%+ 자동화 목표</span></div>
       </div>
     </div>
-
   </div>
   <div class="wm wm-dark">DOOSAN ENERBILITY</div>
 </div>
 
-</div><!-- /slides -->
+</div>
 
 <div class="nav">
   <button onclick="prev()">◀ 이전</button>
@@ -666,7 +922,6 @@ body{font-family:'Segoe UI','Apple SD Gothic Neo',sans-serif;color:#1a2340;}
 </div>
 
 <script>
-// ── NAV ──
 let cur=0;
 const slides=document.querySelectorAll('.slide');
 const N=slides.length;
@@ -680,246 +935,135 @@ let sx=0;
 document.addEventListener('touchstart',e=>{sx=e.touches[0].clientX;},{passive:true});
 document.addEventListener('touchend',e=>{if(document.getElementById('popupOverlay').classList.contains('show'))return;const dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>60){dx<0?next():prev();}},{passive:true});
 
-// ── POPUP DATA ──
 const popups={
-powerAutomate:{
-  title:'Microsoft Power Automate',
-  html:`
-    <div class="popup-section">
-      <div class="popup-section-title">📌 두산에너빌리티에서 할 수 있는 것</div>
-      <div class="popup-text"><ul>
-        <li>서브미탈 기한 D-14/7/1 자동 알림 → Teams + 이메일</li>
-        <li>고객 이메일 수신 → 프로젝트 번호 자동 인식 → SharePoint 자동 등록</li>
-        <li>미답변 48시간 초과 → 담당자+팀장 자동 알림</li>
-        <li>원가 초과 임계치 도달 → 자동 경보 발송</li>
-        <li>PR 승인 라우팅 자동화 → 결재자에게 모바일 승인 요청</li>
-        <li>고객 검토 결과 이메일 → 서브미탈 상태 자동 업데이트</li>
-      </ul></div>
-    </div>
-    <div class="popup-section">
-      <div class="popup-section-title">🔧 구축 방법 (IT팀 기준)</div>
-      <div class="popup-steps">
-        <div class="popup-step"><div class="popup-step-num">1</div><div class="popup-step-text">M365 관리 센터에서 Power Automate 라이선스 범위 확인</div></div>
-        <div class="popup-step"><div class="popup-step-num">2</div><div class="popup-step-text">SharePoint List로 서브미탈 DCL 구조 설계 (30분)</div></div>
-        <div class="popup-step"><div class="popup-step-num">3</div><div class="popup-step-text">Power Automate 템플릿에서 "Scheduled reminder" 선택 → 조건 설정 (2~3시간)</div></div>
-        <div class="popup-step"><div class="popup-step-num">4</div><div class="popup-step-text">테스트 후 전체 배포 (반나절)</div></div>
-      </div>
-    </div>
-    <div class="popup-section">
-      <div class="popup-section-title">💡 핵심 장점</div>
-      <div class="popup-text">코딩 불필요. 드래그앤드롭으로 구축. M365 라이선스에 이미 포함. SAP, SharePoint, Teams, Outlook 모두 연결 가능.</div>
-    </div>
-    <div class="popup-cost-box">
-      <div class="popup-cost-label">💰 비용</div>
-      <div class="popup-cost-val">M365 Business/Enterprise 라이선스에 포함 — 추가 비용 없음<br>고급 기능(SAP 커넥터 등) 필요 시 Power Automate Premium $15/user/월</div>
-    </div>
-    <div class="popup-links">
-      <a class="popup-link pl-blue" href="https://powerautomate.microsoft.com" target="_blank">🌐 공식 사이트</a>
-      <a class="popup-link pl-red" href="https://www.youtube.com/results?search_query=Power+Automate+SharePoint+알림+자동화+한국어" target="_blank">▶ 한국어 튜토리얼</a>
-    </div>`
-},
-copilot365:{
-  title:'Microsoft 365 Copilot — 사업관리 활용법',
-  html:`
-    <div class="popup-section">
-      <div class="popup-section-title">📌 이미 사용 중 — 더 잘 활용하는 방법</div>
-      <div class="popup-text"><ul>
-        <li><strong>납기 변경 통보 이메일:</strong> "P-003 프로젝트 납기 2주 지연, 사유는 자재 수급, 영문으로 고객 통보 이메일 작성해줘" → 완성된 이메일 즉시 생성</li>
-        <li><strong>회의록 자동 생성:</strong> Teams 회의 후 Copilot이 요약 + Action Items 자동 추출</li>
-        <li><strong>주간 보고서 초안:</strong> "이번 주 프로젝트 현황 보고서 작성해줘" → 기존 문서 참조해서 초안 생성</li>
-        <li><strong>계약서 요약:</strong> 수백 페이지 계약서 → 핵심 조항·납기·페널티 요약</li>
-        <li><strong>Copilot Studio:</strong> 사업관리팀 전용 챗봇 구축 → "P-003 현재 원가 현황?" 질문 시 SAP 데이터 자동 조회</li>
-      </ul></div>
-    </div>
-    <div class="popup-section">
-      <div class="popup-section-title">⚡ 수주 급증 상황에서 특히 유용한 것</div>
-      <div class="popup-text"><ul>
-        <li>동시에 처리해야 할 고객 이메일이 많을 때 → 각 프로젝트별 답변 초안을 10초 안에 생성</li>
-        <li>여러 프로젝트 상황을 임원에게 보고할 때 → 보고서 초안 자동 생성</li>
-        <li>영문 계약서, 영문 고객 커뮤니케이션 → 번역 + 작성 동시에</li>
-      </ul></div>
-    </div>
-    <div class="popup-cost-box">
-      <div class="popup-cost-label">💰 비용</div>
-      <div class="popup-cost-val">이미 사용 중 — 추가 비용 없음<br>Copilot Studio (커스텀 챗봇): $200/테넌트/월</div>
-    </div>`
-},
-powerbi365:{
-  title:'Power BI — 사업관리 고도화 활용법',
-  html:`
-    <div class="popup-section">
-      <div class="popup-section-title">📌 현재 사용 중 → 자동화와 연결하면 강력해지는 것</div>
-      <div class="popup-text"><ul>
-        <li><strong>SAP 실시간 연동:</strong> SAP OData 또는 SAP HANA 직접 연결 → Excel 수동 작업 완전 제거</li>
-        <li><strong>원가 초과 자동 경보:</strong> Power BI 데이터셋 기반 Power Automate 알림 연동</li>
-        <li><strong>서브미탈 현황 대시보드:</strong> SharePoint List 연동 → 실시간 제출 현황 자동 반영</li>
-        <li><strong>Power BI Copilot:</strong> "이번 달 원가 초과 프로젝트 보여줘" 자연어 조회</li>
-        <li><strong>임원 보고용 자동 리포트:</strong> 매주 월요일 오전 9시 최신 데이터로 자동 갱신 리포트 발송</li>
-      </ul></div>
-    </div>
-    <div class="popup-section">
-      <div class="popup-section-title">🔧 SAP 연동 방법</div>
-      <div class="popup-steps">
-        <div class="popup-step"><div class="popup-step-num">1</div><div class="popup-step-text">SAP BW, SAP HANA, 또는 OData 서비스 확인 (SAP 담당자)</div></div>
-        <div class="popup-step"><div class="popup-step-num">2</div><div class="popup-step-text">Power BI Desktop → 데이터 가져오기 → SAP 커넥터 선택</div></div>
-        <div class="popup-step"><div class="popup-step-num">3</div><div class="popup-step-text">WBS별 실행원가, 예산, 진도율 데이터 연결</div></div>
-        <div class="popup-step"><div class="popup-step-num">4</div><div class="popup-step-text">원가 소진율 자동 계산 측정값 생성 → 대시보드 구성</div></div>
-      </div>
-    </div>
-    <div class="popup-cost-box">
-      <div class="popup-cost-label">💰 비용</div>
-      <div class="popup-cost-val">Power BI Pro: 이미 보유 중으로 추가 비용 없음<br>SAP 커넥터: Power BI Premium 필요 시 $20/user/월</div>
-    </div>`
-},
-sapPowerBI:{
-  title:'SAP ↔ Power BI 실시간 연동',
-  html:`
-    <div class="popup-section">
-      <div class="popup-section-title">📌 왜 이것이 중요한가</div>
-      <div class="popup-text">현재 사업관리팀이 매달 SAP에서 데이터를 Export해서 Excel에 붙여넣고 가공하는 작업이 있다면, 이 연동 하나만 해도 <strong>월 수십 시간의 반복 작업이 사라집니다.</strong> 수주가 늘수록 이 작업은 더 힘들어지기 때문에 가장 우선순위가 높습니다.</div>
-    </div>
-    <div class="popup-section">
-      <div class="popup-section-title">🔧 연동 방법 (SAP 버전별)</div>
-      <div class="popup-text"><ul>
-        <li><strong>SAP ECC:</strong> SAP BW(Business Warehouse) 또는 RFC/BAPI를 통한 연동. 구축 기간 2~4주.</li>
-        <li><strong>SAP S/4HANA 온프레미스:</strong> SAP HANA DB 직접 연결 또는 OData 서비스. 가장 빠르고 안정적.</li>
-        <li><strong>SAP S/4HANA Cloud:</strong> OData API 즉시 사용 가능. 실시간 연동 최적.</li>
-      </ul></div>
-    </div>
-    <div class="popup-section">
-      <div class="popup-section-title">✅ 연동 후 자동화 가능한 것</div>
-      <div class="popup-text"><ul>
-        <li>프로젝트별 WBS 실행원가 vs 목표원가 실시간 비교</li>
-        <li>원가 소진율 자동 계산 (= 실행원가 / 목표예산)</li>
-        <li>EAC(완료 시 예상 원가) 자동 계산</li>
-        <li>발주 잔액(Commitment) 자동 집계</li>
-        <li>월간 Forecasting 자동 업데이트</li>
-      </ul></div>
-    </div>
-    <div class="popup-cost-box">
-      <div class="popup-cost-label">💰 비용</div>
-      <div class="popup-cost-val">SAP 컨설팅 비용: $30K~$100K (버전·복잡도에 따라)<br>Power BI 추가 라이선스: 현재 보유분으로 가능한 경우 많음<br>구축 기간: 4~8주</div>
-    </div>`
-},
-joule:{
-  title:'SAP Joule — 두산에너빌리티 적용 조건',
-  html:`
-    <div class="popup-section">
-      <div class="popup-section-title">⚠️ 핵심 — Joule은 ERP가 아닙니다</div>
-      <div class="popup-text">SAP Joule은 SAP S/4HANA 위에서 작동하는 <strong>AI 어시스턴트</strong>입니다. 자동차로 비유하면 S/4HANA가 자동차, Joule은 그 안의 AI 음성비서입니다. 자동차 없이 음성비서만 살 수 없듯이, S/4HANA가 없으면 Joule도 없습니다.</div>
-    </div>
-    <div class="popup-section">
-      <div class="popup-section-title">🔍 SAP 버전별 Joule 적용 가능 여부</div>
-      <div class="popup-text"><ul>
-        <li><strong>SAP ECC 6.0:</strong> ❌ Joule 사용 불가. S/4HANA 마이그레이션 필요 (대규모 프로젝트)</li>
-        <li><strong>SAP S/4HANA 온프레미스:</strong> ⚠️ 제한적. 자율 에이전트(Agents) 기능 불가</li>
-        <li><strong>SAP S/4HANA Cloud (RISE with SAP):</strong> ✅ 완전 사용 가능. BTP 추가 시 자율 에이전트 활성화</li>
-      </ul></div>
-    </div>
-    <div class="popup-section">
-      <div class="popup-section-title">✅ S/4HANA Cloud 확인 시 할 수 있는 것</div>
-      <div class="popup-text"><ul>
-        <li>"P-003 프로젝트 이번달 실행원가 얼마야?" → 자연어로 SAP 즉시 조회</li>
-        <li>구매요청(PR) 자동 생성 및 승인 라우팅 (Joule Agent)</li>
-        <li>원가 초과 프로젝트 자동 감지 → 담당자 자동 알림</li>
-        <li>마일스톤 달성 감지 → 청구 문서 자동 생성 (IFRS 15)</li>
-        <li>인보이스 3-way 매칭 자동화</li>
-      </ul></div>
-    </div>
-    <div class="popup-cost-box">
-      <div class="popup-cost-label">💰 비용</div>
-      <div class="popup-cost-val">기본 Joule: S/4HANA Cloud 구독 포함 (추가 비용 없음)<br>Joule Agents (자율화): SAP BTP 추가 $100K~$500K/년<br>한국 구현 파트너: Samsung SDS, LG CNS, SK C&C</div>
-    </div>
-    <div class="popup-links">
-      <a class="popup-link pl-blue" href="https://www.sap.com/products/artificial-intelligence/ai-assistant.html" target="_blank">🌐 SAP Joule 공식</a>
-      <a class="popup-link pl-red" href="https://www.youtube.com/results?search_query=SAP+Joule+demo+2025" target="_blank">▶ 데모 영상</a>
-    </div>`
-},
-sharePoint:{
-  title:'SharePoint + Lists — 서브미탈 자동화 기반',
-  html:`
-    <div class="popup-section">
-      <div class="popup-section-title">📌 왜 SharePoint List인가</div>
-      <div class="popup-text">Excel DCL의 가장 큰 문제는 <strong>자동화가 불가능하다는 것</strong>입니다. SharePoint List로 전환하면 Power Automate와 연결되어 자동 알림, 자동 상태 업데이트, 자동 대시보드가 가능해집니다. 데이터 구조는 Excel과 거의 동일하므로 이전 작업도 쉽습니다.</div>
-    </div>
-    <div class="popup-section">
-      <div class="popup-section-title">🔧 서브미탈 DCL 구조 설계</div>
-      <div class="popup-text"><ul>
-        <li>문서번호 / 문서명 / 문서 유형</li>
-        <li>제출 예정일 / 실제 제출일</li>
-        <li>고객 검토 결과 (Approved / RFA / Rejected / 검토 중)</li>
-        <li>재제출 기한 / 재제출 횟수</li>
-        <li>담당자 / 프로젝트 번호</li>
-        <li>상태 (제출 예정 / 제출 완료 / 기한 초과 / 종결)</li>
-      </ul></div>
-    </div>
-    <div class="popup-section">
-      <div class="popup-section-title">⚡ 연결 가능한 자동화</div>
-      <div class="popup-text"><ul>
-        <li>제출 예정일 D-14/7/1 → 담당자 Teams 자동 알림</li>
-        <li>기한 초과 → 팀장 + PM 즉시 에스컬레이션</li>
-        <li>Rejected → 재제출 담당자 자동 배정 + 기한 자동 계산</li>
-        <li>Power BI 연동 → 전체 서브미탈 현황 대시보드 자동 갱신</li>
-      </ul></div>
-    </div>
-    <div class="popup-cost-box">
-      <div class="popup-cost-label">💰 비용</div>
-      <div class="popup-cost-val">M365 라이선스 포함 — 추가 비용 없음<br>구축 시간: IT팀 1~2명, 1~2주</div>
-    </div>`
-},
-sapIRPA:{
-  title:'SAP iRPA — SAP 반복 업무 자동화 로봇',
-  html:`
-    <div class="popup-section">
-      <div class="popup-section-title">📌 무엇인가</div>
-      <div class="popup-text">SAP Intelligent Robotic Process Automation. SAP 트랜잭션을 사람 대신 자동으로 실행하는 소프트웨어 로봇입니다. <strong>SAP 버전에 관계없이 적용 가능</strong>한 것이 최대 강점입니다. ECC 6.0에서도 작동합니다.</div>
-    </div>
-    <div class="popup-section">
-      <div class="popup-section-title">✅ 두산에너빌리티 적용 시나리오</div>
-      <div class="popup-text"><ul>
-        <li><strong>표준 자재 자동 PO 생성:</strong> 반복 구매 자재는 PR 승인 후 로봇이 자동으로 PO 생성 → 사람 개입 없이 처리</li>
-        <li><strong>입고 처리 자동화:</strong> 검수 완료 후 SAP 입고 전표 자동 생성</li>
-        <li><strong>인보이스 매칭:</strong> PO·입고·인보이스 3-way 매칭 자동화</li>
-        <li><strong>정기 리포트 자동 추출:</strong> 매월 말 원가 데이터 자동 추출 → 지정된 폴더에 저장</li>
-      </ul></div>
-    </div>
-    <div class="popup-section">
-      <div class="popup-section-title">⚠️ 주의사항</div>
-      <div class="popup-text">iRPA는 SAP 화면을 그대로 따라하는 방식이라 SAP UI 변경 시 재설정 필요. 안정적 운용을 위해 SAP 파트너사와 협력 권장.</div>
-    </div>
-    <div class="popup-cost-box">
-      <div class="popup-cost-label">💰 비용</div>
-      <div class="popup-cost-val">SAP iRPA 라이선스: 연간 $30K~$100K<br>구현 컨설팅: $50K~$150K<br>SAP 버전 무관 적용 가능 — ECC에서도 사용 가능</div>
-    </div>
-    <div class="popup-links">
-      <a class="popup-link pl-blue" href="https://www.sap.com/products/technology-platform/intelligent-rpa.html" target="_blank">🌐 SAP iRPA 공식</a>
-      <a class="popup-link pl-red" href="https://www.youtube.com/results?search_query=SAP+iRPA+automation+demo" target="_blank">▶ 데모 영상</a>
-    </div>`
-},
-sapWorkflow:{
-  title:'SAP Workflow — SAP 내 승인·프로세스 자동화',
-  html:`
-    <div class="popup-section">
-      <div class="popup-section-title">📌 무엇인가</div>
-      <div class="popup-text">SAP에 기본 내장된 워크플로우 엔진입니다. 추가 라이선스 없이 <strong>지금 당장 사용 가능</strong>합니다. 대부분의 기업이 존재는 알지만 10~20%밖에 활용하지 않는 기능입니다.</div>
-    </div>
-    <div class="popup-section">
-      <div class="popup-section-title">✅ 두산에너빌리티 즉시 적용 가능한 것</div>
-      <div class="popup-text"><ul>
-        <li><strong>PR 자동 승인 라우팅:</strong> PR 금액·자재 유형에 따라 자동으로 결재선 배분. 결재자에게 SAP 알림·이메일 자동 발송.</li>
-        <li><strong>납기 초과 자동 에스컬레이션:</strong> 납기 경과 시 담당자 → 팀장 → 임원 순으로 자동 에스컬레이션</li>
-        <li><strong>변경계약 승인 자동화:</strong> 변경 요청 발생 시 관련 부서 자동 통보 및 승인 라우팅</li>
-        <li><strong>품질 이슈 알림:</strong> NCR 발생 시 품질팀·PM·고객사 자동 통보</li>
-      </ul></div>
-    </div>
-    <div class="popup-cost-box">
-      <div class="popup-cost-label">💰 비용</div>
-      <div class="popup-cost-val">SAP 기본 포함 — 추가 라이선스 비용 없음<br>구현 컨설팅: $20K~$80K (SAP 담당자 + 파트너사)<br>구축 기간: 4~8주</div>
-    </div>
-    <div class="popup-links">
-      <a class="popup-link pl-blue" href="https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/16b3a2c89fe640c0bdad07d13b2cf9a8/4630e82acee60adb41a82af5eba17c2b.html" target="_blank">🌐 SAP Workflow 문서</a>
-    </div>`
-}
+powerAutomate:{title:'Power Automate — 구축 가이드',html:`
+<div class="popup-section"><div class="popup-section-title">📌 두산에너빌리티 적용 시나리오</div><div class="popup-text"><ul>
+<li><strong>서브미탈 기한 알림:</strong> SharePoint List의 "제출예정일" 필드를 매일 체크 → D-14/7/1 도달 시 담당자+팀장에게 Teams+이메일 자동 발송</li>
+<li><strong>고객 이메일 자동 분류:</strong> 수신 이메일에서 프로젝트 번호(예: P-2024-003) 자동 인식 → 유형 분류(납기문의/변경/클레임) → SharePoint 자동 등록</li>
+<li><strong>미답변 자동 알림:</strong> 등록 후 48시간 경과·미처리 → 담당자+팀장에게 자동 알림</li>
+<li><strong>원가 초과 경보:</strong> Power BI 데이터 기반 → 원가 소진율 임계치 초과 시 Teams 자동 알림</li>
+<li><strong>PR 승인 자동 라우팅:</strong> SAP PR 생성 → 금액·자재 유형에 따라 결재선 자동 배분 → 모바일 원클릭 승인</li>
+</ul></div></div>
+<div class="popup-section"><div class="popup-section-title">🔧 구축 방법 (코딩 불필요)</div><div class="popup-steps">
+<div class="popup-step"><div class="popup-step-num">1</div><div class="popup-step-text">M365 관리센터 → Power Automate 라이선스 범위 확인</div></div>
+<div class="popup-step"><div class="popup-step-num">2</div><div class="popup-step-text">SharePoint List로 서브미탈 DCL 구조 설계 (문서번호/제출예정일/담당자/상태)</div></div>
+<div class="popup-step"><div class="popup-step-num">3</div><div class="popup-step-text">Power Automate → "Scheduled cloud flow" 선택 → 매일 오전 9시 실행 설정</div></div>
+<div class="popup-step"><div class="popup-step-num">4</div><div class="popup-step-text">조건 설정: 오늘 날짜 기준 D-14/7/1 해당 항목 필터링 → Teams 메시지 발송</div></div>
+<div class="popup-step"><div class="popup-step-num">5</div><div class="popup-step-text">테스트 → 전체 배포 (IT팀 1명 기준 총 1~2주)</div></div>
+</div></div>
+<div class="popup-cost-box"><div class="popup-cost-label">💰 비용</div><div class="popup-cost-val">M365 Business/Enterprise 포함 — <strong>추가 비용 없음</strong><br>SAP 커넥터 등 고급 기능 필요 시: Power Automate Premium $15/user/월</div></div>
+<div class="popup-links">
+<a class="popup-link pl-blue" href="https://powerautomate.microsoft.com" target="_blank">🌐 공식 사이트</a>
+<a class="popup-link pl-red" href="https://www.youtube.com/results?search_query=Power+Automate+SharePoint+알림+자동화" target="_blank">▶ 한국어 튜토리얼</a>
+</div>`},
+
+copilot365:{title:'Microsoft 365 Copilot — 사업관리 활용법',html:`
+<div class="popup-section"><div class="popup-section-title">📌 수주 급증 상황에서 즉시 활용 가능한 것</div><div class="popup-text"><ul>
+<li><strong>납기 변경 통보 이메일:</strong> "P-003 납기 2주 지연, 사유 자재 수급, 영문 고객 통보 이메일 작성해줘" → 30초 내 완성된 이메일 생성</li>
+<li><strong>회의록 자동 생성:</strong> Teams 회의 후 Copilot이 핵심 내용 요약 + Action Items 자동 추출·배정</li>
+<li><strong>주간 사업관리 보고서:</strong> "이번 주 프로젝트 현황 보고서 작성해줘" → 기존 문서 참조해 초안 즉시 생성</li>
+<li><strong>계약서 핵심 조항 추출:</strong> 수백 페이지 계약서 → 납기·페널티·LD 조항 요약 정리</li>
+<li><strong>Copilot Studio 활용:</strong> 사업관리팀 전용 챗봇 구축 → "P-003 현재 원가 현황?" 질문 시 Power BI 데이터 자동 조회</li>
+</ul></div></div>
+<div class="popup-cost-box"><div class="popup-cost-label">💰 비용</div><div class="popup-cost-val">이미 사용 중 — <strong>추가 비용 없음</strong><br>Copilot Studio (커스텀 챗봇): $200/테넌트/월</div></div>`},
+
+sapPowerBI:{title:'SAP ↔ Power BI 실시간 연동',html:`
+<div class="popup-section"><div class="popup-section-title">📌 왜 이것이 가장 중요한가</div><div class="popup-text">현재 SAP 데이터를 Export → Excel 붙여넣기 → 가공하는 작업이 있다면, <strong>이 연동 하나만으로 매월 수십 시간의 반복 작업이 사라집니다.</strong> 수주가 늘수록 이 효과는 배가 됩니다.</div></div>
+<div class="popup-section"><div class="popup-section-title">🔧 SAP 버전별 연동 방법</div><div class="popup-text"><ul>
+<li><strong>SAP ECC:</strong> SAP BW(Business Warehouse) 또는 RFC/BAPI 연동 → 구축 2~4주</li>
+<li><strong>SAP S/4HANA 온프레미스:</strong> SAP HANA DB 직접 연결 또는 OData 서비스 → 가장 빠르고 안정적</li>
+<li><strong>SAP S/4HANA Cloud:</strong> OData API 즉시 사용 → 실시간 연동 최적</li>
+</ul></div></div>
+<div class="popup-section"><div class="popup-section-title">✅ 연동 후 자동화 가능한 것</div><div class="popup-text"><ul>
+<li>WBS별 실행원가 vs 목표원가 실시간 비교 대시보드</li>
+<li>원가 소진율 자동 계산 (실행원가 / 목표예산)</li>
+<li>EAC(완료 시 예상 원가) 자동 계산</li>
+<li>발주 잔액(Commitment) 자동 집계</li>
+<li>월간 Forecasting 자동 업데이트 → 수작업 70% 제거</li>
+</ul></div></div>
+<div class="popup-cost-box"><div class="popup-cost-label">💰 비용</div><div class="popup-cost-val">SAP 컨설팅: $30K~$100K (버전·복잡도에 따라)<br>구축 기간: 4~8주 / Power BI 추가 라이선스: 현재 보유분으로 가능한 경우 많음</div></div>`},
+
+joule:{title:'SAP Joule — 적용 조건 & 상세 기능',html:`
+<div class="popup-section"><div class="popup-section-title">⚠️ 핵심 — Joule은 ERP가 아닙니다</div><div class="popup-text">SAP Joule은 S/4HANA 위에서 작동하는 <strong>AI 어시스턴트</strong>입니다. S/4HANA가 없으면 Joule도 없습니다. 먼저 SAP 버전을 확인하세요.</div></div>
+<div class="popup-section"><div class="popup-section-title">🔍 버전별 Joule 적용 가능 여부</div><div class="popup-text"><ul>
+<li><strong>SAP ECC 6.0:</strong> ❌ Joule 불가 → SAP iRPA 대안 또는 S/4HANA 마이그레이션</li>
+<li><strong>S/4HANA 온프레미스:</strong> ⚠️ 제한적 — 자율 에이전트(Agents) 불가</li>
+<li><strong>S/4HANA Cloud (RISE with SAP):</strong> ✅ 완전 사용 — BTP 추가 시 자율 에이전트 활성화</li>
+</ul></div></div>
+<div class="popup-section"><div class="popup-section-title">✅ S/4HANA Cloud 확인 시 할 수 있는 것</div><div class="popup-text"><ul>
+<li>"P-003 이번달 실행원가 얼마야?" → 자연어로 SAP 즉시 조회</li>
+<li>PR 자동 생성 및 승인 라우팅 (Joule Agent)</li>
+<li>원가 초과 프로젝트 자동 감지 → 담당자 자동 알림</li>
+<li>마일스톤 달성 감지 → 청구 문서 자동 생성 (IFRS 15)</li>
+<li>인보이스 3-way 매칭 자동화</li>
+</ul></div></div>
+<div class="popup-cost-box"><div class="popup-cost-label">💰 비용</div><div class="popup-cost-val">기본 Joule: S/4HANA Cloud 구독 포함 (<strong>추가 비용 없음</strong>)<br>Joule Agents: SAP BTP 추가 $100K~$500K/년<br>한국 파트너: Samsung SDS, LG CNS, SK C&C</div></div>
+<div class="popup-links">
+<a class="popup-link pl-blue" href="https://www.sap.com/products/artificial-intelligence/ai-assistant.html" target="_blank">🌐 SAP Joule 공식</a>
+<a class="popup-link pl-red" href="https://www.youtube.com/results?search_query=SAP+Joule+TechEd+2024+demo" target="_blank">▶ TechEd 데모</a>
+</div>`},
+
+ecosys:{title:'EcoSys (Hexagon) — EPC 원가관리 AI',html:`
+<div class="popup-section"><div class="popup-section-title">📌 왜 SAP PS만으로는 부족한가</div><div class="popup-text">SAP PS는 원가 <strong>기록</strong>에는 강하지만, <strong>예측·관리·의사결정 지원</strong>에는 한계가 있습니다. EcoSys는 이 공백을 채우는 전문 플랫폼입니다.<br><br>SAP PS가 못 하는 것: 다중 EAC 예측법, 변경관리 전 주기, Monte Carlo 시뮬레이션, 포트폴리오 통합 관리</div></div>
+<div class="popup-section"><div class="popup-section-title">✅ 두산에너빌리티 핵심 적용 시나리오</div><div class="popup-text"><ul>
+<li><strong>제조 EVM:</strong> 설계→자재입고→제작→FAT→출하 마일스톤 기반 진도율 자동 계산</li>
+<li><strong>스코프 변경 즉시 시뮬레이션:</strong> 고객이 사양 변경 요청 → 원가·납기 영향 즉시 계산</li>
+<li><strong>임원 포트폴리오 뷰:</strong> 전체 수주 잔고 프로젝트 원가 성과 한눈에 파악</li>
+<li><strong>SAP 양방향 통합:</strong> SAP CO/PS 실제원가 → EcoSys 자동 반영, EcoSys 예산 → SAP PS 자동 업데이트</li>
+</ul></div></div>
+<div class="popup-section"><div class="popup-section-title">🏢 주요 고객사</div><div class="popup-text">Bechtel · Fluor · Shell · Jacobs · Saudi Aramco · 삼성엔지니어링 · 현대ENG · EDF</div></div>
+<div class="popup-cost-box"><div class="popup-cost-label">💰 비용</div><div class="popup-cost-val">SaaS: $2,000~$5,000/user/년 (100명 기준 $200K~$500K/년)<br>구현: $500K~$2M (SAP 통합 포함) / 구현 기간: 12~16개월<br>예상 ROI: 3~5× (3년)</div></div>
+<div class="popup-links">
+<a class="popup-link pl-blue" href="https://hexagon.com/products/ecosys" target="_blank">🌐 EcoSys 공식</a>
+<a class="popup-link pl-red" href="https://www.youtube.com/results?search_query=Hexagon+EcoSys+project+controls+demo" target="_blank">▶ 데모 영상</a>
+<a class="popup-link pl-green" href="https://hexagon.com/customer-stories" target="_blank">📋 고객 사례</a>
+</div>`},
+
+sharePoint:{title:'SharePoint + Lists — 서브미탈 자동화 기반',html:`
+<div class="popup-section"><div class="popup-section-title">📌 왜 Excel이 아닌 SharePoint인가</div><div class="popup-text">Excel DCL의 가장 큰 문제는 <strong>자동화가 불가능하다는 것</strong>입니다. SharePoint List로 전환하면 Power Automate와 연결되어 자동 알림, 자동 상태 업데이트, Power BI 실시간 연동이 가능해집니다.</div></div>
+<div class="popup-section"><div class="popup-section-title">🔧 DCL 구조 설계 (권장)</div><div class="popup-text"><ul>
+<li>문서번호 / 문서명 / 문서 유형 (도면/시방서/절차서)</li>
+<li>제출 예정일 / 실제 제출일 / 재제출 횟수</li>
+<li>고객 검토 결과 (Approved/RFA/Rejected/검토중)</li>
+<li>재제출 기한 / 담당자 / 프로젝트 번호</li>
+<li>상태 (제출예정/제출완료/기한초과/종결)</li>
+</ul></div></div>
+<div class="popup-section"><div class="popup-section-title">⚡ 연결 가능한 자동화</div><div class="popup-text"><ul>
+<li>D-14/7/1 자동 알림 → Teams + 이메일</li>
+<li>기한 초과 → 팀장+PM 즉시 에스컬레이션</li>
+<li>Rejected → 재제출 담당자 자동 배정 + 기한 자동 계산</li>
+<li>Power BI 연동 → 전체 서브미탈 현황 실시간 대시보드</li>
+</ul></div></div>
+<div class="popup-cost-box"><div class="popup-cost-label">💰 비용</div><div class="popup-cost-val">M365 라이선스 포함 — <strong>추가 비용 없음</strong><br>구축: IT팀 1~2명, 1~2주</div></div>`},
+
+agentforce:{title:'Salesforce Agentforce — 자율 고객 응대 AI',html:`
+<div class="popup-section"><div class="popup-section-title">📌 무엇인가</div><div class="popup-text">2024년 출시된 자율 AI 에이전트 플랫폼. 단순 챗봇이 아니라 <strong>스스로 판단하고 행동하는 진정한 자율 에이전트</strong>입니다. 납기 문의·변경 요청·보증 클레임을 24/7 자율 처리합니다.</div></div>
+<div class="popup-section"><div class="popup-section-title">✅ 두산에너빌리티 적용 시나리오</div><div class="popup-text"><ul>
+<li>고객 납기 문의 → 24/7 자율 응답 (새벽 2시 문의도 0.3초 내 응답)</li>
+<li>납기 변경 공문 자동 작성·발송 + CRM 자동 업데이트</li>
+<li>보증 클레임 자동 접수·처리·종결</li>
+<li>수주 급증으로 폭증하는 고객 문의를 사람 없이 80% 자동 처리</li>
+</ul></div></div>
+<div class="popup-cost-box"><div class="popup-cost-label">💰 비용</div><div class="popup-cost-val">$2/대화 (소비 기반) + Salesforce CRM $75~$300/user/월<br>기존 Salesforce CRM 없을 경우 도입 비용 별도 고려 필요</div></div>
+<div class="popup-links">
+<a class="popup-link pl-blue" href="https://www.salesforce.com/agentforce/" target="_blank">🌐 Agentforce 공식</a>
+<a class="popup-link pl-red" href="https://www.youtube.com/results?search_query=Salesforce+Agentforce+demo+2025" target="_blank">▶ 데모 영상</a>
+</div>`},
+
+aconex:{title:'Oracle Aconex — EPC 문서관리 글로벌 #1',html:`
+<div class="popup-section"><div class="popup-section-title">📌 왜 EPC 문서관리 표준인가</div><div class="popup-text">500M+ 문서, 20,000+ 프로젝트. NEOM·파리올림픽·Bechtel·Fluor·삼성엔지니어링이 사용하는 EPC 문서관리 사실상 표준 플랫폼입니다.</div></div>
+<div class="popup-section"><div class="popup-section-title">✅ 두산에너빌리티 핵심 기능</div><div class="popup-text"><ul>
+<li>서브미탈 자동 추적 — 기한 초과 AI 자동 경보·에스컬레이션</li>
+<li>수만 건 도서 자동 분류·태깅·지능형 검색</li>
+<li>고객 검토 결과 → 상태 자동 업데이트 → 재제출 자동 배정</li>
+<li>검토 사이클 40~60% 단축</li>
+<li>SharePoint 기반보다 EPC 특화 기능 월등히 우수 (수주 구조적 증가 시 권장)</li>
+</ul></div></div>
+<div class="popup-cost-box"><div class="popup-cost-label">💰 비용</div><div class="popup-cost-val">연간 $50K~$500K (프로젝트 규모·사용자 수 기준)<br>구현 기간: 3~6개월</div></div>
+<div class="popup-links">
+<a class="popup-link pl-blue" href="https://www.oracle.com/industries/construction-engineering/aconex/" target="_blank">🌐 Oracle Aconex</a>
+<a class="popup-link pl-red" href="https://www.youtube.com/results?search_query=Oracle+Aconex+EPC+document+management" target="_blank">▶ 데모 영상</a>
+</div>`}
 };
 
 function showPopup(id){
